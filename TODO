@@ -1,0 +1,132 @@
+  
+Por hacer:
+  ☐ Diseño página web
+  ☐ Cambiar diseño de Log In y registro
+  ☐ Realizar metodo para Loguearse o Registrarse con google.
+  ☐
+  ☐
+  ☐
+  ☐
+  ☐
+  ☐
+
+
+Terminado:
+  ☐ 
+  ☐
+  ☐
+  ☐
+  ☐ 
+  ☐
+  ☐
+  ☐
+  ☐ 
+  ☐
+  ☐
+
+Tablas: 
+  - Usuario: (Realizado por breeze).
+    -Nombre
+    -email
+    -role
+    -password
+
+  - Productos
+    -nombre
+    -categoria
+    -precio
+    -descripcion
+    -Imagen
+    -Localización
+    -NumeroVisto
+
+  - Categorias:
+    -Nombre
+
+  - UsuarioProductos
+    -UsuarioId
+    -ProductoId
+
+  - UsuarioFavoritos
+    -UsuarioId
+    -ProductoId
+
+  - UsuarioOpiniones
+    -UsuarioId
+    -VendedorId
+    -Estrellas
+    -Opinión
+  
+  - Chat
+    -UsuarioId
+    -VendedorId
+    -Activo
+
+  - ChatMensaje
+    -ChatId
+    -UsuarioId
+    -Mensaje
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+Proyecto:
+  ☐ Proyecto final: Crearé una página web completamente funcional que emula plataformas como Wallapop o Mil Anuncios, pero con una función más específica centrada en el mundo del humo, incluyendo productos como cachimbas, vapers, entre otros. La página se llamará "Resmoke". Contará con un sistema de chat interno que facilitará la comunicación entre compradores y vendedores de estos productos. Realizaré pruebas exhaustivas para garantizar el correcto funcionamiento de todas las características y la experiencia del usuario en Resmoke.
+
+Paginas:
+
+  // No registrados
+  ☐ Nav Bar: Tendrán en el logo en la parte izquierda y en la parte derecha tendremos los botones de registro y de login
+
+  ☐ Página principal : En esta página tendremos tres apartados:
+    ☐ Apartado 1: Tendremos un buscador para buscar productos por nombre y nos llevara a una página donde nos presente los productos cuyo nombre presente lo puesto en el buscador.
+    ☐ Apartado 2: Tendremos una lista de las categorias disponibles para visualizar los productos por categoría.
+    ☐ Apartado 3: Tendremos una lista de 6 productos aleatorios ordenados de 3 en 3. 
+
+  ☐ Página Log In: Tendremos un formulario donde pondremos  el usuario y la contraseña // Creado por Breeze y modificado.
+  ☐ Página Registro: Tendremos un formulario para poner los datos y realizar el registro // Creado por Breeze y modificado
+
+  ☐ Pagina de productos: donde nos mostrará todos los productos a la venta, en su nav bar se le añadira el buscador. 
+
+  ☐ Visualizar el producto, con todos los datos del producto // no es necesario el registro o login y La parte de poder ver los datos del vendedor si que tendrias que estar registrado o logueado, pondrá un link para poder hablar directamente desde el chat en linea y (siempre y cuando se señale al crear el producto en venta) el numero de telefono.
+  
+  // REGISTRADOS
+  ☐ Nav Bar: Tendrán Tendrán un botón (Subir Producto) que nos mandarán a la página para crear el producto.
+
+  ☐ Página crear producto: Tendrá un formulario en el que nos pedirá todos los datos del producto (Aún por concordar), tendrá un boton en el que permitirá o no el poner el telefono de contacto.
+
+  ☐ Pagina Usuario: Esta parte contará con varios apartados que son:
+    ☐ Apartado 1: En la parte superior aparecerá los datos del perfil con su respectiva imagen que asigne el usuario y un boton (editar) que no dirigirá a otra página para poder personalizar los datos del usuario.
+    ☐ Apartado 2:Que a su vez tendrá un pequeño navbar de dos enlaces en que podremos dividir en dos apartados:
+      ☐ Apartado 2.1 (En venta) Tendremos un apartado en el que nos saldrán todos los productos lanzados a la venta, en cada producto saldrán dos botones (Editar) que nos llevará a una página en la que podremos editar los datos del producto, tanto el precio como los datos en si y (Vendido) que nos saldrá un modal para confirmar que se ha vendido el producto respectivo, esto hará que en la base de datos salga como vendido y no se printeará en la página de productos.
+      ☐ Apartado 2.2 (Vendidos): Tendremos otro apartado donde nos saldrán todos los productos que ya marquemos como vendidos.
+
+  ☐ Página modificar datos personales: Saldrá una página donde podremos modificar los datos del usuario. 
+
+  ☐ Página de producto: En el caso que este registrado o logueado, como he comentado antes, habrá un botón para poder ver los datos del vendedor y el botón del chat en linea, en el caso de ser el vendedor, saldrán los botones de (vendido) y (editar) de los productos.
+
+  ☐ Página de chat en linea: Tendremos que estar registrados para esto y tendremos una página exclusiva para el chat con personas, tendremos en la izquieda un navbar donde tendremos un listado de las personas con la que hemos hablado y cuando habrás un chat saldrá a la derecha.
+
+  //ADMINISTRADOR
+  ☐ Este será el apartado de los administradores de la página en la cual podrán cambiar todo lo anterior, en todos las paginas tendremos un buscador para que la busqueda sea más facil.
+
+  ☐ Página de categorias: Nos saldran un listado de las categorias, podremos añadir, eliminar y modificar.
+  ☐ Página de Usuarios: Nos saldrán un listado de los usuarios con todos sus datos menos la contraseña, podremos eliminar, modificar, modificar el rol.
+  ☐ Página de Productos: Nos saldrán un listado de los productos , podremos añadir, eliminar, modificar 
+
+  
