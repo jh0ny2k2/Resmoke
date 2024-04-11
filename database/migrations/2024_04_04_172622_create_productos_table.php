@@ -17,7 +17,7 @@ return new class extends Migration
             $table->unsignedBigInteger('categoriaId');
             $table->foreign('categoriaId')->references('id')->on('categorias')->onDelete('cascade')->onUpdate('cascade');
             $table->double('precio');
-            $table->enum('estado', ['activo', 'vendido', 'reservado']);
+            $table->enum('estado', ['observacion', 'activo', 'vendido', 'reservado']);
             $table->text('descripcion');
             $table->string('imagen')->nullable();
             $table->string('localizacion');

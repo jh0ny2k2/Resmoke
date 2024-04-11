@@ -1,17 +1,40 @@
   
 Por hacer:
-  ☐ Diseño página web
-  ☐ Cambiar diseño de Log In y registro
-  ☐ Realizar metodo para Loguearse o Registrarse con google.
-  ☐
-  ☐
-  ☐
-  ☐
+  ☐ Hacer funcionalidad de buscar principal, no tiene ni formulario                        // Importante
+  ☐ Realizar metodo para Loguearse o Registrarse con google. 
+  ☐ Arreglar metodos de registro y logueo                                                  // Importante
+  ☐ Realizar diseño de perfil cuando es nuestro perfil
+  ☐ Realizar diseño de perfil cuando visitamos otro perfil que no sea el nuestro
+  ☐ Poner enlace en el logo principal en el navbar                                         // Importante
+  ☐ Crear página no recuerdo contraseña
   ☐
   ☐
 
 
 Terminado:
+
+  Lunes 08/04/2024
+  ☐ Diseño página principal
+  ☐ Diseño página para mostrar los productos
+  ☐ Creado diseño formulario añadir producto
+
+  Martes 09/04/2024
+  ☐ Hacer diseño de login 
+  ☐ Hacer diseño de Registro 
+  ☐ Hacer diseño de Ver producto
+
+  Miercoles 10/04/2024
+  ☐ Implementado diseño en la pagina principal
+  ☐ Realizada foreach en la pagina principal de categorias
+  ☐ Creado los componentes de NavBar y footer para la pagina de inicio y puestas en funcionamiento
+  ☐ Crear componente de card
+  ☐ Realizado varios enlaces (mostrar todos, mostrar por categoría)
+  ☐ Poner enlace en las categorias pagina principal
+  ☐ Implementado el diseño de página de productos
+  ☐ Realizado que salgan 6 productos en la pagina principal
+
+  Jueves 11/04/2024
+  ☐ Cambiado el diseño en laravel de Login y Registro
   ☐ 
   ☐
   ☐
@@ -20,9 +43,9 @@ Terminado:
   ☐
   ☐
   ☐
-  ☐ 
   ☐
   ☐
+
 
 Tablas: 
   - Usuario: (Realizado por breeze).
@@ -66,23 +89,6 @@ Tablas:
     -ChatId
     -UsuarioId
     -Mensaje
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
 
 
 Proyecto:

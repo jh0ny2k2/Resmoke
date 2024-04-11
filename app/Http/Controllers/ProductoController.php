@@ -8,11 +8,23 @@ use Illuminate\Http\Request;
 class ProductoController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the resource. 
      */
+
+    //VER TODOS
     public function index()
     {
-        //
+        $productos = Producto::all();
+
+        return view('web.productos', ['productos' => $productos]);
+    }
+
+    //VER TODOS POR CATEGORÍA
+    public function indexCategoria($id)
+    {
+        $productos = Producto::where('categoriaId', $id)->get();
+
+        return view('web.productos', ['productos' => $productos]);
     }
 
     /**
