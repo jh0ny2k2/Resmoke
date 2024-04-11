@@ -16,13 +16,14 @@
     <header class="bg-white shadow top-0 left-0 right-0 z-10">
         <div class="container mx-auto flex flex-wrap items-center justify-between p-5">
 
-            <a href="index.html" class="flex items-center text-gray-900 mr-4">
+            <a href="/welcome" class="flex items-center text-gray-900 mr-4">
                 <img src="{{ asset('storage/logo resmoke.png' )}}" alt="Logo" class="h-24">
             </a>
 
-            <div class="relative text-gray-600 mr-4 flex-1 min-w-0">
-                <input type="text" name="buscar" placeholder="Busca lo que necesites ..." class="bg-white h-10 px-5 pr-10 border-2 rounded-full text-sm focus:outline-none w-full">
-            </div>
+            <form method="post" action="{{ route('buscador') }}" class="relative text-gray-600 mr-4 flex-1 min-w-0">
+            @csrf
+                <input type="text" name="buscador" placeholder="Busca lo que necesites ..." class="bg-white h-10 px-5 pr-10 border-2 rounded-full text-sm focus:outline-none w-full">
+            </form>
             @auth
                 <div class="flex items-center">
 
@@ -32,10 +33,13 @@
                         </button>
                     </a>
 
-                    <button class="inline-flex items-center border-2 border-black text-black bg-white hover:bg-gray-100 rounded text-sm py-2 px-3 mr-2">
-                        Panel Admin
-                    </button>
-
+                    @if (Auth::user()->rol == "administrador")
+                        <a href="">
+                            <button class="inline-flex items-center border-2 border-black text-black bg-white hover:bg-gray-100 rounded text-sm py-2 px-3 mr-2">
+                                Panel Admin
+                            </button>
+                        </a>
+                    @endif
                     <div x-data="{ open: false }" class="inline-block">
                         <a href="#" class="inline-block" @click.prevent="open = !open">
                             <img src="Img/images.jpeg" alt="Perfil" class="h-12 w-12 rounded-full border-2 border-black">
@@ -45,6 +49,8 @@
                             <a href="productosPerfil.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">En venta</a>
                             <hr>
                             <a href="perfil.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Perfil</a>
+                            <hr>
+                            <a href="{{ route('milogout') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Cerrar Sesión</a>
                         </div>
                     </div>
 

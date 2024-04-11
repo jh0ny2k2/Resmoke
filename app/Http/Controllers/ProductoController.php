@@ -27,6 +27,14 @@ class ProductoController extends Controller
         return view('web.productos', ['productos' => $productos]);
     }
 
+    //VER TODOS POR NOMBRE
+    public function buscador(Request $request)
+    {
+        $productos = Producto::where('nombre', 'like', '%' . $request->buscador . '%')->get();
+
+        return view('web.productos', ['productos' => $productos]);
+    }
+
     /**
      * Show the form for creating a new resource.
      */

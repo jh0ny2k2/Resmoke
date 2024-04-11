@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\ProfileController;
 use App\Models\Categoria;
@@ -18,7 +19,10 @@ Route::get('/welcome', function () {
     $producto = Producto::with('categorias')->inRandomOrder()->take(6)->get();
 
     return view('welcome', ['categorias' => $categorias, 'productos' => $producto]);
-});
+})->name('welcome');
+
+// RUTA CREADA PARA CERRAR SESIÓN
+Route::get('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('milogout');
 
 
 Route::get('/dashboard', function () {
@@ -28,6 +32,7 @@ Route::get('/dashboard', function () {
 Route::prefix('web')->group(function() {
     Route::get('/verTodos', [ProductoController::class, 'index'])->name('verTodos');
     Route::get('/verCategoria/{id}', [ProductoController::class, 'indexCategoria']);
+    Route::post('/buscador', [ProductoController::class, 'buscador'])->name('buscador');
 });
 
 Route::middleware('auth')->group(function () {
