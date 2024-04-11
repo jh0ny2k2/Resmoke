@@ -1,14 +1,14 @@
   
 Por hacer:
   ☐ Hacer funcionalidad de buscar principal, no tiene ni formulario                        // Importante
-  ☐ Realizar metodo para Loguearse o Registrarse con google. 
-  ☐ Arreglar metodos de registro y logueo                                                  // Importante
+  ☐ Realizar metodo para Loguearse o Registrarse con google
   ☐ Realizar diseño de perfil cuando es nuestro perfil
   ☐ Realizar diseño de perfil cuando visitamos otro perfil que no sea el nuestro
   ☐ Poner enlace en el logo principal en el navbar                                         // Importante
   ☐ Crear página no recuerdo contraseña
-  ☐
-  ☐
+  ☐ Implementar foto en formulario de registro
+  ☐ Implementar Boton de cerrar sesion
+  ☐ Quitar el boton de dashboard para los usuarios.
 
 
 Terminado:
@@ -35,6 +35,7 @@ Terminado:
 
   Jueves 11/04/2024
   ☐ Cambiado el diseño en laravel de Login y Registro
+  ☐ Arreglar metodos de registro y logueo
   ☐ 
   ☐
   ☐

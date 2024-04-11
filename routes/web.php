@@ -13,6 +13,14 @@ Route::get('/', function () {
     return view('welcome', ['categorias' => $categorias, 'productos' => $producto]);
 });
 
+Route::get('/welcome', function () {
+    $categorias = Categoria::all();
+    $producto = Producto::with('categorias')->inRandomOrder()->take(6)->get();
+
+    return view('welcome', ['categorias' => $categorias, 'productos' => $producto]);
+});
+
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
