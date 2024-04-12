@@ -30,9 +30,11 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::prefix('web')->group(function() {
+    //Productos
     Route::get('/verTodos', [ProductoController::class, 'index'])->name('verTodos');
     Route::get('/verCategoria/{id}', [ProductoController::class, 'indexCategoria']);
     Route::post('/buscador', [ProductoController::class, 'buscador'])->name('buscador');
+    Route::get('/verProducto/{id}', [ProductoController::class, 'show']);
 });
 
 Route::middleware('auth')->group(function () {
