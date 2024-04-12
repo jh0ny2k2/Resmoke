@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdministracionController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\ProfileController;
@@ -35,12 +36,20 @@ Route::prefix('web')->group(function() {
     Route::get('/verCategoria/{id}', [ProductoController::class, 'indexCategoria']);
     Route::post('/buscador', [ProductoController::class, 'buscador'])->name('buscador');
     Route::get('/verProducto/{id}', [ProductoController::class, 'show']);
+
+    // Perfil
+    Route::middleware('auth')->group(function () {
+        Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+        Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+        Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    });
 });
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+
+Route::prefix('admin')->middleware(['auth', 'verified', 'mdrol:administrador,creadorEventos'])->group(function () { 
+    Route::get('/inicio', [AdministracionController::class, 'inicio'])->name('adminInicio');
 });
+
 
 require __DIR__.'/auth.php';

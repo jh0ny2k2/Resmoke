@@ -25,7 +25,7 @@
                         </button>
                     </a>
                     @if (Auth::user()->rol == "administrador")
-                        <a href="">
+                        <a href="{{ route('adminInicio') }}">
                             <button class="inline-flex items-center border-2 border-black text-black bg-white hover:bg-gray-100 rounded text-sm py-2 px-3 mr-2">
                                 Panel Admin
                             </button>
@@ -52,7 +52,7 @@
     @else 
         <header class="bg-white shadow fixed top-0 left-0 right-0 z-10">
             <div class="container mx-auto flex justify-between items-center p-2">
-            <a href="index.html" class="title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+            <a href="/welcome" class="title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
                 <img src="{{ asset('storage/logo resmoke.png') }}" alt="Logo" class="h-24">
             </a>
                 <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">

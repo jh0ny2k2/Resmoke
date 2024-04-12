@@ -34,7 +34,7 @@
                     </a>
 
                     @if (Auth::user()->rol == "administrador")
-                        <a href="">
+                        <a href="{{ route('adminInicio') }}">
                             <button class="inline-flex items-center border-2 border-black text-black bg-white hover:bg-gray-100 rounded text-sm py-2 px-3 mr-2">
                                 Panel Admin
                             </button>
