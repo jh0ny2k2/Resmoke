@@ -4,15 +4,15 @@ Por hacer:
   ☐ Realizar diseño de perfil cuando es nuestro perfil
   ☐ Realizar diseño de perfil cuando visitamos otro perfil que no sea el nuestro
   ☐ Crear página no recuerdo contraseña
-  ☐ Implementar foto en formulario de registro
-  ☐ Implemetar fotos y mapa en ver producto
+  ☐ Implemetar fotos y mapa en ver producto 
+  ☐ Hacer que salga las fotos cuando la subes en el registro de usuario
   ☐ Realizar funcionalidad botón atras en ver producto
-  ☐ Implementar diseño de admin
   ☐ Realizar metodo para guardar como favorito
   ☐ implementar diseño de añadir producto
   ☐ Realizar metodo para añadir producto // que cuando se cree se envie a observacion
   ☐ Realizar metodos para funcionalidad de panel admin
-
+  ☐ Arreglar metodo para poder ir a panel admin // Target class [rol] does not exist
+  ☐ Arreglar base de datos de productosUsuario para poner activo, en revision, vendido o reservado
 
 Terminado:
 
@@ -41,13 +41,20 @@ Terminado:
   ☐ Arreglado metodos de registro y logueo
   ☐ Implementar Boton de cerrar sesion
   ☐ Poner enlace en el logo principal en el navbar
+  
+  Viernes 12/04/2024
+  ☐ Implemetar diseño ver producto
   ☐ Quitar el boton de dashboard para los usuarios.
   ☐ Realizada la funcionalidad de buscador
 
-  Viernes 12/04/2024
+  Sabado 13/04/2024
   ☐ Realizado Diseño total de panel admin
-  ☐ Implemetar diseño ver producto
 
+  Lunes 15/04/2024
+  ☐ Implementar diseño de admin
+  ☐ Ya sale la imagen de perfil en el circulo del navbar
+  ☐ Implementar foto en formulario de registro 
+  ☐ Implementado metodo para guardar la foto de perfil
 
 
 

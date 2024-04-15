@@ -46,6 +46,13 @@ class RegisteredUserController extends Controller
             'rol' => 'usuario',
         ]);
 
+        $id = $user->id;
+        $request->file('fotoPerfil')->storeAs(
+            'public',
+            'fotoPerfil' . $id . '.png'
+        );
+
+
         event(new Registered($user));
 
         Auth::login($user);

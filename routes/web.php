@@ -47,7 +47,7 @@ Route::prefix('web')->group(function() {
 
 
 
-Route::prefix('admin')->middleware(['auth', 'verified', 'mdrol:administrador,creadorEventos'])->group(function () { 
+Route::prefix('admin')->middleware(['auth', 'verified', 'rol:administrador'])->group(function () { 
     Route::get('/inicio', [AdministracionController::class, 'inicio'])->name('adminInicio');
 });
 

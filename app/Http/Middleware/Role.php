@@ -18,9 +18,7 @@ class Role
         if ($request->user()->rol != $rol) {
 
             //No tiene permiso
-
             return redirect("/");
-
         }
         
         return $next($request);

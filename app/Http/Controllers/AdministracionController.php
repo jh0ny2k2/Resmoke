@@ -11,7 +11,7 @@ class AdministracionController extends Controller
      */
     public function inicio()
     {
-        //
+        echo "hola";
     }
 
     /**
