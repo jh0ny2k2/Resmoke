@@ -5,7 +5,7 @@
         <div class="flex flex-wrap -m-4">
 
             @foreach ($productos as $producto)
-            <a href="verProducto.html" class="lg:w-1/3 md:w-1/2 p-4 w-full">
+            <a href="/web/verProducto/{{ $producto->id }}" class="lg:w-1/3 md:w-1/2 p-4 w-full">
                 <div class="block relative h-full max-h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
                     <img alt="ecommerce" class="lg:h-48 md:h-36 w-full object-cover object-center" src="https://dummyimage.com/600x400">
                     <div class="p-4 mt-4">

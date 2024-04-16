@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resmoke - Productos</title>
-    <link rel="shortcut icon" href="Img/logo resmoke.png" />
+    <title>Resmoke</title>
+    <link rel="shortcut icon" href="{{ asset('storage/logo resmoke.png' )}}" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.0/dist/alpine.min.js"></script>
 </head>
@@ -27,11 +27,12 @@
             @auth
                 <div class="flex items-center">
 
-                    <a href="addProducto.html">
-                        <button class="inline-flex items-center border-2 border-black text-black bg-white hover:bg-gray-100 rounded text-sm py-2 px-3 mr-2">
-                            + Añadir Producto
-                        </button>
-                    </a>
+                <a href="{{ route('addProducto') }}" class="inline-flex items-center justify-center border-2 border-black text-black bg-white hover:bg-gray-100 hover:text-gray-700 rounded text-sm py-2 px-3 mr-2 focus:outline-none focus:ring-2 focus:ring-gray-300 transition-colors duration-150">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />
+                    </svg>
+                    Añadir Producto
+                </a>
 
                     @if (Auth::user()->rol == "administrador")
                         <a href="{{ route('adminInicio') }}">

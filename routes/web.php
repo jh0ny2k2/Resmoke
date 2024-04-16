@@ -36,6 +36,7 @@ Route::prefix('web')->group(function() {
     Route::get('/verCategoria/{id}', [ProductoController::class, 'indexCategoria']);
     Route::post('/buscador', [ProductoController::class, 'buscador'])->name('buscador');
     Route::get('/verProducto/{id}', [ProductoController::class, 'show']);
+    Route::get('/addProducto', [ProductoController::class, 'create'])->name('addProducto');
 
     // Perfil
     Route::middleware('auth')->group(function () {
