@@ -2,6 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categoria;
+use App\Models\Producto;
+use App\Models\User;
+use App\Models\UsuarioFavorito;
+use App\Models\UsuarioOpinion;
 use Illuminate\Http\Request;
 
 class AdministracionController extends Controller
@@ -11,54 +16,77 @@ class AdministracionController extends Controller
      */
     public function inicio()
     {
-        echo "hola";
+        $usuarios = User::count();
+        $productos = Producto::count();
+        $categorias = Categoria::count();
+        $favoritos = UsuarioFavorito::count();
+        $opiniones = UsuarioOpinion::count();
+
+        return view('admin.inicio', ['usuario' => $usuarios, 'productos' => $productos, 'categoria' => $categorias, 'favorito' => $favoritos, 'opinion' => $opiniones]);
     }
 
+    
     /**
-     * Show the form for creating a new resource.
+     * USUARIOS
      */
-    public function create()
-    {
-        //
+    public function usuario(){
+        $usuarios = User::all();
+
+        return view('admin.usuario', ['usuarios' => $usuarios]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
+    public function eliminarUsuario($id) {
+        User::destroy($id);
+
+        return redirect()->back();
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show()
-    {
-        //
+    public function editUsuario($id) {
+        User::where('id', $id);
+
+        return view('admin.usuarios.editUsuario');
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit()
-    {
-        //
+
+
+    /** 
+     *  PRODUCTO
+     */ 
+    public function productos(){
+        $productos = Producto::with('categorias')->get();
+
+        return view('admin.producto', ['productos' => $productos]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, )
-    {
-        //
+    public function eliminarProducto($id) {
+        Producto::destroy($id);
+        return redirect()->back();
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy()
-    {
-        //
+    public function editarProducto($id) {
+        $producto = Producto::where('id', $id);
+
+        return view('admin.productos.editProducto', ['producto' => $producto]);
     }
+
+    public function categoria(){
+        $categorias = Categoria::all();
+
+        return view('admin.categoria', ['categorias' => $categorias]);
+    }
+
+    public function favorito(){
+        $favoritos = UsuarioFavorito::all();
+
+        return view('admin.favorito', ['favoritos' => $favoritos]);
+    }
+
+    public function opiniones(){
+        $opiniones = UsuarioOpinion::all();
+
+        return view('admin.opinion', ['opiniones' => $opiniones]);
+    }
+
+
+
 }

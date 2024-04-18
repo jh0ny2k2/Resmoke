@@ -25,7 +25,7 @@ class User extends Authenticatable
         'dni',
         'password',
         'fotoPerfil',
-        'role',
+        'rol',
     ];
 
     /**

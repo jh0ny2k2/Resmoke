@@ -13,7 +13,7 @@
 
   <div class="container mx-auto px-6 pt-5 pb-5">
     <!-- Título de la sección -->
-    <form action="tu_endpoint_de_procesamiento" method="POST" enctype="multipart/form-data">
+    <form action=" {{ route('storeProducto') }}" method="POST" enctype="multipart/form-data">
       <h1 class="text-3xl font-semibold text-center mb-10">Sube tu producto</h1>
 
 
@@ -26,7 +26,7 @@
           <div class="flex justify-center gap-4 my-5">
             @foreach ($categorias as $categoria)
             <label class="flex flex-col items-center cursor-pointer group">
-              <input type="radio" name="categoria" value="cachimbas" class="sr-only peer" />
+              <input type="radio" name="categoria" id="categoria" value=" {{ $categoria->nombre }}" class="sr-only peer" />
               <div class="p-2 rounded-full group-hover:bg-gray-100 peer-checked:bg-gray-200">
                 <img src="{{ asset('storage/' . $categoria->nombre . '.png') }}" alt="{{ $categoria->nombre}}" class="h-20 w-22">
               </div>

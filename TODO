@@ -8,12 +8,12 @@ Por hacer:
   ☐ Realizar metodo para guardar como favorito
   ☐ Realizar metodo para añadir producto // que cuando se cree se envie a observacion
   ☐ Realizar metodos para funcionalidad de panel admin
-  ☐ Arreglar metodo para poder ir a panel admin // Target class [rol] does not exist
-  ☐ Arreglar base de datos de productosUsuario para poner activo, en revision, vendido o reservado
-
-  //PREGUNTAR 
-  ☐ Preguntar duda de imagenes, si es mejor directamente ponerla en base de datos o en laravel.
-  ☐ Preguntar sobre el error de panel admin
+  ☐ Poder cambiar el rol del usuario en panel admin 
+  ☐ Realizar diseño pagina de confirmacion de producto
+  ☐ Realizar metodo de confirmacion de producto
+  ☐ Realizar arreglos de rutas de la web, para que los favoritos y addproducto sea solo los registrados
+  ☐ Añadir metodo para sumar vez vista cuando pulsemos para ver el producto 
+  ☐ Crear formularios para admin
 
 Terminado:
 
@@ -71,11 +71,17 @@ Terminado:
 
   Miercoles 17/04/2024
 
-  ☐
+  ☐ Arreglar base de datos de productosUsuario para poner activo, en revision, vendido o reservado
+  ☐ Arreglar metodo para poder ir a panel admin // Target class [rol] does not exist
 
   Jueves 08/04/2024
 
-  ☐
+  //PREGUNTADO 
+  ☐ Preguntar duda de imagenes, si es mejor directamente ponerla en base de datos o en laravel.  --> carpeta
+  ☐ Preguntar sobre el error de panel admin --> arreglado
+
+  ☐ Realizado metodo para poder ver todo el panel admin con las tablas y los elementos 
+
 
   Viernes 19/04/2024
 

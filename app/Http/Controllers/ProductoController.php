@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Categoria;
 use App\Models\Producto;
+use App\Models\UsuarioProducto;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProductoController extends Controller
 {
@@ -51,7 +53,55 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        // TABLA DE PRODUCTO
+
+            // Datos del producto 
+            $producto = new Producto();
+            $producto->categoria = $request->categoria;
+            $producto->nombre = $request->nombreProducto;
+            $producto->precio = $request->precioProducto;
+            $producto->estado = 'observacion';
+            $producto->descripcion = $request->descripcionProducto;
+            $producto->localizacion = $request->localizacion;
+            $producto->save();
+
+            // Sacamos la id del producto
+            $id = $producto->id;
+
+            // Imagenes del producto
+            $request->file('fotoPricipal')->storeAs(
+                'public',
+                'fotoPrincipal' . $id . '.png'
+            );
+
+            $request->file('fotoExtra1')->storeAs(
+                'public',
+                'fotoExtra1' . $id . '.png'
+            );
+
+            $request->file('fotoExtra2')->storeAs(
+                'public',
+                'fotoExtra2' . $id . '.png'
+            );
+
+            $request->file('fotoExtra3')->storeAs(
+                'public',
+                'fotoExtra3' . $id . '.png'
+            );
+
+            $request->file('fotoExtra4')->storeAs(
+                'public',
+                'fotoExtra4' . $id . '.png'
+            );
+
+        // TABLA DE USUARIO-PRODUCTO
+
+            // Datos de producto tabla intermedia
+            $usuarioProducto = new UsuarioProducto();
+            $usuarioProducto->productoId = $id;
+            $usuarioProducto->usuarioId = Auth::user()->id;
+            $usuarioProducto->save();
     }
 
     /**
