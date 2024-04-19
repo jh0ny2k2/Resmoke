@@ -47,7 +47,8 @@ Route::prefix('admin')->middleware(['auth', 'verified', 'mdrol:administrador'])-
 
     //USUARIO
     Route::get('/usuario', [AdministracionController::class, 'usuario'])->name('adminUsuario');         // VER TODOS LOS USUARIOS REGISTRADOS DESDE ADMIN
-    Route::get('/eliminarUsuario', [AdministracionController::])
+    Route::get('/eliminarUsuario/{id}', [AdministracionController::class, 'eliminarUsuario']);          // ELIMINAR USUARIO DESDE ADMIN
+    Route::get('/editarUsuario/{id}', [AdministracionController::class, 'editProducto']);               // VER FORMULARIO EDITAR USUARIO DESDE ADMIN
 
     //PRODUCTOS
     Route::get('/productos', [AdministracionController::class, 'productos'])->name('adminProducto');    // VER TODOS LOS PRODUCTOS DESDE ADMIN
