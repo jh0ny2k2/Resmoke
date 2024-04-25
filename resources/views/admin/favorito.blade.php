@@ -14,15 +14,14 @@
                     <tbody>
                         @foreach($favoritos as $favorito)
                         <tr class="bg-white border-b">
-                            <td class="px-6 py-4">{{ $favorito->usuarioId }}</td>
-                            <td class="px-6 py-4">{{ $favorito->productoId }}</td>
+                            <td class="px-6 py-4">{{ $favorito->usuarios->name }}</td>
+                            <td class="px-6 py-4">{{ $favorito->productos->nombre }}</td>
                             <td class="px-6 py-4">
-                                <button class="text-red-500 hover:text-red-700">
-                                    <span class="material-icons">delete</span>
-                                </button>
-                                <button class="text-blue-500 hover:text-blue-700">
-                                    <span class="material-icons">edit</span>
-                                </button>
+                                <a href="/admin/eliminarFavorito/{{ $favorito->id }}">
+                                    <button class="text-red-500 hover:text-red-700">
+                                        <span class="material-icons">delete</span>
+                                    </button>
+                                </a>
                             </td>
                         </tr>
                         @endforeach

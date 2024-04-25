@@ -13,4 +13,14 @@ class UsuarioFavorito extends Model
         'usuarioId', 
         'productoId', 
     ];
+
+    public function usuarios()
+    {
+        return $this->belongsTo(User::class, 'usuarioId');
+    }
+
+    public function productos()
+    {
+        return $this->belongsTo(Producto::class, 'productoId');
+    }
 }

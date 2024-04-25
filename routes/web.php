@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\AdminFavoritos;
 use App\Http\Controllers\AdministracionController;
+use App\Http\Controllers\AdminProducto;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\ProfileController;
@@ -27,7 +29,7 @@ Route::prefix('web')->group(function() {
 
         // PRODUCTO
         Route::get('/addProducto', [ProductoController::class, 'create'])->name('addProducto');     //VER FORMULARIO AÑADIR PRODUCTO
-        Route::post('/producto', [ProductoController::class, 'store'])->name('storeProducto');      //AÑADIR PRODUCTO A LA VENTA
+        Route::post('/addproducto', [ProductoController::class, 'store'])->name('storeProducto');      //AÑADIR PRODUCTO A LA VENTA
 
         // Favorito
         Route::get('/addFavorito/{id}', [UsuarioFavoritoController::class, 'favorito']);            //AÑADIR A FAVORITO
@@ -46,24 +48,39 @@ Route::prefix('admin')->middleware(['auth', 'verified', 'mdrol:administrador'])-
     Route::get('/inicio', [AdministracionController::class, 'inicio'])->name('adminInicio');            // VER INICIO DE ADMIN
 
     //USUARIO
-    Route::get('/usuario', [AdministracionController::class, 'usuario'])->name('adminUsuario');         // VER TODOS LOS USUARIOS REGISTRADOS DESDE ADMIN
-    Route::get('/eliminarUsuario/{id}', [AdministracionController::class, 'eliminarUsuario']);          // ELIMINAR USUARIO DESDE ADMIN
-    Route::get('/editarUsuario/{id}', [AdministracionController::class, 'editProducto']);               // VER FORMULARIO EDITAR USUARIO DESDE ADMIN
+    Route::get('/usuario', [AdministracionController::class, 'usuario'])->name('adminUsuario');         // VER TODOS LOS USUARIOS REGISTRADOS 
+    Route::get('/eliminarUsuario/{id}', [AdministracionController::class, 'eliminarUsuario']);          // ELIMINAR USUARIO 
+    Route::get('/editarUsuario/{id}', [AdministracionController::class, 'editarUsuario']);               // VER FORMULARIO EDITAR USUARIO 
+    Route::post('/editUsuario/{id}', [AdministracionController::class, 'editUsuario']);                 
+    Route::get('/addUsuario', [AdministracionController::class, 'addUsuario'])->name('verFormularioUsuario');
+    Route::post('/addUser', [AdministracionController::class, 'addUser']);
+    Route::get('/editRol/{id}', [AdministracionController::class, 'editRol']);
+    Route::post('/editRol/{id}', [AdministracionController::class, 'editarRol']);
+    Route::get('/verAdministrador', [AdministracionController::class, 'verAdministrador'])->name('verAdministrador');
+    Route::get('/verUsuarios', [AdministracionController::class, 'verUsuario'])->name('verUsuario');
+    Route::post('/buscadorUsuario', [ProductoController::class, 'buscador']);
 
     //PRODUCTOS
-    Route::get('/productos', [AdministracionController::class, 'productos'])->name('adminProducto');    // VER TODOS LOS PRODUCTOS DESDE ADMIN
-    Route::get('/eliminarProducto/{id}', [AdministracionController::class, 'eliminarProducto']);        // ELIMINAR PRODUCTO DESDE ADMIN
-    Route::get('/editarProducto/{id}', [AdministracionController::class, 'editarProducto']);            // VER FORMULARIO DE EDITAR PRODUCTO DESDE ADMIN
-    Route::post('/editProducto', [AdministracionController::class, 'editProducto']);                    // EDITAR PRODUCTO DESDE ADMIN
+    Route::get('/productos', [AdminProducto::class, 'productos'])->name('adminProducto');    // VER TODOS LOS PRODUCTOS 
+    Route::get('/eliminarProducto/{id}', [AdminProducto::class, 'eliminarProducto']);        // ELIMINAR PRODUCTO 
+    Route::get('/editProducto/{id}', [AdminProducto::class, 'editarProducto']);            // VER FORMULARIO DE EDITAR PRODUCTO 
+    Route::post('/editarProducto/{id}', [AdminProducto::class, 'editProducto']);                    // EDITAR PRODUCTO 
+    Route::get('/addProducto', [AdminProducto::class, 'verFormProducto'])->name('verFormularioProducto');
+    Route::post('/addProducto', [AdminProducto::class, 'addProducto']);
+    Route::get('/verConfirmar', [AdminProducto::class, 'verConfirmar'])->name('verConfirmar');
+    Route::get('/confirmar/{id}', [AdminProducto::class, 'confirmar']);
+    Route::get('/denegar/{id}', [AdminProducto::class, 'denegar']);
+    Route::get('/verProducto/{id}', [AdminProducto::class, 'verProducto']);
 
     //CATEGORIAS
-    Route::get('/categorias', [AdministracionController::class, 'categoria'])->name('adminCategoria');  // VER TODAS LAS CATEGORIAS DESDE ADMIN
+    Route::get('/categorias', [AdministracionController::class, 'categoria'])->name('adminCategoria');  // VER TODAS LAS CATEGORIAS 
 
     //FAVORITOS
-    Route::get('/favoritos', [AdministracionController::class, 'favorito'])->name('adminFavorito');     // VER TODOS LOS FAVORITOS DESDE ADMIN
+    Route::get('/favoritos', [AdminFavoritos::class, 'favorito'])->name('adminFavorito');     // VER TODOS LOS FAVORITOS
+    Route::get('/eliminarFavorito/{id}', [AdminFavoritos::class, 'eliminar']);
 
     //OPINIONES
-    Route::get('/opiniones', [AdministracionController::class, 'opiniones'])->name('adminOpiniones');   // VER TODAS LAS RESEÑAS DESDE ADMIN
+    Route::get('/opiniones', [AdministracionController::class, 'opiniones'])->name('adminOpiniones');   // VER TODAS LAS RESEÑAS 
 });
 
 // RUTA CREADA PARA CERRAR SESIÓN

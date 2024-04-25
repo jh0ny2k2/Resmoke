@@ -19,8 +19,19 @@ class UsuarioFavoritoController extends Controller
     }
 
     public function favorito($id) {
-        echo 'hola';
+        
+        $favorito = new UsuarioFavorito();
+        $favorito->usuarioId = Auth::user()->id;
+        $favorito->productoId = $id;
+        $favorito->save();
+
+        return redirect()->back();
     }
+
+    public function deleteFavorito($id){
+
+    }
+
 
     /**
      * Show the form for creating a new resource.

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Categoria;
 use App\Models\Producto;
+use App\Models\UsuarioFavorito;
 use App\Models\UsuarioProducto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -17,7 +18,7 @@ class ProductoController extends Controller
     //VER TODOS
     public function index()
     {
-        $productos = Producto::all();
+        $productos = Producto::where('estado', 'activo')->get();
 
         return view('web.productos', ['productos' => $productos]);
     }
@@ -58,16 +59,25 @@ class ProductoController extends Controller
 
             // Datos del producto 
             $producto = new Producto();
-            $producto->categoria = $request->categoria;
+            $producto->categoriaId = $request->categoria;
             $producto->nombre = $request->nombreProducto;
             $producto->precio = $request->precioProducto;
             $producto->estado = 'observacion';
             $producto->descripcion = $request->descripcionProducto;
             $producto->localizacion = $request->localizacion;
+            $producto->numeroVisto = 0;
             $producto->save();
 
             // Sacamos la id del producto
             $id = $producto->id;
+
+            // TABLA DE USUARIO-PRODUCTO
+
+            // Datos de producto tabla intermedia
+            $usuarioProducto = new UsuarioProducto();
+            $usuarioProducto->productoId = $id;
+            $usuarioProducto->usuarioId = Auth::user()->id;
+            $usuarioProducto->save();
 
             // Imagenes del producto
             $request->file('fotoPricipal')->storeAs(
@@ -95,13 +105,9 @@ class ProductoController extends Controller
                 'fotoExtra4' . $id . '.png'
             );
 
-        // TABLA DE USUARIO-PRODUCTO
 
-            // Datos de producto tabla intermedia
-            $usuarioProducto = new UsuarioProducto();
-            $usuarioProducto->productoId = $id;
-            $usuarioProducto->usuarioId = Auth::user()->id;
-            $usuarioProducto->save();
+            return redirect()->back();
+        
     }
 
     /**
@@ -109,9 +115,13 @@ class ProductoController extends Controller
      */
     public function show($id)
     {
-        $producto = Producto::where('id', $id)->first();
+        $favorito = UsuarioFavorito::where('usuarioId', Auth::user()->dni)->where('productoId', $id)->exists();
 
-        return view('web.verproducto', ['producto' => $producto]);
+        $producto = Producto::where('id', $id)->first();
+        $producto->numeroVisto = ($producto->numeroVisto) + 1;
+        $producto->save();
+
+        return view('web.verproducto', ['producto' => $producto, 'favorito' => $favorito]);
     }
 
     /**

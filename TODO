@@ -5,108 +5,126 @@ Por hacer:
   ☐ Realizar diseño de perfil cuando visitamos otro perfil que no sea el nuestro
   ☐ Crear página no recuerdo contraseña
   ☐ Implemetar fotos y mapa en ver producto 
-  ☐ Realizar metodo para guardar como favorito
-  ☐ Realizar metodo para añadir producto // que cuando se cree se envie a observacion
-  ☐ Realizar metodos para funcionalidad de panel admin
-  ☐ Poder cambiar el rol del usuario en panel admin 
-  ☐ Realizar diseño pagina de confirmacion de producto
-  ☐ Realizar metodo de confirmacion de producto
-  ☐ Realizar arreglos de rutas de la web, para que los favoritos y addproducto sea solo los registrados
-  ☐ Añadir metodo para sumar vez vista cuando pulsemos para ver el producto 
-  ☐ Crear formularios para admin
+  ☐ Mirar porque no va lo de poner fotos al añadir producto en la web // Call to a member function storeAs() on null
+  ☐ Mirar error fotos add producto desde admin
+  ☐ 
+  ☐ Crear metodo para borrar categoría
+  ☐ Crear metodo para editar categoría
+  ☐ Crear metodo para añadir categoría
+  ☐ Poner fotos en ver producto para confirmar
+  ☐ Poner buscador en admin, usuarios y productos
+  ☐ Mirar metodo para buscar en admin
+  ☐ Mirar porque no se cambio el corazon favorito
+  ☐ Arreglar tabla de productos que no se vaya para la derecha (que se quede centrada en la pantalla)
+  ☐ 
+  ■ 
 
 Terminado:
 
   Lunes 08/04/2024
-  ☐ Diseño página principal
-  ☐ Diseño página para mostrar los productos
-  ☐ Creado diseño formulario añadir producto
+  ✔ Diseño página principal
+  ✔ Diseño página para mostrar los productos
+  ✔ Creado diseño formulario añadir producto
 
   Martes 09/04/2024
-  ☐ Hacer diseño de login 
-  ☐ Hacer diseño de Registro 
-  ☐ Hacer diseño de Ver producto
+  ✔ Hacer diseño de login 
+  ✔ Hacer diseño de Registro 
+  ✔ Hacer diseño de Ver producto
 
   Miercoles 10/04/2024
-  ☐ Implementado diseño en la pagina principal
-  ☐ Realizada foreach en la pagina principal de categorias
-  ☐ Creado los componentes de NavBar y footer para la pagina de inicio y puestas en funcionamiento
-  ☐ Crear componente de card
-  ☐ Realizado varios enlaces (mostrar todos, mostrar por categoría)
-  ☐ Poner enlace en las categorias pagina principal
-  ☐ Implementado el diseño de página de productos
-  ☐ Realizado que salgan 6 productos en la pagina principal
+  ✔ Implementado diseño en la pagina principal
+  ✔ Realizada foreach en la pagina principal de categorias
+  ✔ Creado los componentes de NavBar y footer para la pagina de inicio y puestas en funcionamiento
+  ✔ Crear componente de card
+  ✔ Realizado varios enlaces (mostrar todos, mostrar por categoría)
+  ✔ Poner enlace en las categorias pagina principal
+  ✔ Implementado el diseño de página de productos
+  ✔ Realizado que salgan 6 productos en la pagina principal
 
   Jueves 11/04/2024
-  ☐ Cambiado el diseño en laravel de Login y Registro
-  ☐ Arreglado metodos de registro y logueo
-  ☐ Implementar Boton de cerrar sesion
-  ☐ Poner enlace en el logo principal en el navbar
+  ✔ Cambiado el diseño en laravel de Login y Registro
+  ✔ Arreglado metodos de registro y logueo
+  ✔ Implementar Boton de cerrar sesion
+  ✔ Poner enlace en el logo principal en el navbar
   
   Viernes 12/04/2024
-  ☐ Implemetar diseño ver producto
-  ☐ Quitar el boton de dashboard para los usuarios.
-  ☐ Realizada la funcionalidad de buscador
+  ✔ Implemetar diseño ver producto
+  ✔ Quitar el boton de dashboard para los usuarios.
+  ✔ Realizada la funcionalidad de buscador
 
   Sabado 13/04/2024
-  ☐ Realizado Diseño total de panel admin
+  ✔ Realizado Diseño total de panel admin
 
   Domingo 14/04/2024
 
-  ☐ 
+
 
   Lunes 15/04/2024
-  ☐ Implementar diseño de admin
-  ☐ Ya sale la imagen de perfil en el circulo del navbar
-  ☐ Implementar foto en formulario de registro 
-  ☐ Implementado metodo para guardar la foto de perfil
-  ☐ Realizar funcionalidad botón atras en ver producto 
-  ☐ Implementar enlace a ruta para la pagina de ver lista de productos
-  ☐ implementar diseño de añadir producto
+  ✔ Implementar diseño de admin
+  ✔ Ya sale la imagen de perfil en el circulo del navbar
+  ✔ Implementar foto en formulario de registro 
+  ✔ Implementado metodo para guardar la foto de perfil
+  ✔ Realizar funcionalidad botón atras en ver producto 
+  ✔ Implementar enlace a ruta para la pagina de ver lista de productos
+  ✔ implementar diseño de añadir producto
 
   Martes 16/04/2024
-
-  ☐ Hacer que salga las fotos cuando la subes en el registro de productos
+  ✔ Hacer que salga las fotos cuando la subes en el registro de productos
 
 
   Miercoles 17/04/2024
-
-  ☐ Arreglar base de datos de productosUsuario para poner activo, en revision, vendido o reservado
-  ☐ Arreglar metodo para poder ir a panel admin // Target class [rol] does not exist
+  ✔ Arreglar base de datos de productosUsuario para poner activo, en revision, vendido o reservado
+  ✔ Arreglar metodo para poder ir a panel admin // Target class [rol] does not exist
 
   Jueves 08/04/2024
-
   //PREGUNTADO 
-  ☐ Preguntar duda de imagenes, si es mejor directamente ponerla en base de datos o en laravel.  --> carpeta
-  ☐ Preguntar sobre el error de panel admin --> arreglado
+  ✔ Preguntar duda de imagenes, si es mejor directamente ponerla en base de datos o en laravel.  --> carpeta
+  ✔ Preguntar sobre el error de panel admin --> arreglado
 
-  ☐ Realizado metodo para poder ver todo el panel admin con las tablas y los elementos 
-  ☐ Realizado metodo de borrar y ir a formulario de ediccion de usuarios y productos en el panel admin
-
+  ✔ Realizado metodo para poder ver todo el panel admin con las tablas y los elementos 
+  ✔ Realizado metodo de borrar y ir a formulario de ediccion de usuarios y productos en el panel admin
 
   Viernes 19/04/2024
 
-  ☐
+  
 
   Sabado 20/04/2024
 
-  ☐
+  
 
   Domingo 21/04/2024
 
-  ☐
+  
 
   Lunes 22/04/2024
-
-  ☐
-
+  ✔ Crear formularios para admin de producto, categoria, opiniones
+  ✔ Realizado el metodo editar el usuario
+  ✔ Realizado metodo para añadir usuario
+  ✔ Realizado metodo para cambiar rol de un usuario
+  ✔ Realizado metodo para editar producto
+  
   Martes 23/04/2024
-
-  ☐
+  ✔ Creado metodo para añadir producto
+  ✔ Poner boton en el admin productos para aceptar las publicaciones
+  ✔ Creado metodo para aceptar producto
+  ✔ Creado metodo para denegar producto
+  ✔ Realizar diseño pagina de confirmacion de producto
+  ✔ Añadir metodo para sumar vez vista cuando pulsemos para ver el producto
+  ✔ Metodo para poder ver producto desde ver producto en admin
+  ✔ Creado metodo para filtrar por rol en el panel de usuario de admin
 
   Miercoles 24/04/2024
 
-  ☐
+  ✔ Creado metodo para añadir un producto a favoritos
+  ✔ Realizar arreglos de rutas de la web, para que los favoritos y addproducto sea solo los registrados
+  ✔ Hacer controladores admin para cada cosa para que este mas organizado
+  ✔ Puesto buscador para buscar en admin Usuario
+  ✔ Creado metodo para añadir producto desde la web 
+  ✔ Creado metodo para eliminar favoritos
+  ✔ Arreglada tabla de favoritos, ya sale el nombre del usuario y el nombre del producto
+  ✔ Mirar porque no se pone la tabla de usuarioProducto al añadir producto
+  ✔ 
+  ✔ 
 
   Jueves 25/04/2024
 

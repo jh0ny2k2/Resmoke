@@ -13,7 +13,8 @@
 
   <div class="container mx-auto px-6 pt-5 pb-5">
     <!-- Título de la sección -->
-    <form action=" {{ route('storeProducto') }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('storeProducto') }}" method="POST" enctype="multipart/form-data">
+      @csrf 
       <h1 class="text-3xl font-semibold text-center mb-10">Sube tu producto</h1>
 
 
@@ -26,7 +27,7 @@
           <div class="flex justify-center gap-4 my-5">
             @foreach ($categorias as $categoria)
             <label class="flex flex-col items-center cursor-pointer group">
-              <input type="radio" name="categoria" id="categoria" value=" {{ $categoria->nombre }}" class="sr-only peer" />
+              <input type="radio" name="categoria" id="categoria" value=" {{ $categoria->id }}" class="sr-only peer" />
               <div class="p-2 rounded-full group-hover:bg-gray-100 peer-checked:bg-gray-200">
                 <img src="{{ asset('storage/' . $categoria->nombre . '.png') }}" alt="{{ $categoria->nombre}}" class="h-20 w-22">
               </div>
@@ -66,36 +67,7 @@
           </div>
         </fieldset>
 
-        <!-- Subida de fotos del producto -->
-        <fieldset class="mb-6">
-          <legend class="text-xl mb-4">Fotografías</legend>
-
-          <div class="grid grid-cols-5 gap-4">
-            <!-- Foto principal -->
-            <label class="border-2 border-dashed border-green-500 rounded-md p-4 flex flex-col items-center justify-center cursor-pointer hover:border-green-700" style="background-image: url('{{ asset('storage/nouvelle-icone-grise.png') }}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-              <input type="file" name="fotoPrincipal" accept="image/*" class="sr-only" onchange="updateBackground(this)" />
-            </label>
-
-            <label class="border-2 border-dashed border-gray-300 rounded-md p-4 flex flex-col items-center justify-center cursor-pointer hover:border-gray-700" style="background-image: url('{{ asset('storage/nouvelle-icone-grise.png') }}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-              <input type="file" name="fotoExtra1" accept="image/*" class="sr-only" onchange="updateBackground(this)" />
-            </label>
-
-            <label class="border-2 border-dashed border-gray-300 rounded-md p-4 flex flex-col items-center justify-center cursor-pointer hover:border-gray-700" style="background-image: url('{{ asset('storage/nouvelle-icone-grise.png') }}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-              <input type="file" name="fotoExtra2" accept="image/*" class="sr-only" onchange="updateBackground(this)" />
-            </label>
-            
-            <label class="border-2 border-dashed border-gray-300 rounded-md p-4 flex flex-col items-center justify-center cursor-pointer hover:border-gray-700" style="background-image: url('{{ asset('storage/nouvelle-icone-grise.png') }}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-              <input type="file" name="fotoExtra3" accept="image/*" class="sr-only" onchange="updateBackground(this)" />
-            </label>
-
-            <label class="border-2 border-dashed border-gray-300 rounded-md p-4 flex flex-col items-center justify-center cursor-pointer hover:border-gray-500">
-              <input type="file" name="fotosAdicional1" accept="image/*" class="sr-only" onchange="updateImagePreview(this)" />
-              <img src="{{ asset('storage/nouvelle-icone-grise.png') }}" alt="Icono de cámara" />
-            </label>
-
-          
-          </div>
-        </fieldset>
+        
 
         <!-- Botón de envío -->
         <div class="flex ">
