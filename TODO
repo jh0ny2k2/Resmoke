@@ -1,21 +1,25 @@
-  
-Por hacer:
+  Por hacer:
   ☐ Realizar metodo para Loguearse o Registrarse con google
-  ☐ Realizar diseño de perfil cuando es nuestro perfil
-  ☐ Realizar diseño de perfil cuando visitamos otro perfil que no sea el nuestro
-  ☐ Crear página no recuerdo contraseña
+  ☐ 
+  ☐ 
+  ☐ 
   ☐ Implemetar fotos y mapa en ver producto 
   ☐ Mirar porque no va lo de poner fotos al añadir producto en la web // Call to a member function storeAs() on null
   ☐ Mirar error fotos add producto desde admin
+  ☐
   ☐ 
-  ☐ Crear metodo para borrar categoría
-  ☐ Crear metodo para editar categoría
-  ☐ Crear metodo para añadir categoría
+  ☐ 
   ☐ Poner fotos en ver producto para confirmar
   ☐ Poner buscador en admin, usuarios y productos
   ☐ Mirar metodo para buscar en admin
   ☐ Mirar porque no se cambio el corazon favorito
-  ☐ Arreglar tabla de productos que no se vaya para la derecha (que se quede centrada en la pantalla)
+  ☐ 
+  ☐ Mirar porque no salen los productos en productos de la persona
+  ☐ 
+  ☐ 
+  ☐ 
+  ☐ 
+  ☐ 
   ☐ 
   ■ 
 
@@ -123,8 +127,6 @@ Terminado:
   ✔ Creado metodo para eliminar favoritos
   ✔ Arreglada tabla de favoritos, ya sale el nombre del usuario y el nombre del producto
   ✔ Mirar porque no se pone la tabla de usuarioProducto al añadir producto
-  ✔ 
-  ✔ 
 
   Jueves 25/04/2024
 
@@ -144,11 +146,26 @@ Terminado:
 
   Lunes 29/04/2024
 
-  ☐
-
+  ✔ Realizado metodo para eliminar categoria en admin
+  ✔ Realizado metodo para añadir categoria en admin
+  ✔ Creado metodo para ir a productos en venta en la web
+  
   Martes 30/04/2024
 
-  ☐
+  ✔ Arreglar tabla de productos que no se vaya para la derecha (que se quede centrada en la pantalla)
+  ✔ Crear página no recuerdo contraseña
+  ✔ Realizar diseño de perfil cuando es nuestro perfil
+  ✔ 
+  ✔ 
+  ✔ 
+  ✔ 
+  ✔ 
+  ✔ 
+  ✔ 
+  ✔ 
+  ✔ 
+  ✔ 
+  ✔ 
 
   Miercoles 01/05/2024
 

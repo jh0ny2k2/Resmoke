@@ -116,14 +116,7 @@ class AdministracionController extends Controller
     }
     
 
-    /**
-     * CATEGORÍA
-     */
-    public function categoria(){
-        $categorias = Categoria::all();
-
-        return view('admin.categoria', ['categorias' => $categorias]);
-    }
+    
 
     
 

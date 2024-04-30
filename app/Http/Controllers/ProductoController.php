@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Categoria;
 use App\Models\Producto;
+use App\Models\User;
 use App\Models\UsuarioFavorito;
 use App\Models\UsuarioProducto;
 use Illuminate\Http\Request;
@@ -115,13 +116,12 @@ class ProductoController extends Controller
      */
     public function show($id)
     {
-        $favorito = UsuarioFavorito::where('usuarioId', Auth::user()->dni)->where('productoId', $id)->exists();
 
         $producto = Producto::where('id', $id)->first();
         $producto->numeroVisto = ($producto->numeroVisto) + 1;
         $producto->save();
 
-        return view('web.verproducto', ['producto' => $producto, 'favorito' => $favorito]);
+        return view('web.verproducto', ['producto' => $producto]);
     }
 
     /**
@@ -146,5 +146,12 @@ class ProductoController extends Controller
     public function destroy(Producto $producto)
     {
         //
+    }
+
+    public function verMisProductos() {
+        $usuario = User::where('id', Auth::user()->id)->first();
+        $productoVenta = UsuarioProducto::where('usuarioId', Auth::user()->id)->with('productos')->get();
+
+        return view('web.perfil.enVenta', ['usuario' => $usuario, 'productos' => $productoVenta]);
     }
 }

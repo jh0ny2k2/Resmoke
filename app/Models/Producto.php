@@ -35,5 +35,10 @@ class Producto extends Model
         return $this->hasMany(UsuarioOpinion::class);
     }
 
+    public function productos() 
+    {
+        return $this->belongsToMany(UsuarioProducto::class);
+    }
+
     
 }

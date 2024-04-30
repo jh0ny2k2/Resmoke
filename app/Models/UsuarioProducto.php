@@ -13,4 +13,9 @@ class UsuarioProducto extends Model
         'usuarioId', 
         'productoId', 
     ];
+
+    public function productos()
+    {
+        return $this->belongsTo(Producto::class, 'productoId');
+    }
 }

@@ -39,7 +39,7 @@
                         </a>
                         <div x-show="open" @click.outside="open = false" class="absolute mt-2 py-2 w-48 bg-white rounded-md shadow-xl z-20">
                             <a href="favoritos.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Favoritos</a>
-                            <a href="productosPerfil.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">En venta</a>
+                            <a href="/web/productoVenta" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">En venta</a>
                             <hr>
                             <a href="perfil.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Perfil</a>
                             <hr>

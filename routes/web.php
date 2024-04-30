@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminCategoría;
 use App\Http\Controllers\AdminFavoritos;
 use App\Http\Controllers\AdministracionController;
 use App\Http\Controllers\AdminProducto;
@@ -34,6 +35,8 @@ Route::prefix('web')->group(function() {
         // Favorito
         Route::get('/addFavorito/{id}', [UsuarioFavoritoController::class, 'favorito']);            //AÑADIR A FAVORITO
         Route::get('/deleteFavorito/{id}', [UsuarioFavoritoController::class, 'create']);           //ELIMINAR UN FAVORITO
+
+        Route::get('/productoVenta', [ProductoController::class, 'verMisProductos']);
 
         // PERFIL
         Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');           
@@ -73,7 +76,10 @@ Route::prefix('admin')->middleware(['auth', 'verified', 'mdrol:administrador'])-
     Route::get('/verProducto/{id}', [AdminProducto::class, 'verProducto']);
 
     //CATEGORIAS
-    Route::get('/categorias', [AdministracionController::class, 'categoria'])->name('adminCategoria');  // VER TODAS LAS CATEGORIAS 
+    Route::get('/categorias', [AdminCategoría::class, 'categoria'])->name('adminCategoria');  // VER TODAS LAS CATEGORIAS 
+    Route::get('/eliminarCategoria/{id}', [AdminCategoría::class, 'eliminar']);
+    Route::get('/verAdd', [AdminCategoría::class, 'verAdd'])->name('verAddCategoria');
+    Route::post('/addCategoria', [AdminCategoría::class, 'addCategoria']);
 
     //FAVORITOS
     Route::get('/favoritos', [AdminFavoritos::class, 'favorito'])->name('adminFavorito');     // VER TODOS LOS FAVORITOS
