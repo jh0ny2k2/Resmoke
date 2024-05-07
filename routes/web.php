@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminCategoría;
 use App\Http\Controllers\AdminFavoritos;
 use App\Http\Controllers\AdministracionController;
+use App\Http\Controllers\AdminOpiniones;
 use App\Http\Controllers\AdminProducto;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\ProductoController;
@@ -34,12 +35,13 @@ Route::prefix('web')->group(function() {
         Route::get('/deleteFavorito/{id}', [UsuarioFavoritoController::class, 'create']);           //ELIMINAR UN FAVORITO
 
         Route::get('/productoVenta/{id}', [ProductoController::class, 'verMisProductos']);
+        Route::get('/verFavoritos/{id}', [UsuarioFavoritoController::class, 'verMisFavoritos']);
 
-        // PERFIL
-        Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');           
+        // PERFIL      
         Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
         Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
         Route::get('/verPerfil/{id}', [ProfileController::class, 'verPerfil']);
+        Route::get('/edirPerfil', [ProfileController::class, 'edit']);
     });
 });
 
@@ -59,7 +61,7 @@ Route::prefix('admin')->middleware(['auth', 'verified', 'mdrol:administrador'])-
     Route::post('/editRol/{id}', [AdministracionController::class, 'editarRol']);
     Route::get('/verAdministrador', [AdministracionController::class, 'verAdministrador'])->name('verAdministrador');
     Route::get('/verUsuarios', [AdministracionController::class, 'verUsuario'])->name('verUsuario');
-    Route::post('/buscadorUsuario', [ProductoController::class, 'buscador']);
+    Route::post('/buscadorUsuario', [AdministracionController::class, 'buscador']);
 
     //PRODUCTOS
     Route::get('/productos', [AdminProducto::class, 'productos'])->name('adminProducto');    // VER TODOS LOS PRODUCTOS 
@@ -72,6 +74,7 @@ Route::prefix('admin')->middleware(['auth', 'verified', 'mdrol:administrador'])-
     Route::get('/confirmar/{id}', [AdminProducto::class, 'confirmar']);
     Route::get('/denegar/{id}', [AdminProducto::class, 'denegar']);
     Route::get('/verProducto/{id}', [AdminProducto::class, 'verProducto']);
+    Route::post('/buscadorProducto', [AdminProducto::class, 'buscador']);
 
     //CATEGORIAS
     Route::get('/categorias', [AdminCategoría::class, 'categoria'])->name('adminCategoria');  // VER TODAS LAS CATEGORIAS 

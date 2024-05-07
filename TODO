@@ -1,7 +1,6 @@
 Por hacer:
   ☐ Realizar metodo para Loguearse o Registrarse con google
   ☐ implementar mapa en ver producto 
-  ☐ Poner buscador en admin, usuarios y productos
   ☐ Mirar metodo para buscar en admin
   ☐ Mirar porque no salen los productos en productos de la persona
   ☐ Realizar metodo para cambiar estado del producto cuando es tuyo
@@ -10,10 +9,9 @@ Por hacer:
   ☐ Poner que salgan los articulos que tienes guardados como favoritos en su respectiva pagina
   ☐ Poner que salgan los productos creados por el usuario
   ☐ Crear Chat en vivo
-  ☐ 
   ☐ Crear metodo para Realizar una opinion de un usuario
   ☐ Crear diseño para el chat en vivo
-
+  ☐ Realizar la funcionalidad del perfil
   ☐ Poner la informacion del vendedor 
   
 Terminado:
@@ -177,12 +175,19 @@ Terminado:
   ✔ Cambiar en navBar, que ponga Mis Favoritos y Mis productos
   ✔ Poner las fotos en visualizar producto desde admin
   ✔ Poner que cuando se pulse el boton Ver informacion del vendedor salga un modal 
-  ✔ 
-  ✔ 
 
   Martes 07/05/2024
 
-  ☐
+  ✔ Realizado diseño del perfil y printeada la informacion
+  ✔ Realizado metodo para buscar usuario en panel de admin
+  ✔ Realizado metodo para buscar productos en panel de admin
+  ✔ 
+  ✔ 
+  ✔ 
+  ✔ 
+  ✔ 
+  ✔ 
+
 
   Miercoles 08/05/2024
 

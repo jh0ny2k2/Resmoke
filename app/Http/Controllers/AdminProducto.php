@@ -127,4 +127,10 @@ class AdminProducto extends Controller
         return view('admin.productos.verProducto', ['producto' => $producto]);
     }
 
+    public function buscador(Request $request) {
+        $producto = Producto::where('nombre', 'like', '%' . $request->buscador . '%')->get();
+
+        return view('admin.producto', ['productos' => $producto]);
+    }
+
 }

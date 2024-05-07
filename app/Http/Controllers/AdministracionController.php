@@ -111,8 +111,10 @@ class AdministracionController extends Controller
         return view('admin.usuario', ['usuarios' => $usuario]);
     }
 
-    public function buscarUsuario(Request $request) {
-        echo 'hola';
+    public function buscador(Request $request) {
+        $usuario = User::where('name', 'like', '%' . $request->buscador . '%')->get();
+
+        return view ('admin.usuario', ['usuarios' => $usuario]);
     }
     
 

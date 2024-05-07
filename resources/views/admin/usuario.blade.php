@@ -6,6 +6,7 @@
     <div class="flex justify-between mb-6">
         <h1 class="text-4xl font-bold">Usuarios Registrados</h1>
         <form action="/admin/buscadorUsuario" method="post" class="flex w-1/2 max-w-xl">
+            @csrf
             <input type="text" name="buscador" id="buscador" placeholder="Buscar usuarios..." class="w-full px-4 py-2 border rounded-l-lg focus:outline-none focus:border-blue-500" />
             <button type="submit" class="px-4 text-white bg-blue-600 rounded-r-lg hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
                 <span class="material-icons">search</span>
