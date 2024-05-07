@@ -51,7 +51,6 @@ class AdminProducto extends Controller
     }
 
     public function addProducto(Request $request) {
-
         $producto = new Producto();
         $producto->nombre = $request->nombre;
         $producto->categoriaId = $request->categoria;
@@ -70,6 +69,28 @@ class AdminProducto extends Controller
         $product->usuarioId = $request->usuario;
         $product->productoId = $id;
         $product->save();
+
+        $request->file('fotoPrincipal')->storeAs(
+            'public',
+            'producto_' . $id . '.jpg'
+        );
+
+        $request->file('fotoExtra1')->storeAs(
+            'public',
+            'producto_' . $id . 'Extra1.jpg'
+        );
+        $request->file('fotoExtra2')->storeAs(
+            'public',
+            'producto_' . $id . 'Extra2.jpg'
+        );
+        $request->file('fotoExtra3')->storeAs(
+            'public',
+            'producto_' . $id . 'Extra3.jpg'
+        );
+        $request->file('fotoExtra4')->storeAs(
+            'public',
+            'producto_' . $id . 'Extra4.jpg'
+        );
 
         return redirect()->route('adminProducto');
 

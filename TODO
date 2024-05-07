@@ -1,28 +1,21 @@
-  Por hacer:
+Por hacer:
   ☐ Realizar metodo para Loguearse o Registrarse con google
-  ☐ 
-  ☐ 
-  ☐ 
-  ☐ Implemetar fotos y mapa en ver producto 
-  ☐ Mirar porque no va lo de poner fotos al añadir producto en la web // Call to a member function storeAs() on null
-  ☐ Mirar error fotos add producto desde admin
-  ☐
-  ☐ 
-  ☐ 
-  ☐ Poner fotos en ver producto para confirmar
+  ☐ implementar mapa en ver producto 
   ☐ Poner buscador en admin, usuarios y productos
   ☐ Mirar metodo para buscar en admin
-  ☐ Mirar porque no se cambio el corazon favorito
-  ☐ 
   ☐ Mirar porque no salen los productos en productos de la persona
+  ☐ Realizar metodo para cambiar estado del producto cuando es tuyo
+  ☐ Realizar metodo para cambiar datos del producto cuando es tuyo
+  ☐ Arreglar metodo para guardar y que funcione poniendose el corazon rojo
+  ☐ Poner que salgan los articulos que tienes guardados como favoritos en su respectiva pagina
+  ☐ Poner que salgan los productos creados por el usuario
+  ☐ Crear Chat en vivo
   ☐ 
-  ☐ 
-  ☐ 
-  ☐ 
-  ☐ 
-  ☐ 
-  ■ 
+  ☐ Crear metodo para Realizar una opinion de un usuario
+  ☐ Crear diseño para el chat en vivo
 
+  ☐ Poner la informacion del vendedor 
+  
 Terminado:
 
   Lunes 08/04/2024
@@ -155,17 +148,7 @@ Terminado:
   ✔ Arreglar tabla de productos que no se vaya para la derecha (que se quede centrada en la pantalla)
   ✔ Crear página no recuerdo contraseña
   ✔ Realizar diseño de perfil cuando es nuestro perfil
-  ✔ 
-  ✔ 
-  ✔ 
-  ✔ 
-  ✔ 
-  ✔ 
-  ✔ 
-  ✔ 
-  ✔ 
-  ✔ 
-  ✔ 
+
 
   Miercoles 01/05/2024
 
@@ -185,7 +168,17 @@ Terminado:
 
   Lunes 06/05/2024
 
-  ☐
+  ✔ Arreglado metodo para añadir producto desde el panel admin y que se suban las fotos
+  ✔ Poner fotos en ver producto para confirmar
+  ✔ Implemetar fotos en la web
+  ✔ Implementadas fotos en las card de la web
+  ✔ Mirar porque no va lo de poner fotos al añadir producto en la web
+  ✔ Realizar diseño de perfil
+  ✔ Cambiar en navBar, que ponga Mis Favoritos y Mis productos
+  ✔ Poner las fotos en visualizar producto desde admin
+  ✔ Poner que cuando se pulse el boton Ver informacion del vendedor salga un modal 
+  ✔ 
+  ✔ 
 
   Martes 07/05/2024
 

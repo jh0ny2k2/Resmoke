@@ -14,13 +14,13 @@
   <div class="container mx-auto px-6 pt-5 pb-5">
     <!-- Título de la sección -->
     <form action="{{ route('storeProducto') }}" method="POST" enctype="multipart/form-data">
-      @csrf 
+      @csrf
       <h1 class="text-3xl font-semibold text-center mb-10">Sube tu producto</h1>
 
 
       <!-- Categorías del producto -->
       <div class="w-full md:w-1/2 mx-auto">
-        
+
         <!-- Categorías del producto con imágenes -->
         <fieldset class="mb-6">
           <legend class="text-xl mb-4">Selecciona la categoría de tu producto:</legend>
@@ -67,7 +67,21 @@
           </div>
         </fieldset>
 
-        
+        <fieldset class="mb-6">
+          <legend class="text-xl mb-4">Fotografías</legend>
+          <div class="grid grid-cols-5 gap-4">
+            <label class="border-2 border-dashed border-green-500 rounded-md p-4 min-h-32 flex flex-col items-center justify-center cursor-pointer hover:border-green-700 relative" style="background-image: url('{{ asset('storage/nouvelle-icone-grise.png') }}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+              <input type="file" name="fotoPrincipal" class="sr-only" onchange="updateBackground(this)" />
+            </label>
+
+            @for ($i = 1; $i <= 4; $i++) 
+              <label class="border-2 border-dashed border-gray-300 rounded-md p-4 flex flex-col items-center justify-center cursor-pointer hover:border-gray-700" style="background-image: url('{{ asset('storage/nouvelle-icone-grise.png') }}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+                <input type="file" name="fotoExtra{{ $i }}" class="sr-only" onchange="updateBackground(this)" />
+              </label>
+              @endfor
+          </div>
+        </fieldset>
+
 
         <!-- Botón de envío -->
         <div class="flex ">
@@ -79,15 +93,15 @@
 
 <script>
   function updateBackground(input) {
-  if (input.files && input.files[0]) {
-    var reader = new FileReader();
-    reader.onload = function(e) {
-      var label = input.closest('label');
-      label.style.backgroundImage = 'url(' + e.target.result + ')';
-    };
-    reader.readAsDataURL(input.files[0]);
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+      reader.onload = function(e) {
+        var label = input.closest('label');
+        label.style.backgroundImage = 'url(' + e.target.result + ')';
+      };
+      reader.readAsDataURL(input.files[0]);
+    }
   }
-}
 </script>
 
 <x-footer></x-footer>

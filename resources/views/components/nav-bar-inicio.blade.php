@@ -41,7 +41,7 @@
                             <a href="favoritos.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Favoritos</a>
                             <a href="/web/productoVenta" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">En venta</a>
                             <hr>
-                            <a href="perfil.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Perfil</a>
+                            <a href="/web/verPerfil/{{ Auth::user()->id }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Perfil</a>
                             <hr>
                             <a href="{{ route('milogout') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Cerrar Sesión</a>
                         </div>

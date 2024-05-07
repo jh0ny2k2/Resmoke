@@ -11,9 +11,6 @@ use App\Http\Controllers\UsuarioFavoritoController;
 use App\Models\Categoria;
 use App\Models\Producto;
 use Illuminate\Support\Facades\Route;
-use App\http\Middleware\Role;
-
-
 
 
 // RUTAS PARA LA WEB
@@ -36,12 +33,13 @@ Route::prefix('web')->group(function() {
         Route::get('/addFavorito/{id}', [UsuarioFavoritoController::class, 'favorito']);            //AÑADIR A FAVORITO
         Route::get('/deleteFavorito/{id}', [UsuarioFavoritoController::class, 'create']);           //ELIMINAR UN FAVORITO
 
-        Route::get('/productoVenta', [ProductoController::class, 'verMisProductos']);
+        Route::get('/productoVenta/{id}', [ProductoController::class, 'verMisProductos']);
 
         // PERFIL
         Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');           
         Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
         Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+        Route::get('/verPerfil/{id}', [ProfileController::class, 'verPerfil']);
     });
 });
 

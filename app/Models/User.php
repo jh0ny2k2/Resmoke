@@ -51,9 +51,14 @@ class User extends Authenticatable
         ];
     }
 
-    public function productos()
+    public function producto()
     {
         return $this->belongsToMany(Producto::class);
+    }
+
+    public function productos()
+    {
+        return $this->belongsToMany(UsuarioProducto::class);
     }
 
     public function opinion()

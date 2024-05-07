@@ -49,9 +49,38 @@
                 <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{{ $producto->localizacion }}</dd>
             </div>
             <br>
-            <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+            <div class="bg-gray-50 px-4 py-5">
                 <dt class="text-sm font-medium text-gray-500">Fotos:</dt>
-                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{{ $producto->localizacion }}</dd>
+                <br>
+                    <div>
+                        <div class="flex justify-center items-center">
+
+                            <div class="flex flex-wrap justify-center items-center max-w-3x min-h-60 mx-auto">
+                                <div class="flex justify-center items-center w-full lg:w-1/2 p-2">
+                                    <img src="{{ asset('storage/producto_'. $producto->id .'.jpg') }}" alt="Imagen principal del producto" class="w-full border-2 h-auto object-cover rounded-lg" />
+                                </div>
+
+                                <div class="w-full lg:w-1/2 1">
+                                    <div class="flex flex-wrap justify-center items-center h-full">
+                                        <div class="p-2 w-1/2">
+                                            <img src="{{ asset('storage/producto_'. $producto->id .'Extra1.jpg') }}" alt="Imagen principal del producto" class="w-full border-2 h-auto object-cover rounded-lg" />
+                                        </div>
+                                        <div class="p-2 w-1/2">
+
+                                            <img src="{{ asset('storage/producto_'. $producto->id .'Extra2.jpg') }}" alt="Imagen principal del producto" class="w-full border-2 h-auto object-cover rounded-lg" />
+
+                                        </div>
+                                        <div class="p-2 w-1/2">
+                                            <img src="{{ asset('storage/producto_'. $producto->id .'Extra3.jpg') }}" alt="Imagen principal del producto" class="w-full border-2 h-auto object-cover rounded-lg" />
+                                        </div>
+                                        <div class="p-2 w-1/2">
+                                            <img src="{{ asset('storage/producto_'. $producto->id .'Extra4.jpg') }}" alt="Imagen principal del producto" class="w-full border-2 h-auto object-cover rounded-lg" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
             </div>
         </div>
     </div>

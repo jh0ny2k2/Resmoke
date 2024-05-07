@@ -81,33 +81,30 @@ class ProductoController extends Controller
             $usuarioProducto->save();
 
             // Imagenes del producto
-            $request->file('fotoPricipal')->storeAs(
+            $request->file('fotoPrincipal')->storeAs(
                 'public',
-                'fotoPrincipal' . $id . '.png'
+                'producto_' . $id . '.jpg'
             );
-
+    
             $request->file('fotoExtra1')->storeAs(
                 'public',
-                'fotoExtra1' . $id . '.png'
+                'producto_' . $id . 'Extra1.jpg'
             );
-
             $request->file('fotoExtra2')->storeAs(
                 'public',
-                'fotoExtra2' . $id . '.png'
+                'producto_' . $id . 'Extra2.jpg'
             );
-
             $request->file('fotoExtra3')->storeAs(
                 'public',
-                'fotoExtra3' . $id . '.png'
+                'producto_' . $id . 'Extra3.jpg'
             );
-
             $request->file('fotoExtra4')->storeAs(
                 'public',
-                'fotoExtra4' . $id . '.png'
+                'producto_' . $id . 'Extra4.jpg'
             );
 
 
-            return redirect()->back();
+            return redirect()->route('verTodos');
         
     }
 
@@ -120,6 +117,8 @@ class ProductoController extends Controller
         $producto = Producto::where('id', $id)->first();
         $producto->numeroVisto = ($producto->numeroVisto) + 1;
         $producto->save();
+
+        
 
         return view('web.verproducto', ['producto' => $producto]);
     }
