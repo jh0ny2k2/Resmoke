@@ -1,5 +1,14 @@
 <x-navbarvproducto></x-navbarvproducto>
+<!-- BOTON VOLVER ATRAS -->
+<div class="container mx-auto px-6 py-4">
+    <a href="{{ url()->previous() }}" class="inline-flex items-center space-x-2 border-2 border-black text-black bg-white hover:bg-gray-100 py-2 px-4 focus:outline-none focus:ring-2 focus:ring-gray-300 rounded">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 17l-5-5m0 0l5-5m-5 5h12" />
+      </svg>
+    </a>
+  </div>
 
+  
 <!-- Banner -->
 <div class="container rounded-lg relative mx-auto mb-10 mt-10" style="height: 200px;"> <!-- Ajusta la altura según necesites -->
 
@@ -18,41 +27,45 @@
     </div>
 </div>
 
-<!-- Panel de 3 elementos -->
-<div class="container px-5 py-24 mx-auto  flex flex-col h-screen">
-    <ul class="flex rounded-lg w-full text-sm font-medium text-center text-gray-500 bg-gray-50 dark:text-gray-400 dark:bg-gray-800 border-b border-gray-200  dark:border-gray-700" id="defaultTab" data-tabs-toggle="#defaultTabContent" role="tablist">
-        <li class="flex-grow">
-            <button id="about-tab" data-tabs-target="#about" type="button" role="tab" aria-controls="about" aria-selected="true" class="w-full p-4 text-blue-600 hover:rounded-lg rounded-t-lg hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-blue-500">Productos</button>
-        </li>
-        <li class="flex-grow">
-            <button id="opiniones-tab" data-tabs-target="#opiniones" type="button" role="tab" aria-controls="opiniones" aria-selected="false" class="w-full p-4 hover:rounded-lg hover:text-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-300">Opiniones</button>
-        </li>
-    </ul>
-    <div id="defaultTabContent" class="flex-grow overflow-auto">
-        <div class="hidden p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800" id="about" role="tabpanel" aria-labelledby="about-tab">
-            <div class=" container px-5 py-24 mx-auto flex flex-wrap -m-4">
-                @foreach ($productos as $producto)
-                <a href="verProducto.html" class="lg:w-1/3 md:w-1/2 p-4 w-full">
-                    <div class="block relative h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
-                        <img alt="ecommerce" class="lg:h-48 md:h-36 w-full object-cover object-center" src="https://dummyimage.com/600x400">
-                        <div class="mt-4">
+<section class="text-gray-600 body-font px-5 py-24 mx-auto  flex flex-col h-screen container">
 
-                            <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">Categoría</h3>
-                            <p class="mt-1 text-lg font-bold">{{ $producto->productos->precio }}</p>
-                            <h2 class="text-gray-900 title-font text-lg font-medium">{{ $producto->productos->nombre }}</h2>
-                            <p class="mt-1 text-gray-600 text-sm">{{ $producto->productos->descripcion }}</p>
-                        </div>
+    <div class="flex flex-wrap w-full mb-12 flex-col mt-10 ml-5">
+        <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Productos</h1>
+    </div>
+
+
+    <div class="container px-5 py-8 mx-auto">
+        <div class="flex flex-wrap -m-4">
+
+            @foreach ($productos as $producto)
+            <a href="/web/verProducto/{{ $producto->id }}" class="lg:w-1/3 md:w-1/2 p-4 w-full">
+                <div class="block relative h-full max-h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+                    <img alt="ecommerce" class="lg:h-48 md:h-36 w-full object-cover object-center" src="{{ asset('storage/producto_'. $producto->id .'.jpg') }}">
+                    <div class="p-4 mt-4">
+
+                        <p class="mt-1 text-lg font-bold">{{ $producto->productos->precio }} €</p>
+                        <h2 class="text-gray-900 title-font text-lg font-medium">{{ $producto->productos->nombre }}</h2>
+                        <p class="mt-1 text-gray-600 text-sm text-ellipsis">{{ $producto->productos->descripcion }}</p>
+
+                        @if ($producto->productos->estado === 'observacion')
+                            <p class="mt-1 text-lg font-bold text-red-400">{{ $producto->productos->estado }}</p>
+
+                        @elseif ($producto->productos->estado === 'activo')
+                            <p class="mt-1 text-lg font-bold text-green-900">{{ $producto->productos->estado }}</p>
+
+                        @elseif ($producto->productos->estado === 'reservado')
+                            <p class="mt-1 text-lg font-bold text-yellow-900">{{ $producto->productos->estado }}</p>
+
+                        @elseif ($producto->productos->estado === 'vendido')
+                            <p class="mt-1 text-lg font-bold text-red-900">{{ $producto->productos->estado }}</p>
+
+                        @else
+                            <p class="mt-1 text-lg font-bold text-red-900">{{ $producto->productos->estado }}</p>
+                        @endif
                     </div>
-                </a>
-                @endforeach
-            </div>
-        </div>
-
-        <div class="hidden p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800" id="opiniones" role="tabpanel" aria-labelledby="opiniones-tab">
-            <div class=" container px-5 py-24 mx-auto flex flex-wrap -m-4">
-
-
-            </div>
+                </div>
+            </a>
+            @endforeach
         </div>
     </div>
-</div>
+</section>

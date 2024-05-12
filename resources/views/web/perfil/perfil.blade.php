@@ -18,7 +18,9 @@
                         <p class="text-gray-600"> {{$usuario->rol}} </p>
                     </div>
                 </div>
-                <button class="text-dark font-semibold py-2 px-4 border border-dark rounded">Editar</button>
+                <a href="{{ route('editProfile') }}">
+                    <button class="text-dark font-semibold py-2 px-4 border border-dark rounded">Editar</button>
+                </a>
             </div>
             <div class="p-8">
                 <h3 class="text-lg font-semibold text-gray-800 mb-4">Información de contacto</h3>
@@ -31,10 +33,10 @@
                 </div>
             </div>
             <div class="px-8 pb-8 grid grid-cols-2 gap-4 text-center">
-                <a href="" class="bg-white hover:bg-gray-300 text-dark border border-dark font-bold py-2 px-4 rounded transition duration-200 ease-in-out">
+                <a href="{{ route('favoritos') }}" class="bg-white hover:bg-gray-300 text-dark border border-dark font-bold py-2 px-4 rounded transition duration-200 ease-in-out">
                     Ver Favoritos
                 </a>
-                <a href="" class="bg-white hover:bg-gray-300 text-dark border border-dark font-bold py-2 px-4 rounded transition duration-200 ease-in-out">
+                <a href="{{ route('venta') }}" class="bg-white hover:bg-gray-300 text-dark border border-dark font-bold py-2 px-4 rounded transition duration-200 ease-in-out">
                     Ver Mis Productos
                 </a>
             </div>

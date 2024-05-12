@@ -46,8 +46,8 @@
                             <img src="{{ asset('storage/fotoPerfil'. Auth::user()->id .'.png')}}" alt="Perfil" class="h-12 w-12 rounded-full border-2 border-black">
                         </a>
                         <div x-show="open" @click.outside="open = false" class="absolute mt-2 py-2 w-48 bg-white rounded-md shadow-xl z-20">
-                            <a href="favoritos.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Favoritos</a>
-                            <a href="/web/productoVenta" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">En venta</a>
+                        <a href="{{ route('favoritos') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Mis Favoritos</a>
+                        <a href="{{ route('venta') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Mis Productos</a>
                             <hr>
                             <a href="/web/verPerfil/{{ Auth::user()->id }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Perfil</a>
                             <hr>

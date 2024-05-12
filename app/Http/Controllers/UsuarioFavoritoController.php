@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\UsuarioFavorito;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -30,6 +31,13 @@ class UsuarioFavoritoController extends Controller
 
     public function deleteFavorito($id){
 
+    }
+
+    public function verMisFavoritos() {
+        $usuario = User::where('id', Auth::user()->id)->first();
+        $usuarioFavorito = UsuarioFavorito::where('usuarioId', Auth::user()->id)->with('productos')->get();
+
+        return view('web.perfil.favorito', ['usuario'=> $usuario, 'productos' => $usuarioFavorito]);
     }
 
 

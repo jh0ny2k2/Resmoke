@@ -1,18 +1,14 @@
 Por hacer:
   ☐ Realizar metodo para Loguearse o Registrarse con google
-  ☐ implementar mapa en ver producto 
-  ☐ Mirar metodo para buscar en admin
-  ☐ Mirar porque no salen los productos en productos de la persona
-  ☐ Realizar metodo para cambiar estado del producto cuando es tuyo
+  ☐ Mirar como buscar las coordenadas
   ☐ Realizar metodo para cambiar datos del producto cuando es tuyo
   ☐ Arreglar metodo para guardar y que funcione poniendose el corazon rojo
-  ☐ Poner que salgan los articulos que tienes guardados como favoritos en su respectiva pagina
-  ☐ Poner que salgan los productos creados por el usuario
   ☐ Crear Chat en vivo
   ☐ Crear metodo para Realizar una opinion de un usuario
   ☐ Crear diseño para el chat en vivo
-  ☐ Realizar la funcionalidad del perfil
-  ☐ Poner la informacion del vendedor 
+  ☐ crear metodo para cambiar foto de perfil // preguntar
+  ☐ Mirar porque no salen las fotos en favoritos y en venta
+  ☐ Mirar porque no se abre desde favoritos y venta // Attempt to read property "numeroVisto" on null
   
 Terminado:
 
@@ -181,127 +177,136 @@ Terminado:
   ✔ Realizado diseño del perfil y printeada la informacion
   ✔ Realizado metodo para buscar usuario en panel de admin
   ✔ Realizado metodo para buscar productos en panel de admin
-  ✔ 
-  ✔ 
-  ✔ 
-  ✔ 
-  ✔ 
-  ✔ 
-
 
   Miercoles 08/05/2024
 
-  ☐
-
+  ✔ Creado metodo para que salgan los botones de reservar y de vender si es tu producto
+  ✔ Creado metodo para el funcionamiento de estos botones
+  ✔ Realizado formulario de ediccion de usuario
+  ✔ Realizado funcionamiento ediccion de usuario
+  
   Jueves 09/05/2024
 
-  ☐
+  ✔ Realizado metodo para ver mis productos
+  ✔ Puestos enlances en todos los botones para ver mis productos y mis favoritos
+  ✔ Realizar metodo para cambiar estado del producto cuando es tuyo
 
-  Miercoles 10/05/2024
-
-  ☐
-
-  Jueves 11/05/2024
+  Viernes 10/05/2024
 
   ☐
 
-  Miercoles 12/05/2024
+  Sabado 11/05/2024
+
+  ☐
+
+  Domingo 12/05/2024
+  
+  ✔ Realizar la funcionalidad del perfil
+  ✔ Poner la informacion del vendedor
+  ✔ implementar mapa en ver producto 
+  ✔ Mirar porque no salen los productos en productos de la persona
+  ✔ Mirar metodo para buscar en admin
+  ✔ Poner que salgan los articulos que tienes guardados como favoritos en su respectiva pagina
+  ✔ 
+  ✔ 
+  ✔ 
+  ✔
+
+
+
+  Lunes 13/05/2024
+
+  ☐
+
+  Martes 14/05/2024
+
+  ☐
+
+  Miercoles 15/05/2024
+
+  ☐
+
+  Jueves 16/05/2024
+
+  ☐
+
+  Viernes 17/05/2024
+
+  ☐
+
+  Sabado 18/05/2024
+
+  ☐
+
+  Domingo 19/05/2024
+
+  ☐
+
+  Lunes 20/05/2024
+
+  ☐
+
+  Martes 21/05/2024
+
+  ☐
+
+  Miercoles 22/05/2024
+
+  ☐
+
+  Jueves 23/05/2024
+
+  ☐
+
+  Viernes 24/05/2024
+
+  ☐
+
+  Sabado 25/05/2024
+
+  ☐
+
+  Domingo 26/05/2024
+
+  ☐
+
+  Lunes 27/05/2024
+
+  ☐
+
+  Martes 28/05/2024
+
+  ☐
+
+  Miercoles 29/05/2024
   
   ☐
 
-  Jueves 13/05/2024
+  Jueves 30/05/2024
 
   ☐
 
-  Viernes 14/05/2024
+  Viernes 31/05/2024
 
   ☐
 
-  Sabado 15/05/2024
+  Sabado 1/06/2024
 
   ☐
 
-  Domingo 16/05/2024
+  Domingo 2/06/2024
 
   ☐
 
-  Lunes 17/05/2024
+  Lunes 3/04/2024
 
   ☐
 
-  Martes 18/05/2024
+  Martes 4/06/2024
 
   ☐
 
-  Miercoles 19/05/2024
-
-  ☐
-
-  Jueves 20/05/2024
-
-  ☐
-
-  Viernes 21/05/2024
-
-  ☐
-
-  Sabado 22/05/2024
-
-  ☐
-
-  Domingo 23/05/2024
-
-  ☐
-
-  Lunes 24/05/2024
-
-  ☐
-
-  Martes 25/05/2024
-
-  ☐
-
-  Miercoles 26/05/2024
-
-  ☐
-
-  Jueves 27/05/2024
-
-  ☐
-
-  Viernes 28/05/2024
-
-  ☐
-
-  Sabado 29/05/2024
-  
-  ☐
-
-  Lunes 30/05/2024
-
-  ☐
-
-  Martes 31/05/2024
-
-  ☐
-
-  Miercoles 1/06/2024
-
-  ☐
-
-  Jueves 2/06/2024
-
-  ☐
-
-  Viernes 3/04/2024
-
-  ☐
-
-  Sabado 4/06/2024
-
-  ☐
-
-  Domingo 5/06/2024
+  Miercoles 5/06/2024
 
 
 

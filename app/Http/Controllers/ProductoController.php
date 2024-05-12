@@ -27,7 +27,7 @@ class ProductoController extends Controller
     //VER TODOS POR CATEGORÍA
     public function indexCategoria($id)
     {
-        $productos = Producto::where('categoriaId', $id)->get();
+        $productos = Producto::where('categoriaId', $id)->where('estado', 'activo')->get();
 
         return view('web.productos', ['productos' => $productos]);
     }
@@ -115,42 +115,47 @@ class ProductoController extends Controller
     {
 
         $producto = Producto::where('id', $id)->first();
-        $producto->numeroVisto = ($producto->numeroVisto) + 1;
-        $producto->save();
+        if ($producto) {
+            $producto->numeroVisto = ($producto->numeroVisto ?? 0) + 1;
+            $producto->save();
+        }
 
-        
+        $productoo = UsuarioProducto::where('productoId', $id)->with('usuarios')->first();
 
-        return view('web.verproducto', ['producto' => $producto]);
+        return view('web.verproducto', ['producto' => $producto, 'productoo' => $productoo]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Producto $producto)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Producto $producto)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Producto $producto)
-    {
-        //
-    }
-
-    public function verMisProductos($id) {
-        $usuario = User::where('id', $id)->first();
-        $productoVenta = UsuarioProducto::where('usuarioId', $id)->with('productos')->get();
+    public function verMisProductos() {
+        $usuario = User::where('id', Auth::user()->id)->first();
+        $productoVenta = UsuarioProducto::where('usuarioId', Auth::user()->id)->with('productos')->get();
 
         return view('web.perfil.enVenta', ['usuario' => $usuario, 'productos' => $productoVenta]);
     }
+
+    public function ponerReservado($id) {
+
+        $producto = Producto::where('id', $id)->first();
+        $producto->estado = 'reservado';
+        $producto->save();
+
+        return redirect()->back();
+    }
+
+    public function ponerVendido($id) {
+
+        $producto = Producto::where('id', $id)->first();
+        $producto->estado = 'vendido';
+        $producto->save();
+
+        return redirect()->back();
+    }
+
+    public function quitarVendido($id) {
+        $producto = Producto::where('id', $id)->first();
+        $producto->estado = 'activo';
+        $producto->save();
+
+        return redirect()->back();
+    }
+
 }

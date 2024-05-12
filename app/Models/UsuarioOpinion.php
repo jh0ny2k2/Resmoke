@@ -23,7 +23,7 @@ class UsuarioOpinion extends Model
 
     public function vendedor()
     {
-        return $this->belongsTo(User::class, 'UsuarioId');
+        return $this->hasMany(User::class, 'UsuarioId');
     }
 
 }

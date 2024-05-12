@@ -8,6 +8,7 @@ use App\Http\Controllers\AdminProducto;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PusherController;
 use App\Http\Controllers\UsuarioFavoritoController;
 use App\Models\Categoria;
 use App\Models\Producto;
@@ -34,14 +35,20 @@ Route::prefix('web')->group(function() {
         Route::get('/addFavorito/{id}', [UsuarioFavoritoController::class, 'favorito']);            //AÑADIR A FAVORITO
         Route::get('/deleteFavorito/{id}', [UsuarioFavoritoController::class, 'create']);           //ELIMINAR UN FAVORITO
 
-        Route::get('/productoVenta/{id}', [ProductoController::class, 'verMisProductos']);
-        Route::get('/verFavoritos/{id}', [UsuarioFavoritoController::class, 'verMisFavoritos']);
+        Route::get('/reservado/{id}', [ProductoController::class, 'ponerReservado']);
+        Route::get('/vendido/{id}', [ProductoController::class, 'ponerVendido']);
+        Route::get('/quitarReservado/{id}', [ProductoController::class, 'quitarVendido']);
+        Route::get('/quitarVendido/{id}', [ProductoController::class, 'quitarVendido']);
+
+        Route::get('/productoVenta', [ProductoController::class, 'verMisProductos'])->name('venta');
+        Route::get('/verFavoritos', [UsuarioFavoritoController::class, 'verMisFavoritos'])->name('favoritos');
 
         // PERFIL      
         Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
         Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-        Route::get('/verPerfil/{id}', [ProfileController::class, 'verPerfil']);
-        Route::get('/edirPerfil', [ProfileController::class, 'edit']);
+        Route::get('/verPerfil/{id}', [ProfileController::class, 'verPerfil'])->name('verPerfil');
+        Route::get('/editPerfil', [ProfileController::class, 'edit'])->name('editProfile');
+        Route::post('/editPerfil', [ProfileController::class, 'editar']);
     });
 });
 
@@ -109,6 +116,10 @@ Route::get('/welcome', function () {
     return view('welcome', ['categorias' => $categorias, 'productos' => $producto]);
 })->name('welcome');
 
+
+Route::get('/inicioChat', [PusherController::class, 'index']);
+Route::post('/broadcast', [PusherController::class, 'broadcast']);
+Route::post('/receive', [PusherController::class, 'receive']);
 
 
 require __DIR__.'/auth.php';

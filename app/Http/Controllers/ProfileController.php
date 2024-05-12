@@ -13,16 +13,6 @@ use Illuminate\View\View;
 class ProfileController extends Controller
 {
     /**
-     * Display the user's profile form.
-     */
-    public function edit(Request $request): View
-    {
-        return view('profile.edit', [
-            'user' => $request->user(),
-        ]);
-    }
-
-    /**
      * Update the user's profile information.
      */
     public function update(ProfileUpdateRequest $request): RedirectResponse
@@ -63,5 +53,25 @@ class ProfileController extends Controller
         $usuario = User::where('id', $id)->first();
 
         return view('web.perfil.perfil', ['usuario' => $usuario]);
+    }
+
+    public function edit() {
+        $perfil = User::where('id', Auth::user()->id)->first();
+
+        return view('web.perfil.editPerfil', ['usuario' => $perfil]);
+    }
+
+    public function editar(Request $request) {
+
+        $usuario = User::where('id', Auth::user()->id)->first();
+        $usuario->name = $request->nombre;
+        $usuario->email = $request->email;
+        $usuario->telefono = $request->telefono;
+        $usuario->fechaNacimiento = $request->fechaNacimiento;
+        $usuario->genero = $request->genero;
+        $usuario->dni = $request->dni;
+        $usuario->save();
+
+        return redirect()->route('verPerfil', ['id' => Auth::user()->id]);
     }
 }
