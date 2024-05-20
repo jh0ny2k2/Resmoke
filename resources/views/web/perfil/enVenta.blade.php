@@ -16,7 +16,7 @@
     <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 z-10 text-center">
         <!-- Imagen de perfil -->
         <div class="relative inline-block w-32 h-32 md:w-48 md:h-48 bg-gray-300 rounded-full border-4 border-white overflow-hidden">
-            <img src="{{ asset('storage/fotoPerfil'. Auth::user()->id .'.png') }}" alt="Perfil" class="object-cover w-full h-full">
+            <img src="{{ asset('storage/fotoPerfil'. Auth::user()->id .'.png') }}" alt="Perfil" class="object-cover w-full h-full shadow-lg">
             <!-- Botón de edición -->
             <a href="" class="absolute -bottom-4 -right-4 bg-blue-500 hover:bg-blue-600 text-white rounded-full p-3 inline-flex items-center justify-center z-20">
                 <i class="fas fa-edit"></i> <!-- Asegúrate de tener un ícono de edición apropiado aquí -->
@@ -38,9 +38,9 @@
         <div class="flex flex-wrap -m-4">
 
             @foreach ($productos as $producto)
-            <a href="/web/verProducto/{{ $producto->id }}" class="lg:w-1/3 md:w-1/2 p-4 w-full">
+            <a href="/web/verProducto/{{ $producto->productoId }}" class="lg:w-1/3 md:w-1/2 p-4 w-full">
                 <div class="block relative h-full max-h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
-                    <img alt="ecommerce" class="lg:h-48 md:h-36 w-full object-cover object-center" src="{{ asset('storage/producto_'. $producto->id .'.jpg') }}">
+                    <img alt="ecommerce" class="lg:h-48 md:h-36 w-full object-cover object-center" src="{{ asset('storage/producto_'. $producto->productoId .'.jpg') }}">
                     <div class="p-4 mt-4">
 
                         <p class="mt-1 text-lg font-bold">{{ $producto->productos->precio }} €</p>

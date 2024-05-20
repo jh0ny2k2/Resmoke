@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ProfileUpdateRequest;
 use App\Models\User;
+use App\Models\UsuarioOpinion;
+use App\Models\UsuarioProducto;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -49,10 +51,11 @@ class ProfileController extends Controller
         return Redirect::to('/');
     }
 
-    public function verPerfil($id) {
-        $usuario = User::where('id', $id)->first();
+    public function verPerfil() {
+        $usuario = User::where('id', Auth::user()->id)->first();
+        $opiniones = UsuarioOpinion::where('vendedorId', Auth::user()->id)->where('estado', 'activo')->get();
 
-        return view('web.perfil.perfil', ['usuario' => $usuario]);
+        return view('web.perfil.perfil', ['usuario' => $usuario, 'opiniones' => $opiniones]);
     }
 
     public function edit() {
@@ -74,4 +77,13 @@ class ProfileController extends Controller
 
         return redirect()->route('verPerfil', ['id' => Auth::user()->id]);
     }
+
+    public function verPerfilVendedor($id) {
+
+        $usuario = User::where('id', $id)->first();
+
+        return view('web.perfil.perfilVendedor', ['usuario' => $usuario]);
+    }
+
+    
 }

@@ -511,6 +511,15 @@
                 0 => '^1.0',
             ),
         ),
+        'munafio/chatify' => array(
+            'pretty_version' => 'v1.6.3',
+            'version' => '1.6.3.0',
+            'reference' => '559ff515fc83a822ed72cdd03ca8e36c574c5a25',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../munafio/chatify',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'myclabs/deep-copy' => array(
             'pretty_version' => '1.11.1',
             'version' => '1.11.1.0',

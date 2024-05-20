@@ -31,6 +31,11 @@ class UsuarioFavoritoController extends Controller
 
     public function deleteFavorito($id){
 
+        UsuarioFavorito::where('productoId', $id)
+               ->where('usuarioId', Auth::user()->id)
+               ->delete();
+
+        return redirect()->back();
     }
 
     public function verMisFavoritos() {

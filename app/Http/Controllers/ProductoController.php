@@ -122,7 +122,14 @@ class ProductoController extends Controller
 
         $productoo = UsuarioProducto::where('productoId', $id)->with('usuarios')->first();
 
-        return view('web.verproducto', ['producto' => $producto, 'productoo' => $productoo]);
+        
+        if (Auth::check()) {
+            $favorito = UsuarioFavorito::where('productoId', $id)->where('usuarioId', Auth::user()->id)->exists();
+        } else {
+            $favorito = false;
+        }
+        
+        return view('web.verproducto', ['producto' => $producto, 'productoo' => $productoo, 'favorito' => $favorito]);
     }
 
     public function verMisProductos() {

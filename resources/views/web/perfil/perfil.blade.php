@@ -9,17 +9,17 @@
   </div>
 
 <div class="flex justify-center min-h-52">
-        <div class="max-w-4xl w-full my-5 bg-white rounded-lg shadow-xl">
+        <div class="max-w-4xl w-full my-5 bg-white rounded-lg shadow-xl border ">
             <div class="flex justify-between items-center border-b p-8">
                 <div class="flex items-center">
-                    <img src="{{ asset('storage/fotoPerfil'. $usuario->id .'.png') }}" alt="Perfil" class="h-28 w-28 rounded-full object-cover mr-6">
+                    <img src="{{ asset('storage/fotoPerfil'. $usuario->id .'.png') }}" alt="Perfil" class="h-28 w-28 rounded-full object-cover mr-6 shadow-lg">
                     <div>
                         <h2 class="text-2xl font-semibold uppercase"> {{$usuario->name}} </h2>
                         <p class="text-gray-600"> {{$usuario->rol}} </p>
                     </div>
                 </div>
                 <a href="{{ route('editProfile') }}">
-                    <button class="text-dark font-semibold py-2 px-4 border border-dark rounded">Editar</button>
+                    <button class="text-dark font-semibold py-2 px-4 border border-gray-400 rounded shadow-lg hover:bg-gray-300" >Editar</button>
                 </a>
             </div>
             <div class="p-8">
@@ -33,12 +33,36 @@
                 </div>
             </div>
             <div class="px-8 pb-8 grid grid-cols-2 gap-4 text-center">
-                <a href="{{ route('favoritos') }}" class="bg-white hover:bg-gray-300 text-dark border border-dark font-bold py-2 px-4 rounded transition duration-200 ease-in-out">
+                <a href="{{ route('favoritos') }}" class="bg-white hover:bg-gray-300 text-dark border border-gray-400 shadow-lg font-bold py-2 px-4 rounded transition duration-200 ease-in-out">
                     Ver Favoritos
                 </a>
-                <a href="{{ route('venta') }}" class="bg-white hover:bg-gray-300 text-dark border border-dark font-bold py-2 px-4 rounded transition duration-200 ease-in-out">
+                <a href="{{ route('venta') }}" class="bg-white hover:bg-gray-300 text-dark border border-gray-400 shadow-lg font-bold py-2 px-4 rounded transition duration-200 ease-in-out">
                     Ver Mis Productos
                 </a>
             </div>
         </div>
     </div>
+
+    <div class="flex justify-center min-h-52">
+    <div class="max-w-4xl w-full my-5 bg-white rounded-lg border shadow-xl">
+        <div class="p-8">
+            <h3 class="text-lg font-semibold text-gray-800 mb-4">Algunos Comentarios</h3>
+            <div class="grid grid-cols-2">
+                @foreach ($opiniones as $opinion)
+
+                    <article class="ml-2 mt-2 p-4 border border-gray-300 rounded">
+                        <div class="flex items-center mb-4">
+                        <img class="w-10 h-10 me-4 rounded-full" src="{{ asset('storage/fotoPerfil'. $opinion->usuarioId .'.png') }}" alt="">
+                            <div class="font-medium dark:text-white">
+                                <p>{{ $opinion->usuarios->name }}</p>
+                            </div>
+                        </div>
+                        <footer class="mb-5 text-sm text-gray-500 dark:text-gray-400"><p>Opinado el <time datetime="2017-03-03 19:00">{{ $opinion->created_at }}</time></p></footer>
+                        <p class="mb-2 text-gray-500 dark:text-gray-400">{{ $opinion->opinion }}</p>
+                    </article>
+
+                @endforeach
+            </div>
+        </div>
+    </div>
+</div>

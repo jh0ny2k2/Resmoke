@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resmoke</title>
+    <title>Resmoke - </title>
 
     <!-- ICONO PAGINA -->
     <link rel="shortcut icon" href="{{ asset('storage/logo resmoke.png' )}}" />
@@ -21,6 +21,8 @@
     <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
     <script src="https://js.api.here.com/v3/3.1/mapsjs-ui.js" type="text/javascript" charset="utf-8"></script>
     <link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.1/mapsjs-ui.css" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
     <!-- ESTILO MODAL -->
     <style>
@@ -78,7 +80,7 @@
                         <a href="{{ route('favoritos') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Mis Favoritos</a>
                         <a href="{{ route('venta') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Mis Productos</a>
                         <hr>
-                        <a href="/web/verPerfil/{{ Auth::user()->id }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Perfil</a>
+                        <a href="/web/verPerfil" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Perfil</a>
                         <hr>
                         <a href="{{ route('milogout') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Cerrar Sesión</a>
                     </div>
@@ -97,3 +99,11 @@
             @endauth
         </div>
     </header>
+
+    <a href="/chatify">
+        <div class="fixed bottom-14 right-14 shadow-lg border-2 border-gray-900 rounded-full">
+            <button class="bg-white p-4 rounded-full shadow-lg">
+                <i class="material-icons text-gray-900 text-3xl">chat</i>
+            </button>
+        </div>
+    </a>

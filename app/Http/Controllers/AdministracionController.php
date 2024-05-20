@@ -117,17 +117,4 @@ class AdministracionController extends Controller
         return view ('admin.usuario', ['usuarios' => $usuario]);
     }
     
-
-    
-
-    
-
-    public function opiniones(){
-        $opiniones = UsuarioOpinion::all();
-
-        return view('admin.opinion', ['opiniones' => $opiniones]);
-    }
-
-
-
 }

@@ -16,14 +16,14 @@ class UsuarioOpinion extends Model
         'opition',
     ];
 
-    public function usuario()
+    public function usuarios()
     {
-        return $this->belongsTo(User::class, 'UsuarioId');
+        return $this->belongsTo(User::class, 'usuarioId');
     }
 
-    public function vendedor()
+    public function vendedores()
     {
-        return $this->hasMany(User::class, 'UsuarioId');
+        return $this->belongsTo(User::class, 'vendedorId');
     }
 
 }

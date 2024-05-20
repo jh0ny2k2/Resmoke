@@ -10,6 +10,7 @@ use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PusherController;
 use App\Http\Controllers\UsuarioFavoritoController;
+use App\Http\Controllers\UsuarioOpinionController;
 use App\Models\Categoria;
 use App\Models\Producto;
 use Illuminate\Support\Facades\Route;
@@ -33,7 +34,7 @@ Route::prefix('web')->group(function() {
 
         // Favorito
         Route::get('/addFavorito/{id}', [UsuarioFavoritoController::class, 'favorito']);            //AÑADIR A FAVORITO
-        Route::get('/deleteFavorito/{id}', [UsuarioFavoritoController::class, 'create']);           //ELIMINAR UN FAVORITO
+        Route::get('/deleteFavorito/{id}', [UsuarioFavoritoController::class, 'deleteFavorito']);           //ELIMINAR UN FAVORITO
 
         Route::get('/reservado/{id}', [ProductoController::class, 'ponerReservado']);
         Route::get('/vendido/{id}', [ProductoController::class, 'ponerVendido']);
@@ -46,9 +47,15 @@ Route::prefix('web')->group(function() {
         // PERFIL      
         Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
         Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-        Route::get('/verPerfil/{id}', [ProfileController::class, 'verPerfil'])->name('verPerfil');
+        Route::get('/verPerfil', [ProfileController::class, 'verPerfil'])->name('verPerfil');
         Route::get('/editPerfil', [ProfileController::class, 'edit'])->name('editProfile');
         Route::post('/editPerfil', [ProfileController::class, 'editar']);
+
+        Route::get('/verPerfilVendedor/{id}', [ProfileController::class, 'verPerfilVendedor'])->name('verPerfil');
+        Route::get('/verProductosVendedor/{id}', [UsuarioOpinionController::class, 'verProductos']);
+        Route::get('/verOpinionesVendedor/{id}', [UsuarioOpinionController::class, 'verOpiniones']);
+        Route::get('/addOpinion/{id}', [UsuarioOpinionController::class, 'addOpinion']);
+        Route::post('/addOpinion/{id}', [UsuarioOpinionController::class, 'add']);
     });
 });
 
@@ -94,7 +101,11 @@ Route::prefix('admin')->middleware(['auth', 'verified', 'mdrol:administrador'])-
     Route::get('/eliminarFavorito/{id}', [AdminFavoritos::class, 'eliminar']);
 
     //OPINIONES
-    Route::get('/opiniones', [AdministracionController::class, 'opiniones'])->name('adminOpiniones');   // VER TODAS LAS RESEÑAS 
+    Route::get('/opiniones', [AdminOpiniones::class, 'opiniones'])->name('adminOpiniones');   // VER TODAS LAS RESEÑAS 
+    Route::get('/eliminarOpinion/{id}', [AdminOpiniones::class, 'eliminar']);
+    Route::get('/verConfirmarOpinion', [AdminOpiniones::class, 'verConfirmar'])->name('verConfirmarOpinion');
+    Route::get('/confirmarOpinion/{id}', [AdminOpiniones::class, 'confirmar']);
+    Route::get('/denegarOpinion/{id}', [AdminOpiniones::class, 'denegar']);
 });
 
 // RUTA CREADA PARA CERRAR SESIÓN
@@ -103,7 +114,7 @@ Route::get('/logout', [AuthenticatedSessionController::class, 'destroy'])->name(
 // RUTA PARA EL INICIO DE LA PAGINA
 Route::get('/', function () {
     $categorias = Categoria::all();
-    $producto = Producto::with('categorias')->inRandomOrder()->take(6)->get();
+    $producto = Producto::with('categorias')->where('estado', 'activo')->inRandomOrder()->take(6)->get();
 
     return view('welcome', ['categorias' => $categorias, 'productos' => $producto]);
 });
@@ -111,7 +122,7 @@ Route::get('/', function () {
 // RUTA PARA VOLVER A LA PAGINA DE INICIO 
 Route::get('/welcome', function () {
     $categorias = Categoria::all();
-    $producto = Producto::with('categorias')->inRandomOrder()->take(6)->get();
+    $producto = Producto::with('categorias')->where('estado', 'activo')->inRandomOrder()->take(6)->get();
 
     return view('welcome', ['categorias' => $categorias, 'productos' => $producto]);
 })->name('welcome');

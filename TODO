@@ -1,14 +1,18 @@
 Por hacer:
   ☐ Realizar metodo para Loguearse o Registrarse con google
   ☐ Mirar como buscar las coordenadas
+  ☐ 
+  ☐ Mirar que cuando añada una opinion se vuelva al perfil de opinion
+  ☐ 
+
   ☐ Realizar metodo para cambiar datos del producto cuando es tuyo
-  ☐ Arreglar metodo para guardar y que funcione poniendose el corazon rojo
-  ☐ Crear Chat en vivo
-  ☐ Crear metodo para Realizar una opinion de un usuario
-  ☐ Crear diseño para el chat en vivo
-  ☐ crear metodo para cambiar foto de perfil // preguntar
-  ☐ Mirar porque no salen las fotos en favoritos y en venta
-  ☐ Mirar porque no se abre desde favoritos y venta // Attempt to read property "numeroVisto" on null
+  ☐ crear metodo para cambiar foto de perfil
+  ☐ Poner para que si no hay foto de imagen que se ponga una predeterminada
+
+  modificar botones para que se vean mejor y input
+  poner estado en tu producto
+  poner mis compras
+  alinear botones filtro usuario derecha
   
 Terminado:
 
@@ -207,20 +211,24 @@ Terminado:
   ✔ Mirar porque no salen los productos en productos de la persona
   ✔ Mirar metodo para buscar en admin
   ✔ Poner que salgan los articulos que tienes guardados como favoritos en su respectiva pagina
-  ✔ 
-  ✔ 
-  ✔ 
-  ✔
-
-
-
+  
   Lunes 13/05/2024
 
-  ☐
+  ✔ Mirar porque no salen las fotos en favoritos y en venta
+  ✔ Arreglado porque no se habria el producto si no estabas iniciado de sesion
+  ✔ Poner en informacion de vendedor un enlace para ver el perfil del vendedor
+  ✔ Mirar porque no se abre desde favoritos y venta // Attempt to read property "numeroVisto" on null
+  ✔ Creado diseño de productos de un vendedor
+  ✔ Creado diseño de opiniones de un vendedor
+  ✔ Creado metodo para que puedas ver los productos de un vendedor
+  ✔ Creado metodo para ver las opiniones que tiene un vendedor
+  ✔ Creado meto para aceptar o denegar una opinion
+  ✔ Creado diseño de tabla administracion para ver opiniones en observacion
+  ✔ Realizada funcionalidad panel admin de opiniones
 
   Martes 14/05/2024
 
-  ☐
+   
 
   Miercoles 15/05/2024
 
@@ -243,8 +251,15 @@ Terminado:
   ☐
 
   Lunes 20/05/2024
-
-  ☐
+ 
+  ✔ Crear diseño para el chat en vivo
+  ✔ Crear Chat en vivo
+  ✔ Realizado diseño boton flotante para ir al chat
+  ✔ Realizados cambios de diseño en el chat online 
+  ✔ 
+  ✔  
+  ✔ 
+  ✔
 
   Martes 21/05/2024
 

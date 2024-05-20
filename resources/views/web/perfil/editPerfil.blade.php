@@ -10,24 +10,26 @@
 
 <div class="flex justify-center min-h-52">
   <div class="max-w-4xl w-full my-5 bg-white rounded-lg shadow-xl">
+    
     <form action="" method="POST" enctype="multipart/form-data" class="w-full">
       @csrf
+      
       <div class="flex justify-between items-center border-b p-8">
         <div class="flex items-center">
           <label for="fotoPerfil" class="cursor-pointer">
             <input type="file" id="fotoPerfil" name="fotoPerfil" class="hidden">
-            <img id="preview_fotoPerfil" src="{{ asset('storage/fotoPerfil'. $usuario->id .'.png') }}" alt="Perfil" class="h-28 w-28 rounded-full object-cover mr-6 cursor-pointer">
+            <img id="fotoPerfil" src="{{ asset('storage/fotoPerfil'. $usuario->id .'.png') }}" alt="Perfil" class="h-28 w-28 rounded-full object-cover mr-6 cursor-pointer shadow-lg">
           </label>
           <div>
           <label for="nombre" class="block">
             <strong>Nombre:</strong>
-            <input type="text" id="nombre" name="nombre" value="{{$usuario->name}}" class="mt-1 block w-full border-gray-300 rounded-md">
+            <input type="text" id="nombre" name="nombre" value="{{$usuario->name}}" class="mt-1 block w-full p-1  rounded-md">
           </label>
             <p class="text-gray-600"> {{$usuario->rol}} </p>
           </div>
         </div>
         <a href="">
-            <button type="submit" class="text-dark font-semibold py-2 px-4 border border-dark rounded">Guardar Cambios</button>
+            <button type="submit" class="text-dark font-semibold py-2 px-4  border border-dark border-gray-400 rounded shadow-lg hover:bg-gray-300">Guardar Cambios</button>
         </a>
       </div>
       <div class="p-8">
@@ -35,23 +37,23 @@
         <div class="grid grid-cols-2 gap-4">
           <label for="email" class="block">
             <strong>Correo electrónico:</strong>
-            <input type="email" id="email" name="email" value="{{$usuario->email}}" class="mt-1 block w-full border-gray-300 rounded-md">
+            <input type="email" id="email" name="email" value="{{$usuario->email}}" class="mt-1 block w-full p-1  rounded-md">
           </label>
           <label for="telefono" class="block">
             <strong>Teléfono:</strong>
-            <input type="text" id="telefono" name="telefono" value="{{$usuario->telefono}}" class="mt-1 block w-full border-gray-300 rounded-md">
+            <input type="text" id="telefono" name="telefono" value="{{$usuario->telefono}}" class="mt-1 block w-full p-1  rounded-md">
           </label>
           <label for="fechaNacimiento" class="block">
             <strong>Fecha de nacimiento:</strong>
-            <input type="date" id="fechaNacimiento" name="fechaNacimiento" value="{{$usuario->fechaNacimiento}}" class="mt-1 block w-full border-gray-300 rounded-md">
+            <input type="date" id="fechaNacimiento" name="fechaNacimiento" value="{{$usuario->fechaNacimiento}}" class="mt-1 block w-full p-1  rounded-md">
           </label>
           <label for="genero" class="block">
             <strong>Género:</strong>
-            <input type="text" id="genero" name="genero" value="{{$usuario->genero}}" class="mt-1 block w-full border-gray-300 rounded-md">
+            <input type="text" id="genero" name="genero" value="{{$usuario->genero}}" class="mt-1 block w-full rounded-md p-1 ">
           </label>
           <label for="dni" class="block">
             <strong>Dni:</strong>
-            <input type="text" id="dni" name="dni" value="{{$usuario->dni}}" class="mt-1 block w-full border-gray-300 rounded-md">
+            <input type="text" id="dni" name="dni" value="{{$usuario->dni}}" class="mt-1 block w-full rounded-md p-1 ">
           </label>
         </div>
       </div>

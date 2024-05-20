@@ -2,64 +2,48 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\UsuarioOpinion;
+use App\Models\UsuarioProducto;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UsuarioOpinionController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
+    public function addOpinion($id) {
+
+        $usuario = User::where('id', $id)->first();
+
+        return view('web.perfil.addOpinion', ['usuario' => $usuario]); 
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+    public function add($id, Request $request) {
+
+        $opinion = UsuarioOpinion::where('vendedorId', $id)->first();
+        $opinion->usuarioId = Auth::user()->id;
+        $opinion->vendedorId = $id;
+        $opinion->opinion = $request->opinion;
+        $opinion->estado = 'observacion';
+        $opinion->save();
+
+        return redirect()->back();
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
+    public function verOpiniones($id) {
+        $usuario = User::where('id', $id)->first();
+        $opiniones = UsuarioOpinion::where('vendedorId', $id)->where('estado', 'activo')->get();
+
+        return view('web.perfil.perfilVendedorOpinion', ['usuario' => $usuario, 'opiniones' => $opiniones]);
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(UsuarioOpinion $usuarioOpinion)
-    {
-        //
+    public function verProductos($id) {
+        $usuario = User::where('id', $id)->first();
+        $productos = UsuarioProducto::where('usuarioId', $id)->with('productos')->get();
+
+        return view('web.perfil.perfilVendedorProducto', ['usuario' => $usuario, 'productos' => $productos]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(UsuarioOpinion $usuarioOpinion)
-    {
-        //
-    }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, UsuarioOpinion $usuarioOpinion)
-    {
-        //
-    }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(UsuarioOpinion $usuarioOpinion)
-    {
-        //
-    }
+
 }
