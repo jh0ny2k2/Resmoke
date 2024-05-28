@@ -1,18 +1,11 @@
 Por hacer:
   ☐ Realizar metodo para Loguearse o Registrarse con google
   ☐ Mirar como buscar las coordenadas
-  ☐ 
   ☐ Mirar que cuando añada una opinion se vuelva al perfil de opinion
-  ☐ 
-
-  ☐ Realizar metodo para cambiar datos del producto cuando es tuyo
-  ☐ crear metodo para cambiar foto de perfil
-  ☐ Poner para que si no hay foto de imagen que se ponga una predeterminada
-
-  modificar botones para que se vean mejor y input
-  poner estado en tu producto
+  ☐ Metodo para eliminar foto en editar producto
+  
   poner mis compras
-  alinear botones filtro usuario derecha
+  
   
 Terminado:
 
@@ -50,10 +43,6 @@ Terminado:
   Sabado 13/04/2024
   ✔ Realizado Diseño total de panel admin
 
-  Domingo 14/04/2024
-
-
-
   Lunes 15/04/2024
   ✔ Implementar diseño de admin
   ✔ Ya sale la imagen de perfil en el circulo del navbar
@@ -66,7 +55,6 @@ Terminado:
   Martes 16/04/2024
   ✔ Hacer que salga las fotos cuando la subes en el registro de productos
 
-
   Miercoles 17/04/2024
   ✔ Arreglar base de datos de productosUsuario para poner activo, en revision, vendido o reservado
   ✔ Arreglar metodo para poder ir a panel admin // Target class [rol] does not exist
@@ -78,18 +66,6 @@ Terminado:
 
   ✔ Realizado metodo para poder ver todo el panel admin con las tablas y los elementos 
   ✔ Realizado metodo de borrar y ir a formulario de ediccion de usuarios y productos en el panel admin
-
-  Viernes 19/04/2024
-
-  
-
-  Sabado 20/04/2024
-
-  
-
-  Domingo 21/04/2024
-
-  
 
   Lunes 22/04/2024
   ✔ Crear formularios para admin de producto, categoria, opiniones
@@ -119,22 +95,6 @@ Terminado:
   ✔ Arreglada tabla de favoritos, ya sale el nombre del usuario y el nombre del producto
   ✔ Mirar porque no se pone la tabla de usuarioProducto al añadir producto
 
-  Jueves 25/04/2024
-
-  ☐
-
-  Viernes 26/04/2024
-
-  ☐
-
-  Sabado 27/04/2024
-
-  ☐
-  
-  Domingo 28/04/2024
-
-  ☐
-
   Lunes 29/04/2024
 
   ✔ Realizado metodo para eliminar categoria en admin
@@ -146,23 +106,6 @@ Terminado:
   ✔ Arreglar tabla de productos que no se vaya para la derecha (que se quede centrada en la pantalla)
   ✔ Crear página no recuerdo contraseña
   ✔ Realizar diseño de perfil cuando es nuestro perfil
-
-
-  Miercoles 01/05/2024
-
-  ☐
-
-  Jueves 02/05/2024
-
-  ☐
-
-  Viernes 03/05/2024
-
-  ☐
-
-  Sabado 04/05/2024
-
-  ☐
 
   Lunes 06/05/2024
 
@@ -195,14 +138,6 @@ Terminado:
   ✔ Puestos enlances en todos los botones para ver mis productos y mis favoritos
   ✔ Realizar metodo para cambiar estado del producto cuando es tuyo
 
-  Viernes 10/05/2024
-
-  ☐
-
-  Sabado 11/05/2024
-
-  ☐
-
   Domingo 12/05/2024
   
   ✔ Realizar la funcionalidad del perfil
@@ -226,44 +161,25 @@ Terminado:
   ✔ Creado diseño de tabla administracion para ver opiniones en observacion
   ✔ Realizada funcionalidad panel admin de opiniones
 
-  Martes 14/05/2024
-
-   
-
-  Miercoles 15/05/2024
-
-  ☐
-
-  Jueves 16/05/2024
-
-  ☐
-
-  Viernes 17/05/2024
-
-  ☐
-
-  Sabado 18/05/2024
-
-  ☐
-
-  Domingo 19/05/2024
-
-  ☐
-
   Lunes 20/05/2024
  
   ✔ Crear diseño para el chat en vivo
   ✔ Crear Chat en vivo
   ✔ Realizado diseño boton flotante para ir al chat
   ✔ Realizados cambios de diseño en el chat online 
-  ✔ 
-  ✔  
-  ✔ 
-  ✔
 
   Martes 21/05/2024
 
-  ☐
+  ✔ Crear metodo para buscar favoritos por nombre usuario
+  ✔ Crear Metodo para buscar opiniones usuario
+  ✔ alinear botones filtro usuario derecha
+  ✔ modificar botones para que se vean mejor y input
+  ✔ poner estado en tu producto
+  ✔ Poner para que si no hay foto de imagen que se ponga una predeterminada
+  ✔ Cambiar diseño boton atras
+  ✔ crear metodo para cambiar foto de perfil
+  ✔ Realizar metodo para cambiar datos del producto cuando es tuyo
+  ✔
 
   Miercoles 22/05/2024
 

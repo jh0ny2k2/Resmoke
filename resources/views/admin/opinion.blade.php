@@ -1,7 +1,16 @@
 <x-navbaradmin></x-navbaradmin>
 
 <div class="flex-1 p-10 ml-60">
-    <h1 class="text-4xl font-bold mb-6">Opiniones de Clientes</h1>
+    <div class="flex justify-between mb-6">
+        <h1 class="text-4xl font-bold">Opiniones de clientes</h1>
+        <form action="/admin/buscarOpinion" method="post" class="flex w-1/2 max-w-xl">
+            @csrf
+            <input type="text" name="buscador" id="buscador" placeholder="Buscar usuario ( Nombre Comprador ) ..." class="w-full px-4 py-2 border rounded-l-lg focus:outline-none focus:border-blue-500" />
+            <button type="submit" class="px-4 text-white bg-blue-600 rounded-r-lg hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                <span class="material-icons">search</span>
+            </button>
+        </form>
+    </div>
     <div>
         <a href="{{ route('verConfirmarOpinion') }}">
             <button class="py-2 px-4 mb-5 bg-blue-600 hover:bg-blue-700 focus:ring-blue-500 focus:ring-offset-blue-200 text-white transition ease-in duration-200 text-center text-sm font-medium shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg">

@@ -9,8 +9,10 @@
         "guzzlehttp/guzzle": "^7.8",
         "laravel/framework": "^11.0",
         "laravel/tinker": "^2.9",
+        "larswiegers/laravel-maps": "^0.18.0",
         "munafio/chatify": "^1.6",
-        "pusher/pusher-php-server": "^7.2"
+        "pusher/pusher-php-server": "^7.2",
+        "vormkracht10/laravel-seo-scanner": "^3.11"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",

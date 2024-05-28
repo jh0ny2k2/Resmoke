@@ -43,6 +43,7 @@ class MessagesController extends Controller
     public function index( $id = null)
     {
         $messenger_color = Auth::user()->messenger_color;
+
         return view('Chatify::pages.app', [
             'id' => $id ?? 0,
             'messengerColor' => $messenger_color ? $messenger_color : Chatify::getFallbackColor(),

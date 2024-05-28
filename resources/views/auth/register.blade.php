@@ -75,7 +75,7 @@
         </div>
 
         <x-primary-button class="ms-4">
-            {{ __('Register') }}
+            {{ __('Registrarse') }}
         </x-primary-button>
     </form>
 </x-guest-layout>

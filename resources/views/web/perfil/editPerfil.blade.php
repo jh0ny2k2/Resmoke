@@ -1,35 +1,33 @@
 <x-navbarvproducto></x-navbarvproducto>
 
-<div class="container mx-auto px-6 py-4">
-  <a href="{{ url()->previous() }}" class="inline-flex items-center space-x-2 border-2 border-black text-black bg-white hover:bg-gray-100 py-2 px-4 focus:outline-none focus:ring-2 focus:ring-gray-300 rounded">
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 17l-5-5m0 0l5-5m-5 5h12" />
-    </svg>
-  </a>
-</div>
+<!-- BOTON VOLVER ATRAS -->
+<x-boton-atras></x-boton-atras>
+
 
 <div class="flex justify-center min-h-52">
-  <div class="max-w-4xl w-full my-5 bg-white rounded-lg shadow-xl">
+  <div class="max-w-4xl w-full my-5 bg-white rounded-lg shadow-xl border ">
     
     <form action="" method="POST" enctype="multipart/form-data" class="w-full">
       @csrf
+
+      <h3 class="text-xl font-semibold text-gray-800 p-8 uppercase">Edición de Perfil</h3>
       
-      <div class="flex justify-between items-center border-b p-8">
+      <div class="flex justify-between items-center border-b pl-8 pb-8 pr-8">
         <div class="flex items-center">
-          <label for="fotoPerfil" class="cursor-pointer">
-            <input type="file" id="fotoPerfil" name="fotoPerfil" class="hidden">
-            <img id="fotoPerfil" src="{{ asset('storage/fotoPerfil'. $usuario->id .'.png') }}" alt="Perfil" class="h-28 w-28 rounded-full object-cover mr-6 cursor-pointer shadow-lg">
-          </label>
+
+          <label class="h-28 w-28 rounded-full object-cover mr-6 cursor-pointer shadow-lg " style="background-image: url('{{ asset('storage/fotoPerfil'. $usuario->id .'.png') }}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+              <input type="file" name="fotoPerfil" class="sr-only" onchange="updateBackground(this)" />
+            </label>
           <div>
           <label for="nombre" class="block">
             <strong>Nombre:</strong>
-            <input type="text" id="nombre" name="nombre" value="{{$usuario->name}}" class="mt-1 block w-full p-1  rounded-md">
+            <input type="text" id="nombre" name="nombre" value="{{$usuario->name}}" class="mt-1 block w-full p-1  rounded-md ">
           </label>
             <p class="text-gray-600"> {{$usuario->rol}} </p>
           </div>
         </div>
         <a href="">
-            <button type="submit" class="text-dark font-semibold py-2 px-4  border border-dark border-gray-400 rounded shadow-lg hover:bg-gray-300">Guardar Cambios</button>
+            <button type="submit" class="text-dark font-semibold py-2 px-4  border-2 border-gray-400 rounded shadow-lg hover:bg-gray-300">Guardar Cambios</button>
         </a>
       </div>
       <div class="p-8">
@@ -37,27 +35,45 @@
         <div class="grid grid-cols-2 gap-4">
           <label for="email" class="block">
             <strong>Correo electrónico:</strong>
-            <input type="email" id="email" name="email" value="{{$usuario->email}}" class="mt-1 block w-full p-1  rounded-md">
+            <input type="email" id="email" name="email" value="{{$usuario->email}}" class="mt-1 block w-full p-1  rounded-md shadow-lg l-2">
           </label>
           <label for="telefono" class="block">
             <strong>Teléfono:</strong>
-            <input type="text" id="telefono" name="telefono" value="{{$usuario->telefono}}" class="mt-1 block w-full p-1  rounded-md">
+            <input type="text" id="telefono" name="telefono" value="{{$usuario->telefono}}" class="mt-1 block w-full p-1  rounded-md shadow-lg">
           </label>
           <label for="fechaNacimiento" class="block">
             <strong>Fecha de nacimiento:</strong>
-            <input type="date" id="fechaNacimiento" name="fechaNacimiento" value="{{$usuario->fechaNacimiento}}" class="mt-1 block w-full p-1  rounded-md">
+            <input type="date" id="fechaNacimiento" name="fechaNacimiento" value="{{$usuario->fechaNacimiento}}" class="mt-1 block w-full p-1 shadow-lg rounded-md">
           </label>
           <label for="genero" class="block">
             <strong>Género:</strong>
-            <input type="text" id="genero" name="genero" value="{{$usuario->genero}}" class="mt-1 block w-full rounded-md p-1 ">
+            <select id="genero" name="genero" class="shadow-lg mt-1 block w-full rounded-md p-1">
+              <option value="femenino" {{$usuario->genero == 'femenino' ? 'selected' : ''}}>Femenino</option>
+              <option value="masculino" {{$usuario->genero == 'masculino' ? 'selected' : ''}}>Masculino</option>
+              <option value="otro" {{$usuario->genero == 'otro' ? 'selected' : ''}}>Otros</option>
+            </select>
           </label>
           <label for="dni" class="block">
             <strong>Dni:</strong>
-            <input type="text" id="dni" name="dni" value="{{$usuario->dni}}" class="mt-1 block w-full rounded-md p-1 ">
+            <input type="text" id="dni" name="dni" value="{{$usuario->dni}}" class="mt-1 block w-full rounded-md p-1 shadow-lg">
           </label>
         </div>
       </div>
     </form>
   </div>
 </div>
+
+<script>
+  function updateBackground(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+      reader.onload = function(e) {
+        var label = input.closest('label');
+        label.style.backgroundImage = 'url(' + e.target.result + ')';
+      };
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+</script>
+
 

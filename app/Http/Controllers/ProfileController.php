@@ -75,6 +75,13 @@ class ProfileController extends Controller
         $usuario->dni = $request->dni;
         $usuario->save();
 
+        if ($request->hasFile('fotoPerfil')) {
+            $request->file('fotoPerfil')->storeAs(
+                'public',
+                'fotoPerfil' . Auth::user()->id . '.png'
+            );
+        }
+
         return redirect()->route('verPerfil', ['id' => Auth::user()->id]);
     }
 

@@ -1,4 +1,4 @@
-<footer class="text-gray-600 body-font bg-gray-100">
+<footer class="text-gray-600 body-font bg-gray-100 min-w-full">
     <div class="px-5 py-8 mx-auto flex justify-center items-center flex-col">
         <a class="flex title-font font-medium items-center text-gray-900 mb-4">
             <img src="{{ asset('storage/logo resmoke.png') }}" alt="Logo" class="h-10 w-10">

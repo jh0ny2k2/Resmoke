@@ -14,21 +14,26 @@
         </form>
     </div>
 
+    <div class="flex justify-between mb-5">
     <a href="{{ route('verFormularioUsuario') }}">
-        <button class="py-2 px-4 mb-5 bg-blue-600 hover:bg-blue-700 focus:ring-blue-500 focus:ring-offset-blue-200 text-white transition ease-in duration-200 text-center text-sm font-medium shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg">
+        <button class="py-2 px-4 bg-blue-600 hover:bg-blue-700 focus:ring-blue-500 focus:ring-offset-blue-200 text-white transition ease-in duration-200 text-center text-sm font-medium shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg">
             Añadir Usuario
         </button>
     </a>
-    <a href="{{ route('verAdministrador') }}">
-        <button class="py-2 px-4 mb-5 bg-blue-600 hover:bg-blue-700 focus:ring-blue-500 focus:ring-offset-blue-200 text-white transition ease-in duration-200 text-center text-sm font-medium shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg">
-            Administrador
-        </button>
-    </a>
-    <a href="{{ route('verUsuario') }}">
-        <button class="py-2 px-4 mb-5 bg-blue-600 hover:bg-blue-700 focus:ring-blue-500 focus:ring-offset-blue-200 text-white transition ease-in duration-200 text-center text-sm font-medium shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg">
-            Usuarios
-        </button>
-    </a>
+    <div class="flex space-x-4">
+        <a href="{{ route('verAdministrador') }}">
+            <button class="py-2 px-4 bg-blue-600 hover:bg-blue-700 focus:ring-blue-500 focus:ring-offset-blue-200 text-white transition ease-in duration-200 text-center text-sm font-medium shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg">
+                Administrador
+            </button>
+        </a>
+        <a href="{{ route('verUsuario') }}">
+            <button class="py-2 px-4 bg-blue-600 hover:bg-blue-700 focus:ring-blue-500 focus:ring-offset-blue-200 text-white transition ease-in duration-200 text-center text-sm font-medium shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg">
+                Usuarios
+            </button>
+        </a>
+    </div>
+</div>
+
 
     <div class="overflow-x-auto">
         <table class="min-w-full text-sm text-left text-gray-500">

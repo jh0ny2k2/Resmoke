@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\UsuarioOpinion;
 use Illuminate\Http\Request;
 
@@ -45,7 +46,18 @@ class AdminOpiniones extends Controller
 
         return redirect()->route('verConfirmarOpinion');
     }
+    
+    public function buscar(Request $request) {
+        $usuarios = User::where('name', 'like', '%' . $request->buscador . '%')->get();
 
+        foreach ($usuarios as $usuario) {
+            
+            $opinion = UsuarioOpinion::where('usuarioId', $usuario->id)->get();
+        
+        }
+
+        return view('admin.opinion', ['opiniones' => $opinion]);
+    }
 
     
 }

@@ -86,23 +86,33 @@ class ProductoController extends Controller
                 'producto_' . $id . '.jpg'
             );
     
-            $request->file('fotoExtra1')->storeAs(
-                'public',
-                'producto_' . $id . 'Extra1.jpg'
-            );
-            $request->file('fotoExtra2')->storeAs(
-                'public',
-                'producto_' . $id . 'Extra2.jpg'
-            );
-            $request->file('fotoExtra3')->storeAs(
-                'public',
-                'producto_' . $id . 'Extra3.jpg'
-            );
-            $request->file('fotoExtra4')->storeAs(
-                'public',
-                'producto_' . $id . 'Extra4.jpg'
-            );
+            if ($request->hasFile('fotoExtra1')) {
+                $request->file('fotoExtra1')->storeAs(
+                    'public',
+                    'producto_' . $id . 'Extra1.jpg'
+                );
+            }
 
+            if ($request->hasFile('fotoExtra2')) {
+                $request->file('fotoExtra2')->storeAs(
+                    'public',
+                    'producto_' . $id . 'Extra2.jpg'
+                );
+            }
+
+            if ($request->hasFile('fotoExtra3')) {
+                $request->file('fotoExtra3')->storeAs(
+                    'public',
+                    'producto_' . $id . 'Extra3.jpg'
+                );
+            }
+
+            if ($request->hasFile('fotoExtra4')) {
+                $request->file('fotoExtra4')->storeAs(
+                    'public',
+                    'producto_' . $id . 'Extra4.jpg'
+                );
+            }
 
             return redirect()->route('verTodos');
         
@@ -163,6 +173,67 @@ class ProductoController extends Controller
         $producto->save();
 
         return redirect()->back();
+    }
+
+    public function edit($id) {
+
+        $producto = Producto::where('id', $id)->first();
+        $categorias = Categoria::all();
+
+        return view('web.editProducto', ['producto' => $producto, 'categorias' => $categorias]);
+    }
+
+    public function editar(Request $request, $id) {
+
+            $producto = Producto::where('id', $id)->first();
+            $producto->categoriaId = $request->categoria;
+            $producto->nombre = $request->nombreProducto;
+            $producto->precio = $request->precioProducto;
+            $producto->descripcion = $request->descripcionProducto;
+            $producto->localizacion = $request->localizacion;
+            $producto->save();
+
+            // Sacamos la id del producto
+            $id = $producto->id;
+
+            // Imagenes del producto
+            if ($request->hasFile('fotoPrincipal')) {
+                $request->file('fotoPrincipal')->storeAs(
+                    'public',
+                    'producto_' . $id . '.jpg'
+                );
+            }
+    
+            if ($request->hasFile('fotoExtra1')) {
+                $request->file('fotoExtra1')->storeAs(
+                    'public',
+                    'producto_' . $id . 'Extra1.jpg'
+                );
+            }
+
+            if ($request->hasFile('fotoExtra2')) {
+                $request->file('fotoExtra2')->storeAs(
+                    'public',
+                    'producto_' . $id . 'Extra2.jpg'
+                );
+            }
+
+            if ($request->hasFile('fotoExtra3')) {
+                $request->file('fotoExtra3')->storeAs(
+                    'public',
+                    'producto_' . $id . 'Extra3.jpg'
+                );
+            }
+
+            if ($request->hasFile('fotoExtra4')) {
+                $request->file('fotoExtra4')->storeAs(
+                    'public',
+                    'producto_' . $id . 'Extra4.jpg'
+                );
+            }
+
+            return redirect()->back();
+
     }
 
 }

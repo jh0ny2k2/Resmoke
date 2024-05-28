@@ -31,6 +31,8 @@ Route::prefix('web')->group(function() {
         // PRODUCTO
         Route::get('/addProducto', [ProductoController::class, 'create'])->name('addProducto');     //VER FORMULARIO AÑADIR PRODUCTO
         Route::post('/addproducto', [ProductoController::class, 'store'])->name('storeProducto');      //AÑADIR PRODUCTO A LA VENTA
+        Route::get('/editProducto/{id}', [ProductoController::class, 'edit']);
+        Route::post('/editarProducto/{id}', [ProductoController::class, 'editar']);
 
         // Favorito
         Route::get('/addFavorito/{id}', [UsuarioFavoritoController::class, 'favorito']);            //AÑADIR A FAVORITO
@@ -51,7 +53,7 @@ Route::prefix('web')->group(function() {
         Route::get('/editPerfil', [ProfileController::class, 'edit'])->name('editProfile');
         Route::post('/editPerfil', [ProfileController::class, 'editar']);
 
-        Route::get('/verPerfilVendedor/{id}', [ProfileController::class, 'verPerfilVendedor'])->name('verPerfil');
+        Route::get('/verPerfilVendedor/{id}', [ProfileController::class, 'verPerfilVendedor']);
         Route::get('/verProductosVendedor/{id}', [UsuarioOpinionController::class, 'verProductos']);
         Route::get('/verOpinionesVendedor/{id}', [UsuarioOpinionController::class, 'verOpiniones']);
         Route::get('/addOpinion/{id}', [UsuarioOpinionController::class, 'addOpinion']);
@@ -99,9 +101,11 @@ Route::prefix('admin')->middleware(['auth', 'verified', 'mdrol:administrador'])-
     //FAVORITOS
     Route::get('/favoritos', [AdminFavoritos::class, 'favorito'])->name('adminFavorito');     // VER TODOS LOS FAVORITOS
     Route::get('/eliminarFavorito/{id}', [AdminFavoritos::class, 'eliminar']);
+    Route::post('/buscarFavorito', [AdminFavoritos::class, 'buscar'])->name('buscarFavorito');
 
     //OPINIONES
     Route::get('/opiniones', [AdminOpiniones::class, 'opiniones'])->name('adminOpiniones');   // VER TODAS LAS RESEÑAS 
+    Route::post('/buscarOpinion', [AdminOpiniones::class, 'buscar'])->name('buscarOpinion');
     Route::get('/eliminarOpinion/{id}', [AdminOpiniones::class, 'eliminar']);
     Route::get('/verConfirmarOpinion', [AdminOpiniones::class, 'verConfirmar'])->name('verConfirmarOpinion');
     Route::get('/confirmarOpinion/{id}', [AdminOpiniones::class, 'confirmar']);
@@ -127,10 +131,6 @@ Route::get('/welcome', function () {
     return view('welcome', ['categorias' => $categorias, 'productos' => $producto]);
 })->name('welcome');
 
-
-Route::get('/inicioChat', [PusherController::class, 'index']);
-Route::post('/broadcast', [PusherController::class, 'broadcast']);
-Route::post('/receive', [PusherController::class, 'receive']);
 
 
 require __DIR__.'/auth.php';

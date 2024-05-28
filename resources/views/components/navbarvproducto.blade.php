@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resmoke - </title>
 
+    <title>Geocoding Service</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
     <!-- ICONO PAGINA -->
     <link rel="shortcut icon" href="{{ asset('storage/logo resmoke.png' )}}" />
 

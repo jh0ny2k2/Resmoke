@@ -14,18 +14,19 @@
                 <h3 class="text-lg leading-6 font-medium text-gray-900">Información del Producto</h3>
                 <p class="mt-1 max-w-2xl text-sm text-gray-500">Detalles y descripción.</p>
             </div>
-            <div class="flex justify-end">
-                <a href="/admin/confirmar/ {{ $producto->id}}" class="inline-block">
-                    <button class="py-2 px-4 mb-5 bg-green-600 hover:bg-green-700 focus:ring-green-500 focus:ring-offset-green-200 text-white transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg">
-                        <span class="material-icons">check</span>
+            <div class="flex justify-end space-x-2">
+                <a href="/admin/confirmar/{{ $producto->id }}" class="inline-block">
+                    <button class="p-2 text-green-500 hover:text-green-700">
+                        <span class="material-icons text-4xl">check</span>
                     </button>
                 </a>
-                <a href="/admin/denegar/ {{ $producto->id}}" class="inline-block">
-                    <button class="ml-5 py-2 px-4 mb-5 bg-red-600 hover:bg-red-700 focus:ring-red-500 focus:ring-offset-red-200 text-white transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg">
-                        <span class="material-icons">close</span>
+                <a href="/admin/denegar/{{ $producto->id }}" class="inline-block">
+                    <button class="p-2 text-red-500 hover:text-red-700">
+                        <span class="material-icons text-4xl">close</span>
                     </button>
                 </a>
             </div>
+
         </div>
         <div class="px-4 py-5 sm:p-6 grid grid-cols-2 gap-4">
             <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -38,7 +39,7 @@
             </div>
             <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                 <dt class="text-sm font-medium text-gray-500">Precio:</dt>
-                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{{ $producto->precio }}€</dd>
+                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{{ $producto->precio }} €</dd>
             </div>
             <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                 <dt class="text-sm font-medium text-gray-500">Descripción:</dt>
@@ -63,18 +64,32 @@
                                 <div class="w-full lg:w-1/2 1">
                                     <div class="flex flex-wrap justify-center items-center h-full">
                                         <div class="p-2 w-1/2">
-                                            <img src="{{ asset('storage/producto_'. $producto->id .'Extra1.jpg') }}" alt="Imagen principal del producto" class="w-full border-2 h-auto object-cover rounded-lg" />
+                                            @if (Storage::exists('public/producto_' . $producto->id . 'Extra1.jpg'))
+                                                <img src="{{ asset('storage/producto_'. $producto->id .'Extra1.jpg') }}" alt="Imagen principal del producto" class="w-full border-2 h-auto object-cover rounded-lg" />
+                                            @else
+                                                <img src="{{ asset('storage/noFoto.png') }}" alt="Imagen predeterminada" class="w-full border-2 h-auto object-cover rounded-lg" />
+                                            @endif
                                         </div>
                                         <div class="p-2 w-1/2">
-
-                                            <img src="{{ asset('storage/producto_'. $producto->id .'Extra2.jpg') }}" alt="Imagen principal del producto" class="w-full border-2 h-auto object-cover rounded-lg" />
-
+                                            @if (Storage::exists('public/producto_' . $producto->id . 'Extra2.jpg'))
+                                                <img src="{{ asset('storage/producto_'. $producto->id .'Extra2.jpg') }}" alt="Imagen principal del producto" class="w-full border-2 h-auto object-cover rounded-lg" />
+                                            @else
+                                                <img src="{{ asset('storage/noFoto.png') }}" alt="Imagen predeterminada" class="w-full border-2 h-auto object-cover rounded-lg" />
+                                            @endif
                                         </div>
                                         <div class="p-2 w-1/2">
-                                            <img src="{{ asset('storage/producto_'. $producto->id .'Extra3.jpg') }}" alt="Imagen principal del producto" class="w-full border-2 h-auto object-cover rounded-lg" />
+                                            @if (Storage::exists('public/producto_' . $producto->id . 'Extra3.jpg'))
+                                                <img src="{{ asset('storage/producto_'. $producto->id .'Extra3.jpg') }}" alt="Imagen principal del producto" class="w-full border-2 h-auto object-cover rounded-lg" />
+                                            @else
+                                                <img src="{{ asset('storage/noFoto.png') }}" alt="Imagen predeterminada" class="w-full border-2 h-auto object-cover rounded-lg" />
+                                            @endif
                                         </div>
                                         <div class="p-2 w-1/2">
-                                            <img src="{{ asset('storage/producto_'. $producto->id .'Extra4.jpg') }}" alt="Imagen principal del producto" class="w-full border-2 h-auto object-cover rounded-lg" />
+                                            @if (Storage::exists('public/producto_' . $producto->id . 'Extra4.jpg'))
+                                                <img src="{{ asset('storage/producto_'. $producto->id .'Extra4.jpg') }}" alt="Imagen principal del producto" class="w-full border-2 h-auto object-cover rounded-lg" />
+                                            @else
+                                                <img src="{{ asset('storage/noFoto.png') }}" alt="Imagen predeterminada" class="w-full border-2 h-auto object-cover rounded-lg" />
+                                        @endif
                                         </div>
                                     </div>
                                 </div>

@@ -7,7 +7,8 @@
             @foreach ($productos as $producto)
             <a href="/web/verProducto/{{ $producto->id }}" class="lg:w-1/3 md:w-1/2 p-4 w-full">
                 <div class="block relative h-full max-h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
-                    <img alt="ecommerce" class="lg:h-48 md:h-36 w-full object-cover object-center" src="{{ asset('storage/producto_'. $producto->id .'.jpg') }}">
+                        <img alt="ecommerce" class="lg:h-48 md:h-36 w-full object-cover object-center" src="{{ asset('storage/producto_'. $producto->id .'.jpg') }}">
+                    
                     <div class="p-4 mt-4">
 
                         <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">{{ $producto->categorias->nombre }}</h3>
