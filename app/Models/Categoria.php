@@ -13,6 +13,7 @@ class Categoria extends Model
         'nombre', 
     ];
 
+    // Relación uno a muchos con la tabla productos
     public function productos()
     {
         return $this->hasMany(Producto::class);

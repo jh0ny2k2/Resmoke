@@ -8,13 +8,14 @@ use Illuminate\Http\Request;
 
 class AdminFavoritos extends Controller
 {
-    
+    // VER TODOS LOS FAVORITOS
     public function favorito(){
         $favoritos = UsuarioFavorito::with('usuarios')->with('productos')->get();
 
         return view('admin.favorito', ['favoritos' => $favoritos]);
     }
 
+    // ELIMINAR FAVORITO
     public function eliminar($id)  {
         
         UsuarioFavorito::destroy($id);
@@ -22,6 +23,7 @@ class AdminFavoritos extends Controller
         return redirect()->back();
     }
 
+    // BUSCAR FAVORITO POR USUARIO
     public function buscar(Request $request) {
         $usuarios = User::where('name', 'like', '%' . $request->buscador . '%')->get();
 

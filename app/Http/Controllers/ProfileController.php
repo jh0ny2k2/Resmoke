@@ -14,9 +14,7 @@ use Illuminate\View\View;
 
 class ProfileController extends Controller
 {
-    /**
-     * Update the user's profile information.
-     */
+    // Función para ver formulario añadir una opinión
     public function update(ProfileUpdateRequest $request): RedirectResponse
     {
         $request->user()->fill($request->validated());
@@ -30,9 +28,7 @@ class ProfileController extends Controller
         return Redirect::route('profile.edit')->with('status', 'profile-updated');
     }
 
-    /**
-     * Delete the user's account.
-     */
+    // Función para ver formulario añadir una opinión
     public function destroy(Request $request): RedirectResponse
     {
         $request->validateWithBag('userDeletion', [
@@ -51,6 +47,7 @@ class ProfileController extends Controller
         return Redirect::to('/');
     }
 
+    // Función para ver formulario añadir una opinión
     public function verPerfil() {
         $usuario = User::where('id', Auth::user()->id)->first();
         $opiniones = UsuarioOpinion::where('vendedorId', Auth::user()->id)->where('estado', 'activo')->get();
@@ -58,12 +55,14 @@ class ProfileController extends Controller
         return view('web.perfil.perfil', ['usuario' => $usuario, 'opiniones' => $opiniones]);
     }
 
+    // Función para ver formulario añadir una opinión
     public function edit() {
         $perfil = User::where('id', Auth::user()->id)->first();
 
         return view('web.perfil.editPerfil', ['usuario' => $perfil]);
     }
 
+    // Función para ver formulario añadir una opinión
     public function editar(Request $request) {
 
         $usuario = User::where('id', Auth::user()->id)->first();
@@ -85,6 +84,7 @@ class ProfileController extends Controller
         return redirect()->route('verPerfil', ['id' => Auth::user()->id]);
     }
 
+    // Función para ver formulario añadir una opinión
     public function verPerfilVendedor($id) {
 
         $usuario = User::where('id', $id)->first();

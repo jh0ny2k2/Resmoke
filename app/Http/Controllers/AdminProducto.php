@@ -10,18 +10,21 @@ use Illuminate\Http\Request;
 
 class AdminProducto extends Controller
 {
+    // VER TODOS LOS PRODUCTOS
     public function productos(){
         $productos = Producto::with('categorias')->get();
 
         return view('admin.producto', ['productos' => $productos]);
     }
 
+    // ELIMINAR PRODUCTO
     public function eliminarProducto($id) {
         Producto::destroy($id);
 
         return redirect()->back();
     }
 
+    // VER EDITAR PRODUCTO
     public function editarProducto($id) {
         $producto = Producto::where('id', $id)->first();
         $categoria = Categoria::all();
@@ -29,6 +32,7 @@ class AdminProducto extends Controller
         return view('admin.productos.editProducto', ['producto' => $producto, 'categorias' => $categoria]);
     }
 
+    // EDITAR PRODUCTO
     public function editProducto(Request $request, $id) {
 
         $producto = Producto::where('id', $id)->first();
@@ -43,6 +47,7 @@ class AdminProducto extends Controller
         return redirect()->route('adminProducto');
     }
 
+    // VER AÑADIR DE PRODUCTO
     public function verFormProducto() {
         $categoria = Categoria::all();
         $usuarios = User::all();
@@ -50,6 +55,7 @@ class AdminProducto extends Controller
         return view('admin.productos.addProducto', ['categorias' => $categoria, 'usuarios' => $usuarios]);
     }
 
+    // AÑADIR PRODUCTO
     public function addProducto(Request $request) {
         $producto = new Producto();
         $producto->nombre = $request->nombre;
@@ -96,6 +102,7 @@ class AdminProducto extends Controller
 
     }
 
+    // VER PRODUCTOS A CONFIRMAR
     public function verConfirmar() {
         $producto = Producto::where('estado', 'observacion')->get();
         $productos = Producto::where('estado', 'observacion')->count();
@@ -103,6 +110,7 @@ class AdminProducto extends Controller
         return view('admin.productos.verConfirmar', ['productos' => $producto, 'numero' => $productos]);
     }
 
+    // CONFIRMAR PRODUCTO
     public function confirmar($id) {
 
         $producto = Producto::where('id', $id)->first();
@@ -112,6 +120,7 @@ class AdminProducto extends Controller
         return redirect()->route('verConfirmar');
     }
 
+    // DENEGAR PRODUCTO
     public function denegar($id) {
 
         $producto = Producto::where('id', $id)->first();
@@ -121,12 +130,14 @@ class AdminProducto extends Controller
         return redirect()->route('verConfirmar');
     }
 
+    // VER PRODUCTO
     public function verProducto($id) {
         $producto = Producto::with('categorias')->where('id', $id)->first();
 
         return view('admin.productos.verProducto', ['producto' => $producto]);
     }
 
+    // BUSCADOR
     public function buscador(Request $request) {
         $producto = Producto::where('nombre', 'like', '%' . $request->buscador . '%')->get();
 

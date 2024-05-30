@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 class AdminOpiniones extends Controller
 {
+    // VER TODAS LAS OPINIONES
     public function opiniones(){
         $opiniones = UsuarioOpinion::with('usuarios', 'vendedores')->get();
 
@@ -15,12 +16,14 @@ class AdminOpiniones extends Controller
         return view('admin.opinion', ['opiniones' => $opiniones]);
     }
 
+    // ELIMINAR OPINION
     public function eliminar($id) {
         UsuarioOpinion::destroy($id);
 
         return redirect()->route('adminOpiniones');
     }
 
+    // VER CONFIRMAR OPINION
     public function verConfirmar() {
 
         $confirmaciones = UsuarioOpinion::where('estado', 'observacion')->with('usuarios', 'vendedores')->get();
@@ -29,6 +32,7 @@ class AdminOpiniones extends Controller
         return view('admin.opiniones.verConfirmar', ['opiniones' => $confirmaciones, 'numero' => $numero]);
     }
 
+    // CONFIRMAR OPINION
     public function confirmar($id) {
 
         $opinion = UsuarioOpinion::where('id', $id)->first();
@@ -38,6 +42,7 @@ class AdminOpiniones extends Controller
         return redirect()->route('verConfirmarOpinion');
     }
 
+    // DENEGAR OPINION
     public function denegar($id) {
 
         $opinion = UsuarioOpinion::where('id', $id)->first();
@@ -47,6 +52,7 @@ class AdminOpiniones extends Controller
         return redirect()->route('verConfirmarOpinion');
     }
     
+    // BUSCAR OPINION POR USUARIO
     public function buscar(Request $request) {
         $usuarios = User::where('name', 'like', '%' . $request->buscador . '%')->get();
 

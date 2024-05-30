@@ -7,18 +7,21 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
+    // VER TODOS LOS CONTACTOS
     public function contacto(){
         $contacto = Contacto::orderBy('created_at', 'asc')->get();
 
         return view('admin.contacto', ['contactos' => $contacto]);
     }
 
+    // VER CONTACTO
     public function verContacto($id) {
         $contacto = Contacto::where('id', $id)->first();
 
         return view('admin.contacto.verContacto', ['contacto' => $contacto]);
     }
 
+    // ACEPTAR CONTACTO
     public function aceptar($id){
         $contacto = Contacto::where('id', $id)->first();
         $contacto->estado = 'visto';
@@ -27,10 +30,12 @@ class AdminController extends Controller
         return redirect()->route('adminContacto');
     }
 
+    // VER FORMULARIO DE CONTACTO WEB
     public function contactoWeb() {
         return view('web.contacto');
     }
 
+    // GUARDAR CONTACTO WEB
     public function guardarContacto(Request $request){
         $contacto = new Contacto();
         $contacto->nombre = $request->nombre;

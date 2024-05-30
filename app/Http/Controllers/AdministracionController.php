@@ -14,9 +14,7 @@ use Illuminate\Support\Facades\Hash;
 
 class AdministracionController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    // VER INICIO DE ADMINISTRACIÓN
     public function inicio()
     {
         $usuarios = User::count();
@@ -32,27 +30,28 @@ class AdministracionController extends Controller
     }
 
     
-    /**
-     * USUARIOS
-     */
+    // VER TODOS LOS USUARIOS
     public function usuario(){
         $usuarios = User::all();
 
         return view('admin.usuario', ['usuarios' => $usuarios]);
     }
 
+    // ELIMINAR USUARIO
     public function eliminarUsuario($id) {
         User::destroy($id);
 
         return redirect()->back();
     }
 
+    // VER EDITAR USUARIO
     public function editarUsuario($id) {
         $usuario = User::where('id', $id)->first();
 
         return view('admin.usuarios.editUsuario', ['usuario' => $usuario]);
     }
 
+    // EDITAR USUARIO
     public function editUsuario(Request $request, $id) {
         
         $usuario = User::where('id', $id)->first();
@@ -67,11 +66,13 @@ class AdministracionController extends Controller
         return redirect()->route('adminUsuario');
     }
 
+    // VER AÑADIR USUARIO
     public function addUsuario() {
 
         return view('admin.usuarios.addUsuario');
     }
 
+    // AÑADIR USUARIO
     public function addUser(Request $request){
 
         $usuario = new User();
@@ -88,12 +89,14 @@ class AdministracionController extends Controller
         return redirect()->route('adminUsuario');
     }
 
+    // VER EDITAR ROL
     public function editRol($id) {
         $usuario = User::where('id', $id)->first();
 
         return view('admin.usuarios.editRol', ['usuario' => $usuario]);
     }
 
+    // EDITAR ROL
     public function editarRol (Request $request, $id) {
         
         $usuario = User::where('id', $id)->first();
@@ -103,18 +106,21 @@ class AdministracionController extends Controller
         return redirect()->route('adminUsuario');
     }
 
+    // VER USUARIOS ADMINISTRADORES
     public function verAdministrador() {
         $usuario = User::where('rol', 'administrador')->get();
 
         return view('admin.usuario', ['usuarios' => $usuario]);
     }
 
+    // VER USUARIOS
     public function verUsuario() {
         $usuario = User::where('rol', 'usuario')->get();
 
         return view('admin.usuario', ['usuarios' => $usuario]);
     }
 
+    // BUSCADOR USUARIOS POR NOMBRE
     public function buscador(Request $request) {
         $usuario = User::where('name', 'like', '%' . $request->buscador . '%')->get();
 

@@ -51,21 +51,25 @@ class User extends Authenticatable
         ];
     }
 
+    // Relación uno a muchos con la tabla productos
     public function producto()
     {
         return $this->belongsToMany(Producto::class);
     }
 
+    // Relación uno a muchos con la tabla opiniones
     public function productos()
     {
         return $this->belongsToMany(UsuarioProducto::class);
     }
 
+    // Relación uno a muchos con la tabla opiniones
     public function opinion()
     {
         return $this->hasMany(UsuarioOpinion::class);
     }
 
+    // Relación uno a muchos con la tabla favoritos
     public function favorito()  
     {
         return $this->belongsToMany(UsuarioFavorito::class);

@@ -14,11 +14,13 @@ class UsuarioProducto extends Model
         'productoId', 
     ];
 
+    // Relación uno a muchos con la tabla usuarios
     public function productos()
     {
         return $this->belongsTo(Producto::class, 'productoId');
     }
 
+    // Relación uno a muchos con la tabla productos
     public function usuarios()
     {
         return $this->belongsTo(User::class, 'usuarioId');

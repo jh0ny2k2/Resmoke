@@ -16,11 +16,13 @@ class UsuarioOpinion extends Model
         'opition',
     ];
 
+    // Relación uno a muchos con la tabla usuarios
     public function usuarios()
     {
         return $this->belongsTo(User::class, 'usuarioId');
     }
 
+    // Relación uno a muchos con la tabla usuarios
     public function vendedores()
     {
         return $this->belongsTo(User::class, 'vendedorId');

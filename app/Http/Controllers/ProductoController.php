@@ -13,10 +13,6 @@ use Illuminate\Support\Facades\Storage;
 
 class ProductoController extends Controller
 {
-    /**
-     * Display a listing of the resource. 
-     */
-
     //VER TODOS
     public function index()
     {
@@ -41,9 +37,7 @@ class ProductoController extends Controller
         return view('web.productos', ['productos' => $productos]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+    //VER FORMULARIO DE CREAR PRODUCTO
     public function create()
     {
         $categorias = Categoria::all();
@@ -51,9 +45,7 @@ class ProductoController extends Controller
         return view('web.addProducto', ['categorias' => $categorias]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+    //GUARDAR PRODUCTO
     public function store(Request $request)
     {
         
@@ -119,9 +111,7 @@ class ProductoController extends Controller
         
     }
 
-    /**
-     * Display the specified resource.
-     */
+    //VER UN PRODUCTO
     public function show($id)
     {
 
@@ -143,6 +133,7 @@ class ProductoController extends Controller
         return view('web.verproducto', ['producto' => $producto, 'productoo' => $productoo, 'favorito' => $favorito]);
     }
 
+    // VER MIS PRODUCTOR
     public function verMisProductos() {
         $usuario = User::where('id', Auth::user()->id)->first();
         $productoVenta = UsuarioProducto::where('usuarioId', Auth::user()->id)->with('productos')->get();
@@ -150,6 +141,7 @@ class ProductoController extends Controller
         return view('web.perfil.enVenta', ['usuario' => $usuario, 'productos' => $productoVenta]);
     }
 
+    // PONER PRODUCTO COMO RESERVADO
     public function ponerReservado($id) {
 
         $producto = Producto::where('id', $id)->first();
@@ -159,6 +151,7 @@ class ProductoController extends Controller
         return redirect()->back();
     }
 
+    // PONER PRODUCTO COMO VENDIDO
     public function ponerVendido($id) {
 
         $producto = Producto::where('id', $id)->first();
@@ -168,6 +161,7 @@ class ProductoController extends Controller
         return redirect()->back();
     }
 
+    // QUITAR PRODUCTO COMO VENDIDO
     public function quitarVendido($id) {
         $producto = Producto::where('id', $id)->first();
         $producto->estado = 'activo';
@@ -176,6 +170,7 @@ class ProductoController extends Controller
         return redirect()->back();
     }
 
+    // VER FORMULARIO EDITAR PRODUCTO
     public function edit($id) {
 
         $producto = Producto::where('id', $id)->first();
@@ -184,6 +179,7 @@ class ProductoController extends Controller
         return view('web.editProducto', ['producto' => $producto, 'categorias' => $categorias]);
     }
 
+    // EDITAR PRODUCTO
     public function editar(Request $request, $id) {
 
             $producto = Producto::where('id', $id)->first();
@@ -237,6 +233,7 @@ class ProductoController extends Controller
 
     }
 
+    // ELIMINAR FOTO EDITAR PRODUCTO   
     public function destroy($id, $i)
     {
        $nombre = 'producto_' . $id . 'Extra'. $i .'.jpg';
