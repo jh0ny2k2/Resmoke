@@ -1,8 +1,10 @@
+<!-- BARRA DE NAVEGACION -->
 <x-navbaradmin></x-navbaradmin>
 
-<!-- Content section -->
-
+<!-- CONTENIDO -->
 <div class="flex-1 p-10 ml-60">
+
+    <!-- USUARIOS -->
     <div class="flex justify-between mb-6">
         <h1 class="text-4xl font-bold">Usuarios Registrados</h1>
         <form action="/admin/buscadorUsuario" method="post" class="flex w-1/2 max-w-xl">
@@ -14,18 +16,27 @@
         </form>
     </div>
 
+    <!-- BOTONES -->
     <div class="flex justify-between mb-5">
+
+    <!-- AÑADIR USUARIO -->
     <a href="{{ route('verFormularioUsuario') }}">
         <button class="py-2 px-4 bg-blue-600 hover:bg-blue-700 focus:ring-blue-500 focus:ring-offset-blue-200 text-white transition ease-in duration-200 text-center text-sm font-medium shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg">
             Añadir Usuario
         </button>
     </a>
+
+    <!-- FILTROS -->
     <div class="flex space-x-4">
+
+        <!-- FILTRO ADMINISTRADOR -->
         <a href="{{ route('verAdministrador') }}">
             <button class="py-2 px-4 bg-blue-600 hover:bg-blue-700 focus:ring-blue-500 focus:ring-offset-blue-200 text-white transition ease-in duration-200 text-center text-sm font-medium shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg">
                 Administrador
             </button>
         </a>
+
+        <!-- FILTRO USUARIO -->
         <a href="{{ route('verUsuario') }}">
             <button class="py-2 px-4 bg-blue-600 hover:bg-blue-700 focus:ring-blue-500 focus:ring-offset-blue-200 text-white transition ease-in duration-200 text-center text-sm font-medium shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg">
                 Usuarios
@@ -35,6 +46,7 @@
 </div>
 
 
+<!-- TABLA DE USUARIOS -->
     <div class="overflow-x-auto">
         <table class="min-w-full text-sm text-left text-gray-500">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50">

@@ -1,8 +1,10 @@
+<!-- BARRA DE NAVEGACION -->
 <x-navbarvproducto></x-navbarvproducto>
 
 <!-- BOTON VOLVER ATRAS -->
 <x-boton-atras></x-boton-atras>
 
+<!-- AÑADIR OPINION -->
 <div class="flex justify-center min-h-52">
   <div class="max-w-4xl w-full my-5 bg-white rounded-lg shadow-xl">
     <form action="/web/addOpinion/{{ $usuario->id }}" method="POST" enctype="multipart/form-data" class="w-full">

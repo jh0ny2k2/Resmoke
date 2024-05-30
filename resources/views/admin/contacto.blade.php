@@ -1,9 +1,13 @@
+<!-- BARRA DE NAVEGACION -->
 <x-navbaradmin></x-navbaradmin>
 
+<!-- CONTENIDO -->
 <div class="flex-1 p-10 ml-60">
     <div class="flex justify-between mb-6">
         <h1 class="text-4xl font-bold">Contacto</h1>
     </div>
+
+    <!-- TABLA DE CONTACTO -->
     <div class="overflow-x-auto">
         <table class="min-w-full text-sm text-left text-gray-500">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50">

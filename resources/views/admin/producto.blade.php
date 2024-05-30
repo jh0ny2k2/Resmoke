@@ -1,8 +1,12 @@
+<!-- BARRA DE NAVEGACIÓN -->
 <x-navbaradmin></x-navbaradmin>
 
+<!-- CONTENIDO -->
 <div class="flex-1 p-10 ml-60">
     <div class="flex justify-between mb-6">
         <h1 class="text-4xl font-bold">Productos</h1>
+
+        <!-- BUSCADOR -->
         <form action="/admin/buscadorProducto" method="post" class="flex w-1/2 max-w-xl">
             @csrf
             <input type="text" name="buscador" id="buscador" placeholder="Buscar productos..." class="w-full px-4 py-2 border rounded-l-lg focus:outline-none focus:border-blue-500" />
@@ -12,12 +16,17 @@
         </form>
     </div>
 
+    <!-- BOTONES -->
     <div class="flex justify-between mb-6">
+
+        <!-- AÑADIR PRODUCTO -->
         <a href="{{ route('verFormularioProducto') }}">
             <button class="py-2 px-4 bg-blue-600 hover:bg-blue-700 focus:ring-blue-500 focus:ring-offset-blue-200 text-white transition ease-in duration-200 text-center text-sm font-medium shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg">
                 Añadir Producto
             </button>
         </a>
+
+        <!-- VER CONFIRMACIONES -->
         <a href="{{ route('verConfirmar') }}">
             <button class="py-2 px-4 bg-blue-600 hover:bg-blue-700 focus:ring-blue-500 focus:ring-offset-blue-200 text-white transition ease-in duration-200 text-center text-sm font-medium shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg">
                 Ver Confirmación
@@ -25,6 +34,7 @@
         </a>
     </div>
 
+    <!-- TABLA DE PRODUCTOS -->
     <div class="overflow-x-auto">
         <table class="min-w-full text-sm text-left text-gray-500">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50">

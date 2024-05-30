@@ -54,7 +54,8 @@
       </div>
     </div>
   </div>
-
+  
+  <!-- CAMBIO ESTADO DEL PRODUCTO -->
   @auth
   @if ($productoo->usuarioId === Auth::user()->id)
   @if ($producto->estado === 'activo')
@@ -77,12 +78,13 @@
     <a href="/web/quitarReservado/{{ $producto->id }}" class="bg-white hover:bg-gray-200 text-dark border-2 border-gray-900 font-bold py-2 px-4 rounded-lg transition duration-200 ease-in-out">
       Quitar Reservar
     </a>
-    <a href="/web/vendido/{{ $producto->id }}" class="bg-white hover:bg-gray-200 text-dark border border-dark font-bold py-2 px-4 rounded transition duration-200 ease-in-out">
+    <a href="/web/vendido/{{ $producto->id }}" class="bg-white hover:bg-gray-200 text-dark border-2 border-gray-900 font-bold py-2 px-4 rounded-lg transition duration-200 ease-in-out">
       Vendido
     </a>
   </div>
   @endif
 
+  <!-- ESTADO DEL PRODUCTO -->
   <br>
   @if ($producto->estado === 'observacion')
   <p class="mt-1 uppercase pl-4 text-lg font-bold text-red-400">{{ $producto->estado }}</p>
@@ -164,6 +166,7 @@
 
 <x-footer></x-footer>
 
+<!-- INFORMACION MODAL -->
 
 <div id="myModal" class="modal">
   <!-- Contenido del modal -->
@@ -195,6 +198,7 @@
 </div>
 
 
+<!-- MODAL -->
 <script>
   // Función para abrir el modal
   function openModal() {
@@ -207,10 +211,11 @@
   }
 </script>
 
-
+<!-- MAPA -->
 <script>
+  // GOOGLE MAPS - GEOCODING API
   function obtenerCoordenadas() {
-    var direccion = "{{ $producto->localizacion}}"; // Reemplaza esto con la dirección que deseas geocodificar
+    var direccion = "{{ $producto->localizacion}}";
     var geocoder = new google.maps.Geocoder();
 
     geocoder.geocode({
@@ -229,6 +234,7 @@
     });
   }
 
+  // MAPA HERE MAPS
   function inicializarMapa(latitud, longitud) {
     // Inicializar la plataforma con tus credenciales
     let platform = new H.service.Platform({
@@ -259,7 +265,3 @@
 
   obtenerCoordenadas();
 </script>
-
-<script>
-    
-  </script>

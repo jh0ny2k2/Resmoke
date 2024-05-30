@@ -1,13 +1,18 @@
+<!-- BARRA DE NAVEGACION -->
 <x-navbaradmin></x-navbaradmin>
 
+<!-- CONTENIDO -->
 <div class="flex-1 p-10 ml-60">
     <h1 class="text-4xl font-bold mb-6 text-gray-800">Contacto {{ $contacto->id }}</h1>
+
+    <!-- BOTON VOLVER ATRAS -->
     <a href="{{ url()->previous() }}" class="inline-block">
         <button class="py-2 px-4 mb-5 bg-blue-600 hover:bg-blue-700 focus:ring-blue-500 focus:ring-offset-blue-200 text-white transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg">
             Volver Atrás
         </button>
     </a>
 
+    <!-- CONTENIDO -->
     <div class="bg-white shadow overflow-hidden sm:rounded-lg justify-center">
         <div class="px-4 py-5 sm:p-6 grid grid-cols-2 gap-4">
             <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 rounded">

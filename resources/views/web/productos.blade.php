@@ -1,5 +1,7 @@
+<!-- BARRA DE NAVEGACION -->
 <x-nav-bar-productos></x-nav-bar-productos>
     
+<!-- PRODUCTOS -->
 <section class="text-gray-600 body-font">
     <div class="container px-5 py-8 mx-auto">
         <div class="flex flex-wrap -m-4">
@@ -23,4 +25,5 @@
     </div>
 </section>
 
+<!-- FOOTER -->
 <x-footer></x-footer>

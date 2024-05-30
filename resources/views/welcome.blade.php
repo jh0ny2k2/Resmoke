@@ -1,12 +1,14 @@
-<x-nav-bar-inicio>
+<!-- BARRA DE NAVEGACION -->
+<x-nav-bar-inicio></x-nav-bar-inicio>
 
-</x-nav-bar-inicio>
-
+<!-- BANNER -->
 <section class="text-gray-900 body-font">
     <div class="container mx-auto flex px-5 py-56 items-center justify-center flex-col">
         <div class="text-center lg:w-2/3 w-full">
             <h1 class="title-font sm:text-6xl text-5xl mb-4 font-medium">Encuentra lo que necesitas</h1>
             <p class="mb-8 font-mono leading-relaxed">Vende lo que no utilizas</p>
+
+            <!-- BUSCADOR -->
             <form method="post" action="{{ route('buscador') }}" class="flex w-full justify-center items-end">
             @csrf
                 <div class="relative mr-4 lg:w-full xl:w-1/2 w-2/4 md:w-full text-left">
@@ -18,6 +20,7 @@
     </div>
 </section>
 
+<!-- CATEGORIAS -->
 <section class="text-gray-600 body-font">
     <div class="container px-5 py-24 mx-auto">
         <div class="flex flex-wrap w-full mb-12 flex-col">
@@ -38,6 +41,7 @@
     </div>
 </section>
 
+<!-- PRODUCTOS -->
 <section class="text-gray-600 body-font">
     <div class="container px-5 py-24 mx-auto">
         <div class="flex flex-wrap w-full mb-12 flex-col">
@@ -75,7 +79,5 @@
     
 </section>
 
-
-<x-footer>
-
-</x-footer>
+<!-- FOOTER -->
+<x-footer></x-footer>

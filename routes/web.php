@@ -20,48 +20,98 @@ use Illuminate\Support\Facades\Route;
 // RUTAS PARA LA WEB
 Route::prefix('web')->group(function() {
     //Productos
-    Route::get('/verTodos', [ProductoController::class, 'index'])->name('verTodos');        // VER TODOS LOS PRODUCTOS QUE HAY EN EL MOMENTO QUE ESTEN ACTIVOS
-    Route::get('/verCategoria/{id}', [ProductoController::class, 'indexCategoria']);        // VER LOS PROYECTO PERO POR CATEGORIA
-    Route::post('/buscador', [ProductoController::class, 'buscador'])->name('buscador');    // BUSCAR UN PRODUCTO POR NOMBRE 
-    Route::get('/verProducto/{id}', [ProductoController::class, 'show'])->name('verProducto');                   // VER MAS INFORMACION DE UN PRODUCTO EN ESPECÍFICO
 
-    Route::get('/contacto', [AdminController::class, 'contactoWeb'])->name('contactoWeb');
-    Route::post('/contacto', [AdminController::class, 'guardarContacto'])->name('guardarContacto');
+    // VER TODOS LOS PRODUCTOS QUE HAY EN EL MOMENTO QUE ESTEN ACTIVOS
+    Route::get('/verTodos', [ProductoController::class, 'index'])->name('verTodos');   
+    
+    // VER LOS PROYECTO PERO POR CATEGORIA
+    Route::get('/verCategoria/{id}', [ProductoController::class, 'indexCategoria']); 
+    
+    // BUSCAR UN PRODUCTO POR NOMBRE 
+    Route::post('/buscador', [ProductoController::class, 'buscador'])->name('buscador');  
+    
+    // VER MAS INFORMACION DE UN PRODUCTO EN ESPECÍFICO
+    Route::get('/verProducto/{id}', [ProductoController::class, 'show'])->name('verProducto');  
+
+    // VER FORMULARIO DE CONTACTO
+    Route::get('/contacto', [AdminController::class, 'contactoWeb'])->name('contactoWeb');   
+
+    // GUARDAR CONTACTO
+    Route::post('/contacto', [AdminController::class, 'guardarContacto'])->name('guardarContacto'); 
 
     
     // RUTAS DE LA WEB PERO PARA LOS QUE ESTAN REGISTRADOS O LOGUEADOSS
     Route::middleware('auth')->group(function () {
 
-        // PRODUCTOss
-        Route::get('/addProducto', [ProductoController::class, 'create'])->name('addProducto');     //VER FORMULARIO AÑADIR PRODUCTO
-        Route::post('/addproducto', [ProductoController::class, 'store'])->name('storeProducto');      //AÑADIR PRODUCTO A LA VENTA
-        Route::get('/editProducto/{id}', [ProductoController::class, 'edit']);
-        Route::post('/editarProducto/{id}', [ProductoController::class, 'editar']);
-        Route::get('/eliminarProducto/{id}/{i}', [ProductoController::class, 'destroy']);
+        // PRODUCTOS
 
-        // Favorito
-        Route::get('/addFavorito/{id}', [UsuarioFavoritoController::class, 'favorito']);            //AÑADIR A FAVORITO
-        Route::get('/deleteFavorito/{id}', [UsuarioFavoritoController::class, 'deleteFavorito']);           //ELIMINAR UN FAVORITO
+        //VER FORMULARIO AÑADIR PRODUCTO
+        Route::get('/addProducto', [ProductoController::class, 'create'])->name('addProducto');
 
-        Route::get('/reservado/{id}', [ProductoController::class, 'ponerReservado']);
-        Route::get('/vendido/{id}', [ProductoController::class, 'ponerVendido']);
-        Route::get('/quitarReservado/{id}', [ProductoController::class, 'quitarVendido']);
-        Route::get('/quitarVendido/{id}', [ProductoController::class, 'quitarVendido']);
+        //AÑADIR PRODUCTO A LA VENTA
+        Route::post('/addproducto', [ProductoController::class, 'store'])->name('storeProducto');
 
-        Route::get('/productoVenta', [ProductoController::class, 'verMisProductos'])->name('venta');
-        Route::get('/verFavoritos', [UsuarioFavoritoController::class, 'verMisFavoritos'])->name('favoritos');
+        //VER FORMULARIO EDITAR PRODUCTO  
+        Route::get('/editProducto/{id}', [ProductoController::class, 'edit']);  
+        
+        //EDITAR PRODUCTO
+        Route::post('/editarProducto/{id}', [ProductoController::class, 'editar']);  
+
+        //ELIMINAR PRODUCTO
+        Route::get('/eliminarProducto/{id}/{i}', [ProductoController::class, 'destroy']); 
+        
+        
+
+        // FAVORITOS
+
+        //AÑADIR A FAVORITO
+        Route::get('/addFavorito/{id}', [UsuarioFavoritoController::class, 'favorito']);        
+        
+        //ELIMINAR UN FAVORITO    
+        Route::get('/deleteFavorito/{id}', [UsuarioFavoritoController::class, 'deleteFavorito']);           
+
+        //PONER RESERVADO
+        Route::get('/reservado/{id}', [ProductoController::class, 'ponerReservado']);               
+        
+        //PONER VENDIDO
+        Route::get('/vendido/{id}', [ProductoController::class, 'ponerVendido']);                  
+        
+        //QUITAR RESERVADO
+        Route::get('/quitarReservado/{id}', [ProductoController::class, 'quitarVendido']);         
+        
+        //QUITAR VENDIDO
+        Route::get('/quitarVendido/{id}', [ProductoController::class, 'quitarVendido']);           
+
+        // VER MIS PRODUCTOS
+        Route::get('/productoVenta', [ProductoController::class, 'verMisProductos'])->name('venta'); 
+
+        // VER MIS FAVORITOS
+        Route::get('/verFavoritos', [UsuarioFavoritoController::class, 'verMisFavoritos'])->name('favoritos'); 
 
         // PERFIL      
-        Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-        Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+        //VER PERFIL
         Route::get('/verPerfil', [ProfileController::class, 'verPerfil'])->name('verPerfil');
+
+        //EDITAR PERFIL
         Route::get('/editPerfil', [ProfileController::class, 'edit'])->name('editProfile');
+
+        //GUARDAR PERFIL
         Route::post('/editPerfil', [ProfileController::class, 'editar']);
 
+        //VER PERFIL DE OTRO USUARIO
         Route::get('/verPerfilVendedor/{id}', [ProfileController::class, 'verPerfilVendedor']);
+
+        //VER MIS PRODUCTOS
         Route::get('/verProductosVendedor/{id}', [UsuarioOpinionController::class, 'verProductos']);
+
+        //VER MIS OPINIONES
         Route::get('/verOpinionesVendedor/{id}', [UsuarioOpinionController::class, 'verOpiniones'])->name('verOpinionesVendedor');
+
+        //VER MIS OPINIONES
         Route::get('/addOpinion/{id}', [UsuarioOpinionController::class, 'addOpinion']);
+
+        //AÑADIR OPINION
         Route::post('/addOpinion/{id}', [UsuarioOpinionController::class, 'add']);
     });
 });
@@ -69,56 +119,134 @@ Route::prefix('web')->group(function() {
 // RUTAS CREADAS PARA LOS ADMINISTRADORES QUE TE VERIFICA SI TIENES EL ROL DE ADMINISTRADOR Y SI LO TIENES PUEDES REALIZAR LAS ACCIONES DE ADMIN
 Route::prefix('admin')->middleware(['auth', 'verified', 'mdrol:administrador'])->group(function () {
     //INICIO 
-    Route::get('/inicio', [AdministracionController::class, 'inicio'])->name('adminInicio');            // VER INICIO DE ADMIN
+
+    // VER INICIO DE ADMIN
+    Route::get('/inicio', [AdministracionController::class, 'inicio'])->name('adminInicio');            
 
     //USUARIO
-    Route::get('/usuario', [AdministracionController::class, 'usuario'])->name('adminUsuario');         // VER TODOS LOS USUARIOS REGISTRADOS 
-    Route::get('/eliminarUsuario/{id}', [AdministracionController::class, 'eliminarUsuario']);          // ELIMINAR USUARIO 
-    Route::get('/editarUsuario/{id}', [AdministracionController::class, 'editarUsuario']);               // VER FORMULARIO EDITAR USUARIO 
-    Route::post('/editUsuario/{id}', [AdministracionController::class, 'editUsuario']);                 
+
+    // VER TODOS LOS USUARIOS REGISTRADOS 
+    Route::get('/usuario', [AdministracionController::class, 'usuario'])->name('adminUsuario');     
+    
+    // ELIMINAR USUARIO 
+    Route::get('/eliminarUsuario/{id}', [AdministracionController::class, 'eliminarUsuario']); 
+    
+    // VER FORMULARIO EDITAR USUARIO 
+    Route::get('/editarUsuario/{id}', [AdministracionController::class, 'editarUsuario']);    
+    
+    // EDITAR USUARIO
+    Route::post('/editUsuario/{id}', [AdministracionController::class, 'editUsuario']);    
+    
+    // VER FORMULARIO AÑADIR USUARIO
     Route::get('/addUsuario', [AdministracionController::class, 'addUsuario'])->name('verFormularioUsuario');
+
+    // AÑADIR USUARIO
     Route::post('/addUser', [AdministracionController::class, 'addUser']);
+
+    // VER FORMILARIO EDITAR ROLES
     Route::get('/editRol/{id}', [AdministracionController::class, 'editRol']);
+
+    // EDITAR ROL
     Route::post('/editRol/{id}', [AdministracionController::class, 'editarRol']);
+
+    // VER ADMINISTRADOR
     Route::get('/verAdministrador', [AdministracionController::class, 'verAdministrador'])->name('verAdministrador');
+
+    // VER USUARIOS
     Route::get('/verUsuarios', [AdministracionController::class, 'verUsuario'])->name('verUsuario');
+
+    // BUSCADOR DE USUARIOS
     Route::post('/buscadorUsuario', [AdministracionController::class, 'buscador']);
 
     //PRODUCTOS
-    Route::get('/productos', [AdminProducto::class, 'productos'])->name('adminProducto');    // VER TODOS LOS PRODUCTOS 
-    Route::get('/eliminarProducto/{id}', [AdminProducto::class, 'eliminarProducto']);        // ELIMINAR PRODUCTO 
-    Route::get('/editProducto/{id}', [AdminProducto::class, 'editarProducto']);            // VER FORMULARIO DE EDITAR PRODUCTO 
-    Route::post('/editarProducto/{id}', [AdminProducto::class, 'editProducto']);                    // EDITAR PRODUCTO 
+
+    // VER TODOS LOS PRODUCTOS 
+    Route::get('/productos', [AdminProducto::class, 'productos'])->name('adminProducto');    
+
+    // ELIMINAR PRODUCTO 
+    Route::get('/eliminarProducto/{id}', [AdminProducto::class, 'eliminarProducto']); 
+    
+    // VER FORMULARIO DE EDITAR PRODUCTO 
+    Route::get('/editProducto/{id}', [AdminProducto::class, 'editarProducto']);       
+    
+    // EDITAR PRODUCTO 
+    Route::post('/editarProducto/{id}', [AdminProducto::class, 'editProducto']);           
+    
+    // VER FORMULARIO AÑADIR PRODUCTO
     Route::get('/addProducto', [AdminProducto::class, 'verFormProducto'])->name('verFormularioProducto');
+
+    // AÑADIR PRODUCTO
     Route::post('/addProducto', [AdminProducto::class, 'addProducto']);
+
+    // VER CONFIRMAR PRODUCTO
     Route::get('/verConfirmar', [AdminProducto::class, 'verConfirmar'])->name('verConfirmar');
+
+    // CONFIRMAR PRODUCTO
     Route::get('/confirmar/{id}', [AdminProducto::class, 'confirmar']);
+
+    // DENEGAR PRODUCTO
     Route::get('/denegar/{id}', [AdminProducto::class, 'denegar']);
+
+    // VER PRODUCTO
     Route::get('/verProducto/{id}', [AdminProducto::class, 'verProducto']);
+
+    // BUSCADOR DE PRODUCTOS
     Route::post('/buscadorProducto', [AdminProducto::class, 'buscador']);
 
     //CATEGORIAS
-    Route::get('/categorias', [AdminCategoría::class, 'categoria'])->name('adminCategoria');  // VER TODAS LAS CATEGORIAS 
+
+    // VER TODAS LAS CATEGORIAS 
+    Route::get('/categorias', [AdminCategoría::class, 'categoria'])->name('adminCategoria'); 
+    
+    // ELIMINAR CATEGORIA
     Route::get('/eliminarCategoria/{id}', [AdminCategoría::class, 'eliminar']);
+
+    // VER FORMULARIO EDITAR CATEGORIA
     Route::get('/verAdd', [AdminCategoría::class, 'verAdd'])->name('verAddCategoria');
+
+    // AÑADIR CATEGORIA
     Route::post('/addCategoria', [AdminCategoría::class, 'addCategoria']);
 
     //FAVORITOS
-    Route::get('/favoritos', [AdminFavoritos::class, 'favorito'])->name('adminFavorito');     // VER TODOS LOS FAVORITOS
+
+    // VER TODOS LOS FAVORITOS
+    Route::get('/favoritos', [AdminFavoritos::class, 'favorito'])->name('adminFavorito');  
+    
+    // VER TODOS LOS FAVORITOS
     Route::get('/eliminarFavorito/{id}', [AdminFavoritos::class, 'eliminar']);
+
+    // VER TODOS LOS FAVORITOS
     Route::post('/buscarFavorito', [AdminFavoritos::class, 'buscar'])->name('buscarFavorito');
 
     //OPINIONES
-    Route::get('/opiniones', [AdminOpiniones::class, 'opiniones'])->name('adminOpiniones');   // VER TODAS LAS RESEÑAS 
+
+    // VER TODAS LAS RESEÑAS
+    Route::get('/opiniones', [AdminOpiniones::class, 'opiniones'])->name('adminOpiniones');    
+    
+    // BUSCADOR DE OPINIONES
     Route::post('/buscarOpinion', [AdminOpiniones::class, 'buscar'])->name('buscarOpinion');
+
+    // ELIMINAR OPINION
     Route::get('/eliminarOpinion/{id}', [AdminOpiniones::class, 'eliminar']);
+
+    // VER CONFIRMAR OPINION
     Route::get('/verConfirmarOpinion', [AdminOpiniones::class, 'verConfirmar'])->name('verConfirmarOpinion');
+
+    // CONFIRMAR OPINION
     Route::get('/confirmarOpinion/{id}', [AdminOpiniones::class, 'confirmar']);
+
+    // DENEGAR OPINION
     Route::get('/denegarOpinion/{id}', [AdminOpiniones::class, 'denegar']);
 
     //CONTACTO
+
+    // VER TODOS LOS CONTACTOS
     Route::get('/contacto', [AdminController::class, 'contacto'])->name('adminContacto');
+
+    // VER CONTACTO
     Route::get('/verContacto/{id}', [AdminController::class, 'verContacto']);
+
+    // ACEPTAR CONTACTO
     Route::get('/aceptarContacto/{id}', [AdminController::class, 'aceptar']);
 });
 

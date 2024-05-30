@@ -1,8 +1,12 @@
+<!-- BARRA DE NAVEGACION -->
 <x-navbaradmin></x-navbaradmin>
 
+<!-- CONTENIDO -->
 <div class="flex-1 p-10 ml-60">
             <div class="flex justify-between mb-6">
                 <h1 class="text-4xl font-bold">Favorito</h1>
+
+                <!-- BUSCADOR -->
                 <form action="/admin/buscarFavorito" method="post" class="flex w-1/2 max-w-xl">
                     @csrf
                     <input type="text" name="buscador" id="buscador" placeholder="Buscar usuario ..." class="w-full px-4 py-2 border rounded-l-lg focus:outline-none focus:border-blue-500" />
@@ -11,6 +15,8 @@
                     </button>
                 </form>
             </div>
+
+            <!-- TABLA DE FAVORITOS -->
             <div class="overflow-x-auto">
                 <table class="min-w-full text-sm text-left text-gray-500">
                     <thead class="text-xs text-gray-700 uppercase bg-gray-50">
