@@ -9,6 +9,7 @@ use App\Models\UsuarioFavorito;
 use App\Models\UsuarioProducto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class ProductoController extends Controller
 {
@@ -232,8 +233,17 @@ class ProductoController extends Controller
                 );
             }
 
-            return redirect()->back();
+            return redirect()->route('verProducto', ['id' => $id]);
 
+    }
+
+    public function destroy($id, $i)
+    {
+       $nombre = 'producto_' . $id . 'Extra'. $i .'.jpg';
+
+         Storage::delete('public/' . $nombre);
+
+         return redirect()->back();
     }
 
 }

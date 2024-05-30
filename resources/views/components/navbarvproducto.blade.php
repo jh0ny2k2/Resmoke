@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resmoke - </title>
+    <title>Resmoke</title>
 
-    <title>Geocoding Service</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 
     <!-- ICONO PAGINA -->
@@ -19,11 +19,16 @@
     <!-- ICONOS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
 
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0PxmE61Ua3Aug8uBgC9fFyevNr5OWKJw"></script>
+    
+
     <!-- MAPAS -->
     <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
     <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
     <script src="https://js.api.here.com/v3/3.1/mapsjs-ui.js" type="text/javascript" charset="utf-8"></script>
     <link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.1/mapsjs-ui.css" />
+
+    
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
@@ -103,9 +108,9 @@
         </div>
     </header>
 
-    <a href="/chatify">
-        <div class="fixed bottom-14 right-14 shadow-lg border-2 border-gray-900 rounded-full">
-            <button class="bg-white p-4 rounded-full shadow-lg">
+    <a href="/chatify" class="fixed bottom-14 right-14 z-50">
+        <div class="bg-white border-2 border-gray-900 rounded-full shadow-lg">
+            <button class="bg-white p-4 rounded-full shadow-lg focus:outline-none">
                 <i class="material-icons text-gray-900 text-3xl">chat</i>
             </button>
         </div>

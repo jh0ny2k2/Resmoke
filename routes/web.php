@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminCategoría;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminFavoritos;
 use App\Http\Controllers\AdministracionController;
 use App\Http\Controllers\AdminOpiniones;
@@ -22,17 +23,21 @@ Route::prefix('web')->group(function() {
     Route::get('/verTodos', [ProductoController::class, 'index'])->name('verTodos');        // VER TODOS LOS PRODUCTOS QUE HAY EN EL MOMENTO QUE ESTEN ACTIVOS
     Route::get('/verCategoria/{id}', [ProductoController::class, 'indexCategoria']);        // VER LOS PROYECTO PERO POR CATEGORIA
     Route::post('/buscador', [ProductoController::class, 'buscador'])->name('buscador');    // BUSCAR UN PRODUCTO POR NOMBRE 
-    Route::get('/verProducto/{id}', [ProductoController::class, 'show']);                   // VER MAS INFORMACION DE UN PRODUCTO EN ESPECÍFICO
+    Route::get('/verProducto/{id}', [ProductoController::class, 'show'])->name('verProducto');                   // VER MAS INFORMACION DE UN PRODUCTO EN ESPECÍFICO
+
+    Route::get('/contacto', [AdminController::class, 'contactoWeb'])->name('contactoWeb');
+    Route::post('/contacto', [AdminController::class, 'guardarContacto'])->name('guardarContacto');
 
     
     // RUTAS DE LA WEB PERO PARA LOS QUE ESTAN REGISTRADOS O LOGUEADOSS
     Route::middleware('auth')->group(function () {
 
-        // PRODUCTO
+        // PRODUCTOss
         Route::get('/addProducto', [ProductoController::class, 'create'])->name('addProducto');     //VER FORMULARIO AÑADIR PRODUCTO
         Route::post('/addproducto', [ProductoController::class, 'store'])->name('storeProducto');      //AÑADIR PRODUCTO A LA VENTA
         Route::get('/editProducto/{id}', [ProductoController::class, 'edit']);
         Route::post('/editarProducto/{id}', [ProductoController::class, 'editar']);
+        Route::get('/eliminarProducto/{id}/{i}', [ProductoController::class, 'destroy']);
 
         // Favorito
         Route::get('/addFavorito/{id}', [UsuarioFavoritoController::class, 'favorito']);            //AÑADIR A FAVORITO
@@ -55,7 +60,7 @@ Route::prefix('web')->group(function() {
 
         Route::get('/verPerfilVendedor/{id}', [ProfileController::class, 'verPerfilVendedor']);
         Route::get('/verProductosVendedor/{id}', [UsuarioOpinionController::class, 'verProductos']);
-        Route::get('/verOpinionesVendedor/{id}', [UsuarioOpinionController::class, 'verOpiniones']);
+        Route::get('/verOpinionesVendedor/{id}', [UsuarioOpinionController::class, 'verOpiniones'])->name('verOpinionesVendedor');
         Route::get('/addOpinion/{id}', [UsuarioOpinionController::class, 'addOpinion']);
         Route::post('/addOpinion/{id}', [UsuarioOpinionController::class, 'add']);
     });
@@ -110,6 +115,11 @@ Route::prefix('admin')->middleware(['auth', 'verified', 'mdrol:administrador'])-
     Route::get('/verConfirmarOpinion', [AdminOpiniones::class, 'verConfirmar'])->name('verConfirmarOpinion');
     Route::get('/confirmarOpinion/{id}', [AdminOpiniones::class, 'confirmar']);
     Route::get('/denegarOpinion/{id}', [AdminOpiniones::class, 'denegar']);
+
+    //CONTACTO
+    Route::get('/contacto', [AdminController::class, 'contacto'])->name('adminContacto');
+    Route::get('/verContacto/{id}', [AdminController::class, 'verContacto']);
+    Route::get('/aceptarContacto/{id}', [AdminController::class, 'aceptar']);
 });
 
 // RUTA CREADA PARA CERRAR SESIÓN

@@ -23,7 +23,7 @@
             <thead class="text-xs text-gray-700 uppercase bg-gray-50">
                 <tr>
                     <th scope="col" class="px-6 py-3">Nombre Comprador</th>
-                    <th scope="col" class="px-6 py-3">Nombre Vendedor</th>
+                    <th scope="col" class=11"px-6 py-3">Nombre Vendedor</th>
                     <th scope="col" class="px-6 py-3">Opinión</th>
                     <th scope="col" class="px-6 py-3">Estado</th>
                     <th scope="col" class="px-6 py-3">Acciones</th>

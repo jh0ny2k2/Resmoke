@@ -26,7 +26,7 @@ class UsuarioOpinionController extends Controller
         $opinion->estado = 'observacion';
         $opinion->save();
 
-        return redirect()->back();
+        return redirect()->route('verOpinionesVendedor', ['id' => $id]);
     }
 
     public function verOpiniones($id) {

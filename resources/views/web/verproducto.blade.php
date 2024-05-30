@@ -22,31 +22,31 @@
           <div class="flex flex-wrap justify-center items-center h-full">
             <div class="p-2 w-1/2">
               @if (Storage::exists('public/producto_' . $producto->id . 'Extra1.jpg'))
-                <img src="{{ asset('storage/producto_'. $producto->id .'Extra1.jpg') }}" alt="Imagen principal del producto" class="w-full border-2 h-auto object-cover rounded-lg" />
+              <img src="{{ asset('storage/producto_'. $producto->id .'Extra1.jpg') }}" alt="Imagen principal del producto" class="w-full border-2 h-auto object-cover rounded-lg" />
               @else
-                <img src="{{ asset('storage/noFoto.png') }}" alt="Imagen predeterminada" class="w-full border-2 h-auto object-cover rounded-lg" />
+              <img src="{{ asset('storage/noFoto.png') }}" alt="Imagen predeterminada" class="w-full border-2 h-auto object-cover rounded-lg" />
               @endif
             </div>
             <div class="p-2 w-1/2">
               @if (Storage::exists('public/producto_' . $producto->id . 'Extra2.jpg'))
-                <img src="{{ asset('storage/producto_'. $producto->id .'Extra2.jpg') }}" alt="Imagen principal del producto" class="w-full border-2 h-auto object-cover rounded-lg" />
+              <img src="{{ asset('storage/producto_'. $producto->id .'Extra2.jpg') }}" alt="Imagen principal del producto" class="w-full border-2 h-auto object-cover rounded-lg" />
               @else
-                <img src="{{ asset('storage/noFoto.png') }}" alt="Imagen predeterminada" class="w-full border-2 h-auto object-cover rounded-lg" />
+              <img src="{{ asset('storage/noFoto.png') }}" alt="Imagen predeterminada" class="w-full border-2 h-auto object-cover rounded-lg" />
               @endif
 
             </div>
             <div class="p-2 w-1/2">
               @if (Storage::exists('public/producto_' . $producto->id . 'Extra3.jpg'))
-                <img src="{{ asset('storage/producto_'. $producto->id .'Extra3.jpg') }}" alt="Imagen principal del producto" class="w-full border-2 h-auto object-cover rounded-lg" />
+              <img src="{{ asset('storage/producto_'. $producto->id .'Extra3.jpg') }}" alt="Imagen principal del producto" class="w-full border-2 h-auto object-cover rounded-lg" />
               @else
-                <img src="{{ asset('storage/noFoto.png') }}" alt="Imagen predeterminada" class="w-full border-2 h-auto object-cover rounded-lg" />
+              <img src="{{ asset('storage/noFoto.png') }}" alt="Imagen predeterminada" class="w-full border-2 h-auto object-cover rounded-lg" />
               @endif
             </div>
             <div class="p-2 w-1/2">
               @if (Storage::exists('public/producto_' . $producto->id . 'Extra4.jpg'))
-                <img src="{{ asset('storage/producto_'. $producto->id .'Extra4.jpg') }}" alt="Imagen principal del producto" class="w-full border-2 h-auto object-cover rounded-lg" />
+              <img src="{{ asset('storage/producto_'. $producto->id .'Extra4.jpg') }}" alt="Imagen principal del producto" class="w-full border-2 h-auto object-cover rounded-lg" />
               @else
-                <img src="{{ asset('storage/noFoto.png') }}" alt="Imagen predeterminada" class="w-full border-2 h-auto object-cover rounded-lg" />
+              <img src="{{ asset('storage/noFoto.png') }}" alt="Imagen predeterminada" class="w-full border-2 h-auto object-cover rounded-lg" />
               @endif
             </div>
           </div>
@@ -207,7 +207,29 @@
   }
 </script>
 
+
 <script>
+  function obtenerCoordenadas() {
+    var direccion = "{{ $producto->localizacion}}"; // Reemplaza esto con la dirección que deseas geocodificar
+    var geocoder = new google.maps.Geocoder();
+
+    geocoder.geocode({
+      'address': direccion
+    }, function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+        var latitud = results[0].geometry.location.lat();
+        var longitud = results[0].geometry.location.lng();
+        console.log('Latitud: ' + latitud);
+        console.log('Longitud: ' + longitud);
+
+        inicializarMapa(latitud, longitud);
+      } else {
+        alert('Error al obtener las coordenadas: ' + status);
+      }
+    });
+  }
+
+  function inicializarMapa(latitud, longitud) {
     // Inicializar la plataforma con tus credenciales
     let platform = new H.service.Platform({
       apikey: 'JmgrSX_OfaLN4VNyLi7_DJNM-Ct_lXpxeCnaj8vUKX0'
@@ -220,10 +242,10 @@
     let map = new H.Map(
       document.getElementById('mapContainer'),
       defaultLayers.vector.normal.map, {
-        zoom: 10,
+        zoom: 14,
         center: {
-          lat: 23.5,
-          lng: 45.4
+          lat: latitud,
+          lng: longitud
         }
       }
     );
@@ -233,5 +255,11 @@
 
     // Crear la interfaz de usuario predeterminada y añadirla al mapa
     let ui = H.ui.UI.createDefault(map, defaultLayers);
-  </script>
+  }
 
+  obtenerCoordenadas();
+</script>
+
+<script>
+    
+  </script>

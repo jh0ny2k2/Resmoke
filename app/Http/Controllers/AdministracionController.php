@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Categoria;
+use App\Models\Contacto;
 use App\Models\Producto;
 use App\Models\User;
 use App\Models\UsuarioFavorito;
@@ -23,8 +24,11 @@ class AdministracionController extends Controller
         $categorias = Categoria::count();
         $favoritos = UsuarioFavorito::count();
         $opiniones = UsuarioOpinion::count();
+        $contacto = Contacto::count();
+        $productoConfirmar = Producto::where('estado', 'observacion')->count();
+        $opinionConfirmar = UsuarioOpinion::where('estado', 'observacion')->count();
 
-        return view('admin.inicio', ['usuario' => $usuarios, 'productos' => $productos, 'categoria' => $categorias, 'favorito' => $favoritos, 'opinion' => $opiniones]);
+        return view('admin.inicio', ['usuario' => $usuarios, 'productos' => $productos, 'categoria' => $categorias, 'favorito' => $favoritos, 'opinion' => $opiniones, 'contacto' => $contacto, 'contProduct' => $productoConfirmar, 'contOpinion' => $opinionConfirmar]);
     }
 
     

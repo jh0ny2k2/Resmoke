@@ -83,9 +83,9 @@
         </div>
     </header>
 
-    <a href="/chatify">
-        <div class="fixed bottom-14 right-14 border-2 shadow-lg border-gray-900 rounded-full">
-            <button class="bg-white p-4 rounded-full shadow-lg">
+    <a href="/chatify" class="fixed bottom-14 right-14 z-50">
+        <div class="bg-white border-2 border-gray-900 rounded-full shadow-lg">
+            <button class="bg-white p-4 rounded-full shadow-lg focus:outline-none">
                 <i class="material-icons text-gray-900 text-3xl">chat</i>
             </button>
         </div>

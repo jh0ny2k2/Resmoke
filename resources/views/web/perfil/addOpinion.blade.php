@@ -5,7 +5,7 @@
 
 <div class="flex justify-center min-h-52">
   <div class="max-w-4xl w-full my-5 bg-white rounded-lg shadow-xl">
-    <form action="/web/addOpinion/{{ $usuario->UsuarioId }}" method="POST" enctype="multipart/form-data" class="w-full">
+    <form action="/web/addOpinion/{{ $usuario->id }}" method="POST" enctype="multipart/form-data" class="w-full">
       @csrf
       <div class="flex justify-between items-center p-8">
         <label for="opinion" class="w-full">

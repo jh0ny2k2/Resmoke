@@ -54,6 +54,12 @@
                         Opiniones
                     </a>
                 </li>
+                <li>
+                    <a href="{{ route('adminContacto') }}" class="flex items-center px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                        <span class="material-icons mr-3">chat</span>
+                        Contacto
+                    </a>
+                </li>
             </ul>
         </div>
 
