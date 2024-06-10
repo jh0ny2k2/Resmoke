@@ -44,7 +44,7 @@
 <div class="flex justify-center min-h-52">
     <div class="max-w-4xl w-full my-5 bg-white rounded-lg border shadow-xl">
         <div class="p-8">
-            <h3 class="text-lg font-semibold text-gray-800 mb-4">Algunas Opniones</h3>
+            <h3 class="text-lg font-semibold text-gray-800 mb-4">Algunas Opiniones</h3>
             <div class="grid grid-cols-2">
                 @foreach ($opiniones as $opinion)
 

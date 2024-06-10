@@ -1,5 +1,5 @@
 <!-- BARRA DE NAVEGACION -->
-<x-nav-bar-productos></x-nav-bar-productos>
+<x-navbarproductos></x-navbarproductos>
     
 <!-- PRODUCTOS -->
 <section class="text-gray-600 body-font">
