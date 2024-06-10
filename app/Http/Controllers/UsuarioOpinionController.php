@@ -22,7 +22,7 @@ class UsuarioOpinionController extends Controller
     // Función para guardar una opinión
     public function add($id, Request $request) {
 
-        $opinion = UsuarioOpinion::where('vendedorId', $id)->first();
+        $opinion = new UsuarioOpinion();
         $opinion->usuarioId = Auth::user()->id;
         $opinion->vendedorId = $id;
         $opinion->opinion = $request->opinion;
