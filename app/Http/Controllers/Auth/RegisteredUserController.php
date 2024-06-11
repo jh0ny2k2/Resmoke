@@ -55,10 +55,11 @@ class RegisteredUserController extends Controller
                 'fotoPerfil' . $id . '.png'
             );
         } else {
-            $fotoPredeterminada = storage_path('app/public/fotoNoPerfil.jpeg');
-            $ruta = storage_path('app/public/fotoPerfil' . $id . '.png');
-
-            Storage::copy($fotoPredeterminada, $ruta);
+            $defaultPhotoPath = 'fotoNoPerfil.jpeg';
+    
+            $targetPath = 'public/fotoPerfil' . $id . '.png';
+    
+            Storage::disk('public')->copy($defaultPhotoPath, $targetPath);
         }
 
         event(new Registered($user));
