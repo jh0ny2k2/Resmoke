@@ -9,6 +9,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
 
@@ -47,11 +48,18 @@ class RegisteredUserController extends Controller
         ]);
 
         $id = $user->id;
-        $request->file('fotoPerfil')->storeAs(
-            'public',
-            'fotoPerfil' . $id . '.png'
-        );
 
+        if ($request->hasFile('fotoPerfil')) {
+            $request->file('fotoPerfil')->storeAs(
+                'public',
+                'fotoPerfil' . $id . '.png'
+            );
+        } else {
+            $fotoPredeterminada = storage_path('app/public/fotoNoPerfil.jpeg');
+            $ruta = storage_path('app/public/fotoPerfil' . $id . '.png');
+
+            Storage::copy($fotoPredeterminada, $ruta);
+        }
 
         event(new Registered($user));
 
