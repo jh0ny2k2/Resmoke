@@ -57,10 +57,18 @@ class RegisteredUserController extends Controller
         } else {
             $defaultPhotoPath = 'fotoNoPerfil.jpeg';
     
-            $targetPath = 'public/fotoPerfil' . $id . '.png';
+    // Ruta donde se debe copiar la foto predeterminada
+    $targetPath = 'fotoPerfil' . $id . '.png';
     
-            Storage::disk('public')->copy($defaultPhotoPath, $targetPath);
-        }
+    // Verificar si el archivo predeterminado existe
+    if (Storage::disk('public')->exists($defaultPhotoPath)) {
+        // Copiar la foto predeterminada al destino
+        Storage::disk('public')->copy($defaultPhotoPath, $targetPath);
+    } else {
+        // Manejar el caso donde la foto predeterminada no existe
+        abort(404, 'Default profile photo not found.');
+    }
+}
 
         event(new Registered($user));
 
