@@ -111,12 +111,15 @@
       <div class="flex flex-col">
         <div class="flex items-center">
           <h1 class="text-2xl font-bold inline uppercase">{{ $producto->nombre }}</h1>
+          
           @auth
+          @if ($productoo->usuarioId === Auth::user()->id)
           <a href="/web/editProducto/{{ $producto->id }}" class="ml-4">
             <button class="p-2 rounded-full hover:bg-gray-200 focus:outline-none focus:bg-gray-300">
               <i class="zmdi zmdi-edit text-gray-600"></i>
             </button>
           </a>
+          @endif
           @endauth
         </div>
         <span class="text-xl text-gray-600">{{ $producto->precio }} €</span>
