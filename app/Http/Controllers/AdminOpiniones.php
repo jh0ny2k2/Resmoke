@@ -26,8 +26,8 @@ class AdminOpiniones extends Controller
     // VER CONFIRMAR OPINION
     public function verConfirmar() {
 
-        $confirmaciones = UsuarioOpinion::where('estado', 'observacion')->with('usuarios', 'vendedores')->get();
-        $numero = UsuarioOpinion::where('estado', 'observacion')->count();
+        $confirmaciones = UsuarioOpinion::where('estado', 'revision')->with('usuarios', 'vendedores')->get();
+        $numero = UsuarioOpinion::where('estado', 'revision')->count();
 
         return view('admin.opiniones.verConfirmar', ['opiniones' => $confirmaciones, 'numero' => $numero]);
     }
