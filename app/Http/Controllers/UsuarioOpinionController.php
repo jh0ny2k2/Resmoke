@@ -26,7 +26,7 @@ class UsuarioOpinionController extends Controller
         $opinion->usuarioId = Auth::user()->id;
         $opinion->vendedorId = $id;
         $opinion->opinion = $request->opinion;
-        $opinion->estado = 'observacion';
+        $opinion->estado = 'revision';
         $opinion->save();
 
         return redirect()->route('verOpinionesVendedor', ['id' => $id]);
