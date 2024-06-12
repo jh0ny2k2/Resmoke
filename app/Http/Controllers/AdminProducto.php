@@ -81,22 +81,33 @@ class AdminProducto extends Controller
             'producto_' . $id . '.jpg'
         );
 
+        if ($request->hasFile('fotoExtra1')) {
         $request->file('fotoExtra1')->storeAs(
             'public',
             'producto_' . $id . 'Extra1.jpg'
         );
+        }
+
+        if ($request->hasFile('fotoExtra2')) {
         $request->file('fotoExtra2')->storeAs(
             'public',
             'producto_' . $id . 'Extra2.jpg'
         );
+        }
+
+        if ($request->hasFile('fotoExtra3')) {
         $request->file('fotoExtra3')->storeAs(
             'public',
             'producto_' . $id . 'Extra3.jpg'
         );
+        }
+
+        if ($request->hasFile('fotoExtra4')) {
         $request->file('fotoExtra4')->storeAs(
             'public',
             'producto_' . $id . 'Extra4.jpg'
         );
+        }
 
         return redirect()->route('adminProducto');
 

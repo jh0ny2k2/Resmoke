@@ -59,7 +59,7 @@
                         <div class="flex items-center">
                             <label class="block">
                                 <span class="sr-only">Cargar foto 1</span>
-                                <input type="file" name="fotoPrincipal" class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100" />
+                                <input type="file" name="fotoPrincipal" required class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100" />
                             </label>
                         </div>
 
