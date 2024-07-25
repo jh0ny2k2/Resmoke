@@ -61,6 +61,30 @@ Route::prefix('web')->group(function() {
         Route::get('/eliminarProducto/{id}/{i}', [ProductoController::class, 'destroy']); 
         
         
+        
+        
+        
+        
+        
+        
+        //MARCAR COMO VENDIDO 
+        Route::get('/formularioVendido/{id}', [ProductoController::class, 'vender']);
+        Route::post('/buscadorUsuarioVender/{id}', [ProductoController::class, 'buscadorUsuario']);
+        Route::get('/precioVender/{id}/{usuarioId}', [ProductoController::class, 'precioVender']);
+        Route::post('/precioVendido/{id}/{usuarioId}', [ProductoController::class, 'precioVendido']);
+        Route::get('/vender/{id}/{usuarioId}', [ProductoController::class, 'vendido']);
+        
+        Route::get('/formularioReservado/{id}', [ProductoController::class, 'reservado']);
+        Route::post('/buscadorUsuarioReservado/{id}', [ProductoController::class, 'buscadorUsuarioReservado']);
+        Route::get('/precioReservado/{id}/{usuarioId}', [ProductoController::class, 'precioReservado']);
+        Route::post('/precioReservado/{id}/{usuarioId}', [ProductoController::class, 'precioReserva']);
+        Route::get('/reservado/{id}/{usuarioId}', [ProductoController::class, 'reserva']);
+
+        Route::get('/ocultarProducto/{id}', [ProductoController::class, 'ocultar']);
+        Route::get('/quitarOcultoProducto/{id}', [ProductoController::class, 'quitarOculto']);
+
+        Route::get('/eliminarProducto/{id}', [ProductoController::class, 'eliminar']);
+
 
         // FAVORITOS
 

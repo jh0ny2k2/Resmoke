@@ -6,9 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
+
     public function up(): void
     {
         Schema::create('productos', function (Blueprint $table) {
@@ -17,17 +15,18 @@ return new class extends Migration
             $table->unsignedBigInteger('categoriaId');
             $table->foreign('categoriaId')->references('id')->on('categorias')->onDelete('cascade')->onUpdate('cascade');
             $table->double('precio');
-            $table->enum('estado', ['observacion', 'activo', 'vendido', 'reservado', 'denegado']);
+            $table->double('nuevoPrecio')->nullable();
+            $table->enum('estado', ['observacion', 'activo', 'vendido', 'reservado', 'denegado','oculto']);
             $table->text('descripcion');
-            $table->string('imagen')->nullable();
             $table->string('localizacion');
             $table->integer('numeroVisto');
+            $table->integer('numeroFavorito');
+            $table->unsignedBigInteger('vendidoPor')->nullable();
+            $table->foreign('vendidoPor')->references('id')->on('users')->onDelete('set null')->onUpdate('cascade');
+            $table->enum('promoción', ['si', 'no']);
             $table->timestamps();
         });
 
     }
 
-    /**
-     * Reverse the migrations.
-     */
 };

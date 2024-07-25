@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Producto;
 use App\Models\UsuarioFavorito;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -17,6 +18,10 @@ class UsuarioFavoritoController extends Controller
         $favorito->productoId = $id;
         $favorito->save();
 
+        $producto = Producto::where('id', $id)->first();
+        $producto->numeroFavorito = $producto->numeroFavorito + 1;
+        $producto->save();
+
         return redirect()->back();
     }
 
@@ -26,6 +31,10 @@ class UsuarioFavoritoController extends Controller
         UsuarioFavorito::where('productoId', $id)
                ->where('usuarioId', Auth::user()->id)
                ->delete();
+
+        $producto = Producto::where('id', $id)->first();
+        $producto->numeroFavorito = $producto->numeroFavorito - 1;
+        $producto->save();
 
         return redirect()->back();
     }

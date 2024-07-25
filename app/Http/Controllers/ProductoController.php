@@ -60,6 +60,7 @@ class ProductoController extends Controller
             $producto->descripcion = $request->descripcionProducto;
             $producto->localizacion = $request->localizacion;
             $producto->numeroVisto = 0;
+            $producto->numeroFavorito = 0;
             $producto->save();
 
             // Sacamos la id del producto
@@ -151,7 +152,6 @@ class ProductoController extends Controller
         return redirect()->back();
     }
 
-    // PONER PRODUCTO COMO VENDIDO
     public function ponerVendido($id) {
 
         $producto = Producto::where('id', $id)->first();
@@ -160,6 +160,108 @@ class ProductoController extends Controller
 
         return redirect()->back();
     }
+
+    // PONER PRODUCTO COMO VENDIDO
+    public function vender($id) {
+
+        $producto = Producto::where('id', $id)->first();
+        
+        return view('web.producto.vendido.persona', ['producto' => $producto]);
+    }
+
+    public function buscadorUsuario($id, Request $request) {
+        $producto = Producto::where('id', $id)->first();
+        $usuarios = User::where('name', 'like', '%' . $request->buscador . '%')->get();
+        
+        return view('web.producto.vendido.personaEncontrada', ['producto' => $producto, 'usuarios' => $usuarios]);
+    }
+
+    public function precioVender($id, $usuarioId) {
+        $producto = Producto::where('id', $id)->first();
+        $usuario = User::where('id', $usuarioId)->first();
+
+        return view('web.producto.vendido.precio', ['producto' => $producto, 'usuario' => $usuario]);
+    }
+
+    public function precioVendido($id, $usuarioId, Request $request) {
+        $producto = Producto::where('id', $id)->first();
+        $producto->precio = $request->precio;
+        $producto->save();
+
+        $usuario = User::where('id', $usuarioId)->first();
+
+        return view('web.producto.vendido.resumen', ['producto' => $producto, 'usuario' => $usuario]);
+    }
+
+
+    public function vendido($id, $usuarioId) {
+        $producto = Producto::where('id', $id)->first();
+        $producto->estado = 'vendido';
+        $producto->vendidoPor = $usuarioId;
+        $producto->save();
+
+        return redirect()->route('verProducto', ['id' => $id]);
+
+    }
+
+    public function ocultar($id) {
+        $producto = Producto::where('id', $id)->first();
+        $producto->estado = 'oculto';
+        $producto->save();
+    
+        return redirect()->back();
+    }
+
+    public function quitarOculto($id) {
+        $producto = Producto::where('id', $id)->first();
+        $producto->estado = 'activo';
+        $producto->save();
+    
+        return redirect()->back();
+    }
+
+    public function reservado($id) {
+        $producto = Producto::where('id', $id)->first();
+
+        return view('web.producto.reservado.persona', ['producto' => $producto]);
+    }
+
+    public function buscadorUsuarioReservado($id, Request $request) {
+        $producto = Producto::where('id', $id)->first();
+        $usuarios = User::where('name', 'like', '%' . $request->buscador . '%')->get();
+        
+        return view('web.producto.reservado.personaEncontrada', ['producto' => $producto, 'usuarios' => $usuarios]);
+    }
+
+    public function precioReservado($id, $usuarioId) {
+        $producto = Producto::where('id', $id)->first();
+        $usuario = User::where('id', $usuarioId)->first();
+
+        return view('web.producto.reservado.precio', ['producto' => $producto, 'usuario' => $usuario]);
+    }
+
+    public function precioReserva($id, $usuarioId, Request $request) {
+        $producto = Producto::where('id', $id)->first();
+        $producto->precio = $request->precio;
+        $producto->save();
+
+        $usuario = User::where('id', $usuarioId)->first();
+
+        return view('web.producto.reservado.resumen', ['producto' => $producto, 'usuario' => $usuario]);
+    }
+
+    public function reserva($id, $usuarioId) {
+        $producto = Producto::where('id', $id)->first();
+        $producto->estado = 'reservado';
+        $producto->vendidoPor = $usuarioId;
+        $producto->save();
+
+        return redirect()->route('verProducto', ['id' => $id]);
+
+    }
+
+
+
 
     // QUITAR PRODUCTO COMO VENDIDO
     public function quitarVendido($id) {
@@ -241,6 +343,12 @@ class ProductoController extends Controller
          Storage::delete('public/' . $nombre);
 
          return redirect()->back();
+    }
+
+    public function eliminar($id) {
+        Producto::destroy($id);
+
+        return redirect()->route('verTodos');
     }
 
 }

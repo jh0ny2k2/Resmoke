@@ -1,351 +1,86 @@
-Por hacer:
-  ☐ Realizar metodo para Loguearse o Registrarse con google
-  ☐ 
-  ☐ 
-  ☐ 
-  
-  poner mis compras
-    
-  
-Terminado:
-
-  Lunes 08/04/2024
-  ✔ Diseño página principal
-  ✔ Diseño página para mostrar los productos
-  ✔ Creado diseño formulario añadir producto
-
-  Martes 09/04/2024
-  ✔ Hacer diseño de login 
-  ✔ Hacer diseño de Registro 
-  ✔ Hacer diseño de Ver producto
-
-  Miercoles 10/04/2024
-  ✔ Implementado diseño en la pagina principal
-  ✔ Realizada foreach en la pagina principal de categorias
-  ✔ Creado los componentes de NavBar y footer para la pagina de inicio y puestas en funcionamiento
-  ✔ Crear componente de card
-  ✔ Realizado varios enlaces (mostrar todos, mostrar por categoría)
-  ✔ Poner enlace en las categorias pagina principal
-  ✔ Implementado el diseño de página de productos
-  ✔ Realizado que salgan 6 productos en la pagina principal
-
-  Jueves 11/04/2024
-  ✔ Cambiado el diseño en laravel de Login y Registro
-  ✔ Arreglado metodos de registro y logueo
-  ✔ Implementar Boton de cerrar sesion
-  ✔ Poner enlace en el logo principal en el navbar
-  
-  Viernes 12/04/2024
-  ✔ Implemetar diseño ver producto
-  ✔ Quitar el boton de dashboard para los usuarios.
-  ✔ Realizada la funcionalidad de buscador
-
-  Sabado 13/04/2024
-  ✔ Realizado Diseño total de panel admin
-
-  Lunes 15/04/2024
-  ✔ Implementar diseño de admin
-  ✔ Ya sale la imagen de perfil en el circulo del navbar
-  ✔ Implementar foto en formulario de registro 
-  ✔ Implementado metodo para guardar la foto de perfil
-  ✔ Realizar funcionalidad botón atras en ver producto 
-  ✔ Implementar enlace a ruta para la pagina de ver lista de productos
-  ✔ implementar diseño de añadir producto
-
-  Martes 16/04/2024
-  ✔ Hacer que salga las fotos cuando la subes en el registro de productos
-
-  Miercoles 17/04/2024
-  ✔ Arreglar base de datos de productosUsuario para poner activo, en revision, vendido o reservado
-  ✔ Arreglar metodo para poder ir a panel admin // Target class [rol] does not exist
-
-  Jueves 08/04/2024
-  //PREGUNTADO 
-  ✔ Preguntar duda de imagenes, si es mejor directamente ponerla en base de datos o en laravel.  --> carpeta
-  ✔ Preguntar sobre el error de panel admin --> arreglado
-
-  ✔ Realizado metodo para poder ver todo el panel admin con las tablas y los elementos 
-  ✔ Realizado metodo de borrar y ir a formulario de ediccion de usuarios y productos en el panel admin
-
-  Lunes 22/04/2024
-  ✔ Crear formularios para admin de producto, categoria, opiniones
-  ✔ Realizado el metodo editar el usuario
-  ✔ Realizado metodo para añadir usuario
-  ✔ Realizado metodo para cambiar rol de un usuario
-  ✔ Realizado metodo para editar producto
-  
-  Martes 23/04/2024
-  ✔ Creado metodo para añadir producto
-  ✔ Poner boton en el admin productos para aceptar las publicaciones
-  ✔ Creado metodo para aceptar producto
-  ✔ Creado metodo para denegar producto
-  ✔ Realizar diseño pagina de confirmacion de producto
-  ✔ Añadir metodo para sumar vez vista cuando pulsemos para ver el producto
-  ✔ Metodo para poder ver producto desde ver producto en admin
-  ✔ Creado metodo para filtrar por rol en el panel de usuario de admin
-
-  Miercoles 24/04/2024
-
-  ✔ Creado metodo para añadir un producto a favoritos
-  ✔ Realizar arreglos de rutas de la web, para que los favoritos y addproducto sea solo los registrados
-  ✔ Hacer controladores admin para cada cosa para que este mas organizado
-  ✔ Puesto buscador para buscar en admin Usuario
-  ✔ Creado metodo para añadir producto desde la web 
-  ✔ Creado metodo para eliminar favoritos
-  ✔ Arreglada tabla de favoritos, ya sale el nombre del usuario y el nombre del producto
-  ✔ Mirar porque no se pone la tabla de usuarioProducto al añadir producto
-
-  Lunes 29/04/2024
-
-  ✔ Realizado metodo para eliminar categoria en admin
-  ✔ Realizado metodo para añadir categoria en admin
-  ✔ Creado metodo para ir a productos en venta en la web
-  
-  Martes 30/04/2024
-
-  ✔ Arreglar tabla de productos que no se vaya para la derecha (que se quede centrada en la pantalla)
-  ✔ Crear página no recuerdo contraseña
-  ✔ Realizar diseño de perfil cuando es nuestro perfil
-
-  Lunes 06/05/2024
-
-  ✔ Arreglado metodo para añadir producto desde el panel admin y que se suban las fotos
-  ✔ Poner fotos en ver producto para confirmar
-  ✔ Implemetar fotos en la web
-  ✔ Implementadas fotos en las card de la web
-  ✔ Mirar porque no va lo de poner fotos al añadir producto en la web
-  ✔ Realizar diseño de perfil
-  ✔ Cambiar en navBar, que ponga Mis Favoritos y Mis productos
-  ✔ Poner las fotos en visualizar producto desde admin
-  ✔ Poner que cuando se pulse el boton Ver informacion del vendedor salga un modal 
-
-  Martes 07/05/2024
-
-  ✔ Realizado diseño del perfil y printeada la informacion
-  ✔ Realizado metodo para buscar usuario en panel de admin
-  ✔ Realizado metodo para buscar productos en panel de admin
+Por Hacer: 
+
+  ✔   Poner cuantas veces se han puesto como favorito
+      ✔ → Añadir casilla en base de datos (NUMEROFAVORITO)
+
+  ■   Modificar card de los productos ✘
+        → Quitamos toda la información y ponemos los vistos y los favoritos ✘
+
+  ■   Mirar metodo para vender productos
+      ✔ → Poner casilla en base de datos (PROMOCION)
+        → Ponemos dos botones fijos en la parte inferior de la pantalla
+            → "Hacer una Oferta" → Sale un modal para poner el precio de oferta y se le notifica al vendedor con una encuesta para "Aceptar", "Denegar" o "Realizar Contraoferta" 
+                → "Aceptar" → El estado del producto se pone como vendido 
+                → "Denegar" → Se deniega la oferta y el producto sigue en venta
+                → "Realizar una Contraoferta" → Donde sale un modal para poner el precio de la contraoferta y se le notifica al comprador con una encuesta para "Aceptar", "Denegar" o "Realizar Contraoferta"
+            → "Comprar" → El estado del producto se pone como vendido y se le notifica al vendedor 
+
+  ✔   Poner los botones de "Vendido", "Reservar" y "Editar Producto" en un botón desplegable arriba derecha (Encima de las fotos)
+      ✔ → Añadir botón "Promocionar Producto"
+      ✔ → Falta por hacer metodos eliminar producto y marcar como reservado
+        → Falta por hacer método de promocionar producto 
+
+  ✔   Cambiar formulario de registro, quitar dni y sexo, esto se podrá poner en edicción de usuario posteriormente
+      ✔ → Poner add foto perfil como las fotos en add producto
+        → Poner letra negra en fecha nacimiento formulario registro ✘
+        
+  ■   Añadir sección "Promocionar Producto" con un check imput en añadir producto
+
+  ■   Mejorar página de contacto con preguntas predeterminadas ✘
+
+  ✔   Arreglar botón de favorito, si se le da se le suma 1 al producto y si se quita se le resta 1
+      ✔  Poner más grande el botón de like 
+
+  ■   Mejorar rating
+
+  ■   Arreglar placeholder precio en poner vendido y poner reserva que sea value ✘
+
+  ■   Poner mis ventas ✘
+
+  ■ 
+
+  ■ 
+
+  ■ 
+
+  ■ 
+
+  ■ 
+
+
+Tareas Aplazadas: 
+
+  → 
+  → 
+  → 
+  → 
+  → 
+  → 
+  → 
+  → 
+  → 
+  → 
+  → 
+  → 
+  → 
+  → 
+  → 
+  → 
+
+Terminado: 
+
+  ✔ 
+  ✔ 
+  ✔ 
+  ✔ 
+  ✔  
+  ✔   
+  ✔ 
+  ✔  
+  ✔ 
+  ✔ 
+  ✔ 
+  ✔ 
+  ✔ 
+  ✔
 
-  Miercoles 08/05/2024
-
-  ✔ Creado metodo para que salgan los botones de reservar y de vender si es tu producto
-  ✔ Creado metodo para el funcionamiento de estos botones
-  ✔ Realizado formulario de ediccion de usuario
-  ✔ Realizado funcionamiento ediccion de usuario
-  
-  Jueves 09/05/2024
-
-  ✔ Realizado metodo para ver mis productos
-  ✔ Puestos enlances en todos los botones para ver mis productos y mis favoritos
-  ✔ Realizar metodo para cambiar estado del producto cuando es tuyo
-
-  Domingo 12/05/2024
-  
-  ✔ Realizar la funcionalidad del perfil
-  ✔ Poner la informacion del vendedor
-  ✔ implementar mapa en ver producto 
-  ✔ Mirar porque no salen los productos en productos de la persona
-  ✔ Mirar metodo para buscar en admin
-  ✔ Poner que salgan los articulos que tienes guardados como favoritos en su respectiva pagina
-  
-  Lunes 13/05/2024
-
-  ✔ Mirar porque no salen las fotos en favoritos y en venta
-  ✔ Arreglado porque no se habria el producto si no estabas iniciado de sesion
-  ✔ Poner en informacion de vendedor un enlace para ver el perfil del vendedor
-  ✔ Mirar porque no se abre desde favoritos y venta // Attempt to read property "numeroVisto" on null
-  ✔ Creado diseño de productos de un vendedor
-  ✔ Creado diseño de opiniones de un vendedor
-  ✔ Creado metodo para que puedas ver los productos de un vendedor
-  ✔ Creado metodo para ver las opiniones que tiene un vendedor
-  ✔ Creado meto para aceptar o denegar una opinion
-  ✔ Creado diseño de tabla administracion para ver opiniones en observacion
-  ✔ Realizada funcionalidad panel admin de opiniones
-
-  Lunes 20/05/2024
- 
-  ✔ Crear diseño para el chat en vivo
-  ✔ Crear Chat en vivo
-  ✔ Realizado diseño boton flotante para ir al chat
-  ✔ Realizados cambios de diseño en el chat online 
-
-  Martes 21/05/2024
-
-  ✔ Crear metodo para buscar favoritos por nombre usuario
-  ✔ Crear Metodo para buscar opiniones usuario
-  ✔ alinear botones filtro usuario derecha
-  ✔ modificar botones para que se vean mejor y input
-  ✔ poner estado en tu producto
-  ✔ Poner para que si no hay foto de imagen que se ponga una predeterminada
-  ✔ Cambiar diseño boton atras
-  ✔ crear metodo para cambiar foto de perfil
-  ✔ Realizar metodo para cambiar datos del producto cuando es tuyo
-
-  Miercoles 22/05/2024
-
-  ✔ Comienzo de memoria tecnica
-
-  Jueves 23/05/2024
-
-  ✔ Continuación de memoria tecnica
-
-  Viernes 24/05/2024
-
-  ✔ Continuación de memoria tecnica
-
-  Sabado 25/05/2024
-
-  ✔ Continuación de memoria tecnica
-
-  Lunes 27/05/2024
-
-  ✔ Continuación de memoria tecnica
-
-  Martes 28/05/2024
-
-  ✔ Continuación de memoria tecnica
-
-  Miercoles 29/05/2024
-  
-  ✔ Continuación de memoria tecnica
-
-  Jueves 30/05/2024
-
-  ✔ Mirar como buscar las coordenadas
-  ✔ Mirar que cuando añada una opinion se vuelva al perfil de opinion
-  ✔ Realizados cambios en el diseño de la pagina inicial de panel admin
-  ✔ añadido la página de Contacto
-  ✔ Realizado funcionalidad
-  ✔ Realizado funcionalidad contacto en panel admin
-  ✔ Metodo para eliminar foto en editar producto
-
-  Viernes 31/05/2024
-
-  ☐
-
-  Sabado 1/06/2024
-
-  ☐
-
-  Domingo 2/06/2024
-
-  ☐
-
-  Lunes 3/04/2024
-
-  ☐
-
-  Martes 4/06/2024
-
-  ☐
-
-  Miercoles 5/06/2024
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Tablas: 
-  - Usuario: (Realizado por breeze).
-    -Nombre
-    -email
-    -role
-    -password
-
-  - Productos
-    -nombre
-    -categoria
-    -precio
-    -descripcion
-    -Imagen
-    -Localización
-    -NumeroVisto
-
-  - Categorias:
-    -Nombre
-
-  - UsuarioProductos
-    -UsuarioId
-    -ProductoId
-
-  - UsuarioFavoritos
-    -UsuarioId
-    -ProductoId
-
-  - UsuarioOpiniones
-    -UsuarioId
-    -VendedorId
-    -Estrellas
-    -Opinión
-  
-  - Chat
-    -UsuarioId
-    -VendedorId
-    -Activo
-
-  - ChatMensaje
-    -ChatId
-    -UsuarioId
-    -Mensaje
-
-
-Proyecto:
-  ☐ Proyecto final: Crearé una página web completamente funcional que emula plataformas como Wallapop o Mil Anuncios, pero con una función más específica centrada en el mundo del humo, incluyendo productos como cachimbas, vapers, entre otros. La página se llamará "Resmoke". Contará con un sistema de chat interno que facilitará la comunicación entre compradores y vendedores de estos productos. Realizaré pruebas exhaustivas para garantizar el correcto funcionamiento de todas las características y la experiencia del usuario en Resmoke.
-
-Paginas:
-
-  // No registrados
-  ☐ Nav Bar: Tendrán en el logo en la parte izquierda y en la parte derecha tendremos los botones de registro y de login
-
-  ☐ Página principal : En esta página tendremos tres apartados:
-    ☐ Apartado 1: Tendremos un buscador para buscar productos por nombre y nos llevara a una página donde nos presente los productos cuyo nombre presente lo puesto en el buscador.
-    ☐ Apartado 2: Tendremos una lista de las categorias disponibles para visualizar los productos por categoría.
-    ☐ Apartado 3: Tendremos una lista de 6 productos aleatorios ordenados de 3 en 3. 
-
-  ☐ Página Log In: Tendremos un formulario donde pondremos  el usuario y la contraseña // Creado por Breeze y modificado.
-  ☐ Página Registro: Tendremos un formulario para poner los datos y realizar el registro // Creado por Breeze y modificado
-
-  ☐ Pagina de productos: donde nos mostrará todos los productos a la venta, en su nav bar se le añadira el buscador. 
-
-  ☐ Visualizar el producto, con todos los datos del producto // no es necesario el registro o login y La parte de poder ver los datos del vendedor si que tendrias que estar registrado o logueado, pondrá un link para poder hablar directamente desde el chat en linea y (siempre y cuando se señale al crear el producto en venta) el numero de telefono.
-  
-  // REGISTRADOS
-  ☐ Nav Bar: Tendrán Tendrán un botón (Subir Producto) que nos mandarán a la página para crear el producto.
-
-  ☐ Página crear producto: Tendrá un formulario en el que nos pedirá todos los datos del producto (Aún por concordar), tendrá un boton en el que permitirá o no el poner el telefono de contacto.
-
-  ☐ Pagina Usuario: Esta parte contará con varios apartados que son:
-    ☐ Apartado 1: En la parte superior aparecerá los datos del perfil con su respectiva imagen que asigne el usuario y un boton (editar) que no dirigirá a otra página para poder personalizar los datos del usuario.
-    ☐ Apartado 2:Que a su vez tendrá un pequeño navbar de dos enlaces en que podremos dividir en dos apartados:
-      ☐ Apartado 2.1 (En venta) Tendremos un apartado en el que nos saldrán todos los productos lanzados a la venta, en cada producto saldrán dos botones (Editar) que nos llevará a una página en la que podremos editar los datos del producto, tanto el precio como los datos en si y (Vendido) que nos saldrá un modal para confirmar que se ha vendido el producto respectivo, esto hará que en la base de datos salga como vendido y no se printeará en la página de productos.
-      ☐ Apartado 2.2 (Vendidos): Tendremos otro apartado donde nos saldrán todos los productos que ya marquemos como vendidos.
-
-  ☐ Página modificar datos personales: Saldrá una página donde podremos modificar los datos del usuario. 
-
-  ☐ Página de producto: En el caso que este registrado o logueado, como he comentado antes, habrá un botón para poder ver los datos del vendedor y el botón del chat en linea, en el caso de ser el vendedor, saldrán los botones de (vendido) y (editar) de los productos.
-
-  ☐ Página de chat en linea: Tendremos que estar registrados para esto y tendremos una página exclusiva para el chat con personas, tendremos en la izquieda un navbar donde tendremos un listado de las personas con la que hemos hablado y cuando habrás un chat saldrá a la derecha.
-
-  //ADMINISTRADOR
-  ☐ Este será el apartado de los administradores de la página en la cual podrán cambiar todo lo anterior, en todos las paginas tendremos un buscador para que la busqueda sea más facil.
-
-  ☐ Página de categorias: Nos saldran un listado de las categorias, podremos añadir, eliminar y modificar.
-  ☐ Página de Usuarios: Nos saldrán un listado de los usuarios con todos sus datos menos la contraseña, podremos eliminar, modificar, modificar el rol.
-  ☐ Página de Productos: Nos saldrán un listado de los productos , podremos añadir, eliminar, modificar 
-
-  

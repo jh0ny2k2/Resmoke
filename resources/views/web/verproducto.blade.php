@@ -2,8 +2,87 @@
 
 <div class="container mx-auto px-4 py-8">
 
-  <!-- BOTON VOLVER ATRAS -->
-  <x-boton-atras></x-boton-atras>
+  <div class="flex">
+    <!-- BOTON VOLVER ATRAS -->
+    <x-boton-atras></x-boton-atras>
+
+    @auth
+    @if ($productoo->usuarioId === Auth::user()->id)
+    @if ($producto->estado === 'activo')
+    <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="text-white font-medium rounded-lg text-sm px-8 py-2.5 text-center inline-flex items-center dark:bg-blue-600 " type="button"><img src="{{ asset('storage/puntos.png') }}" class="h-6 w-6" alt="">
+    </button>
+
+    <!-- Dropdown menu -->
+    <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+        <ul class="py-2 text-sm text-gray-900" aria-labelledby="dropdownDefaultButton">
+          <li>
+            <a href="/web/editProducto/{{ $producto->id }}" class="block px-4 py-2"><i class="zmdi zmdi-edit w-5 h-5 text-gray-600"></i> Editar Producto</a>
+          </li>
+          <li>
+            
+            <a href="/web/formularioVendido/{{ $producto->id }}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"><i class="zmdi zmdi-card-off w-5 h-5 text-gray-600"></i>Marcar como vendido</a>
+          </li>
+          <li>
+            <a href="/web/formularioReservado/{{ $producto->id }}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"><i class="zmdi zmdi-card-off w-5 h-5 text-gray-600"></i>Marcar como Reservado</a>
+          </li>
+          <li>
+            <a href="/web/ocultarProducto/{{ $producto->id }}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"><i class="zmdi zmdi-eye-off w-5 h-5 text-gray-600"></i>Ocultar</a>
+          </li>
+          <li>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"><i class="zmdi zmdi-long-arrow-up w-5 h-5 text-gray-600"></i>Promocionar</a>
+          </li>
+          <hr>
+          <li>
+            <button onclick="openModal1()" class="block text-start px-4 py-2 w-full hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"><i class="zmdi zmdi-delete w-5 h-5 text-red-600"></i>Eliminar</button>
+          </li>
+        </ul>
+    </div>
+    @elseif ($producto->estado === 'reservado')
+    <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="text-white font-medium rounded-lg text-sm px-8 py-2.5 text-center inline-flex items-center dark:bg-blue-600 " type="button"><img src="{{ asset('storage/puntos.png') }}" class="h-6 w-6" alt="">
+    </button>
+
+    <!-- Dropdown menu -->
+    <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+        <ul class="py-2 text-sm text-gray-900" aria-labelledby="dropdownDefaultButton">
+          <li>
+            <a href="/web/editProducto/{{ $producto->id }}" class="block px-4 py-2"><i class="zmdi zmdi-edit w-5 h-5 text-gray-600"></i> Editar Producto</a>
+          </li>
+          <li>
+            <a href="/web/vendido/{{ $producto->id }}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"><i class="zmdi zmdi-card-off w-5 h-5 text-gray-600"></i>Vender</a>
+          </li>
+          <li>
+            <a href="/web/quitarReservado/{{ $producto->id }}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"><i class="zmdi zmdi-card-off w-5 h-5 text-gray-600"></i>Quitar Reservado</a>
+          </li>
+          <hr>
+          <li>
+            <button onclick="openModal1()" class="block text-start px-4 py-2 w-full hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"><i class="zmdi zmdi-delete w-5 h-5 text-red-600"></i>Eliminar</button>
+          </li>
+        </ul>
+    </div>
+    @elseif ($producto->estado === 'oculto')
+    <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="text-white font-medium rounded-lg text-sm px-8 py-2.5 text-center inline-flex items-center dark:bg-blue-600 " type="button"><img src="{{ asset('storage/puntos.png') }}" class="h-6 w-6" alt="">
+    </button>
+
+    <!-- Dropdown menu -->
+    <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+        <ul class="py-2 text-sm text-gray-900" aria-labelledby="dropdownDefaultButton">
+          <li>
+            <a href="/web/editProducto/{{ $producto->id }}" class="block px-4 py-2"><i class="zmdi zmdi-edit w-5 h-5 text-gray-600"></i> Editar Producto</a>
+          </li>
+          <li>
+            <a href="/web/quitarOcultoProducto/{{ $producto->id }}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"><i class="zmdi zmdi-eye-off w-5 h-5 text-gray-600"></i>Quitar Oculto</a>
+          </li>
+          <hr>
+          <li>
+            <button onclick="openModal1()" class="block text-start px-4 py-2 w-full hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"><i class="zmdi zmdi-delete w-5 h-5 text-red-600"></i>Eliminar</button>
+          </li>
+        </ul>
+    </div>
+    @endif
+    @endif
+    @endauth
+    
+  </div>
 
   <!-- GALERIA DE IMAGENES-->
   <div class="container mx-auto px-4 py-8">
@@ -54,35 +133,9 @@
       </div>
     </div>
   </div>
-  
-  <!-- CAMBIO ESTADO DEL PRODUCTO -->
+
   @auth
   @if ($productoo->usuarioId === Auth::user()->id)
-  @if ($producto->estado === 'activo')
-  <div class="px-8 pb-8 grid grid-cols-2 gap-4 text-center">
-    <a href="/web/reservado/{{ $producto->id }}" class="bg-white hover:bg-gray-200 text-dark border-2 border-gray-900 font-bold py-2 px-4 rounded-lg transition duration-200 ease-in-out">
-      Reservar
-    </a>
-    <a href="/web/vendido/{{ $producto->id }}" class="bg-white hover:bg-gray-200 text-dark border-2 border-gray-900 font-bold py-2 px-4 rounded-lg transition duration-200 ease-in-out">
-      Vendido
-    </a>
-  </div>
-  @elseif ($producto->estado === 'vendido')
-  <div class="px-8 pb-8 grid grid-cols-2 gap-4 text-center">
-    <a href="/web/quitarVendido/{{ $producto->id }}" class="bg-white hover:bg-gray-200 text-dark border-2 border-gray-900 font-bold py-2 px-4 rounded-lg transition duration-200 ease-in-out">
-      Quitar Vendido
-    </a>
-  </div>
-  @elseif ($producto->estado === 'reservado')
-  <div class="px-8 pb-8 grid grid-cols-2 gap-4 text-center">
-    <a href="/web/quitarReservado/{{ $producto->id }}" class="bg-white hover:bg-gray-200 text-dark border-2 border-gray-900 font-bold py-2 px-4 rounded-lg transition duration-200 ease-in-out">
-      Quitar Reservar
-    </a>
-    <a href="/web/vendido/{{ $producto->id }}" class="bg-white hover:bg-gray-200 text-dark border-2 border-gray-900 font-bold py-2 px-4 rounded-lg transition duration-200 ease-in-out">
-      Vendido
-    </a>
-  </div>
-  @endif
 
   <!-- ESTADO DEL PRODUCTO -->
   <br>
@@ -111,16 +164,6 @@
       <div class="flex flex-col">
         <div class="flex items-center">
           <h1 class="text-2xl font-bold inline uppercase">{{ $producto->nombre }}</h1>
-          
-          @auth
-          @if ($productoo->usuarioId === Auth::user()->id)
-          <a href="/web/editProducto/{{ $producto->id }}" class="ml-4">
-            <button class="p-2 rounded-full hover:bg-gray-200 focus:outline-none focus:bg-gray-300">
-              <i class="zmdi zmdi-edit text-gray-600"></i>
-            </button>
-          </a>
-          @endif
-          @endauth
         </div>
         <span class="text-xl text-gray-600">{{ $producto->precio }} €</span>
       </div>
@@ -129,13 +172,13 @@
       @if ($favorito)
       <a href="/web/deleteFavorito/{{ $producto->id }}">
         <button class="p-2 rounded-full hover:bg-gray-200 focus:outline-none focus:bg-gray-300">
-          <i class="zmdi zmdi-favorite text-red-500"></i>
+          <i class="zmdi zmdi-favorite text-red-500" style="font-size: 1.5em;"></i>
         </button>
       </a>
       @else
       <a href="/web/addFavorito/{{ $producto->id }}">
         <button class="p-2 rounded-full hover:bg-gray-200 focus:outline-none focus:bg-gray-300">
-          <i class="zmdi zmdi-favorite"></i>
+          <i class="zmdi zmdi-favorite" style="font-size: 1.5em;"></i>
         </button>
       </a>
       @endif
@@ -164,7 +207,7 @@
     </div>
   </div>
 </div>
-
+ 
 
 
 <x-footer></x-footer>
@@ -222,6 +265,48 @@
   }
 </script>
 
+
+
+<!-- INFORMACION MODAL CONFIRMACION-->
+<div id="modalConfirmacion" class="modal">
+  <!-- Contenido del modal -->
+  <div class="bg-white rounded-lg shadow-lg p-5 m-10 max-w-md mx-auto">
+    <div class="flex justify-between items-center">
+      <h2 class="text-xl font-bold">Confirmación</h2>
+      <button onclick="closeModal1()" class="text-xl font-bold">&times;</button>
+    </div>
+    <div class="p-8 text-center">
+      <p class="mb-5">¿Quieres eliminar este producto?</p>
+      <div class="flex justify-center gap-4">
+        <a href="/web/eliminarProducto/{{ $producto->id }}" class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-700">Eliminar</a>
+        <button onclick="closeModal1()" class="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-700">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<dialog id="my_modal_3" class="modal">
+  <div class="modal-box">
+    <form method="dialog">
+      <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+    </form>
+    <h3 class="font-bold text-lg">Hello!</h3>
+    <p class="py-4">Press ESC key or click on ✕ button to close</p>
+  </div>
+</dialog>
+<!-- MODAL -->
+<script>
+  // Función para abrir el modal
+  function openModal1() {
+    document.getElementById("modalConfirmacion").style.display = "block";
+  }
+
+  // Función para cerrar el modal
+  function closeModal1() {
+    document.getElementById("modalConfirmacion").style.display = "none";
+  }
+</script>
+ 
 <!-- MAPA -->
 <script>
   // GOOGLE MAPS - GEOCODING API
@@ -276,3 +361,5 @@
 
   obtenerCoordenadas();
 </script>
+
+<!-- MODAL PARA ACEPTAR ELIMINAR PRODUCTO -->
