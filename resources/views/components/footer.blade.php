@@ -5,6 +5,7 @@
             <span class="ml-3 text-xl">Resmoke</span>
         </a>
         <a href="/web/contacto" class="text-sm text-gray-900 m-5">Contacto</a>
+        <a href="{{ route('contacto') }}" class="text-sm text-gray-900 m-5">Contacto Nuevo</a>
         <p class="text-sm text-gray-500">© 2024 Todos los derechos reservados - Resmoke</p>
     </div>
 </footer>

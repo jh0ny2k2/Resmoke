@@ -66,7 +66,7 @@
                 <label class="block text-sm font-medium text-gray-700">Precio</label>
                 <form action="/web/precioVendido/{{ $producto->id }}/{{ $usuario->id }}" method="post" class="mt-1 p-2 bg-gray-50 border border-gray-300 rounded-md shadow-sm">
                 @csrf
-                    <input class="text-center w-full bg-gray-50 text-gray-900" name="precio" id="precio" placeholder="{{ $producto->precio }} €"></input>
+                    <input class="text-center w-full bg-gray-50 text-gray-900" name="precio" id="precio" value="{{ $producto->precio }}"></input>
                 </form>
                 
             </div>

@@ -35,34 +35,27 @@
         <div class="flex flex-wrap -m-4">
 
             @foreach ($productos as $producto)
-            <a href="/web/verProducto/{{ $producto->productoId }}" class="lg:w-1/3 md:w-1/2 p-4 w-full">
-                <div class="block relative h-full max-h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
-                        <img alt="ecommerce" class="lg:h-48 md:h-36 w-full object-cover object-center" src="{{ asset('storage/producto_'. $producto->productoId .'.jpg') }}">
-                    
-                    <div class="p-4 mt-4">
-
-                        <p class="mt-1 text-lg font-bold">{{ $producto->productos->precio }} €</p>
-                        <h2 class="text-gray-900 title-font text-lg font-medium">{{ $producto->productos->nombre }}</h2>
-                        <p class="mt-1 text-gray-600 text-sm text-ellipsis">{{ $producto->productos->descripcion }}</p>
-
-                        @if ($producto->productos->estado === 'observacion')
-                            <p class="mt-1 text-lg font-bold text-red-400">{{ $producto->productos->estado }}</p>
-
-                        @elseif ($producto->productos->estado === 'activo')
-                            <p class="mt-1 text-lg font-bold text-green-900">{{ $producto->productos->estado }}</p>
-
-                        @elseif ($producto->productos->estado === 'reservado')
-                            <p class="mt-1 text-lg font-bold text-yellow-900">{{ $producto->productos->estado }}</p>
-
-                        @elseif ($producto->productos->estado === 'vendido')
-                            <p class="mt-1 text-lg font-bold text-red-900">{{ $producto->productos->estado }}</p>
-
-                        @else
-                            <p class="mt-1 text-lg font-bold text-red-900">{{ $producto->productos->estado }}</p>
-                        @endif
-                    </div>
+            <a href="/web/verProducto/{{ $producto->productoId }}">
+            <div class="lg:w-1/3 md:w-1/2 p-4 w-full">
+            <div class="block relative h-full max-h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <img alt="ecommerce" class="lg:h-48 md:h-36 w-full object-cover object-center" src="{{ asset('storage/producto_'. $producto->productoId .'.jpg') }}">
+                
+                <div class="p-4 mt-4">
+                    <h2 class="text-gray-900 title-font text-lg font-medium">{{ $producto->productos->nombre }}</h2>
+                    <hr class="mt-2 mb-4">
+                    <p class="mt-2 text-gray-600 text-sm">Visto: {{ $producto->productos->numeroVisto }}</p>
+                    <p class="mt-1 text-gray-600 text-sm">Favorito: {{ $producto->productos->numeroFavorito }}</p>
                 </div>
+                <div class="flex justify-center pt-2 pl-4 pb-4 pr-4">
+                    <a href="/web/promocionarProducto/{{ $producto->productoId }}" class="inline-block w-full">
+                        <button class="w-full border border-gray-900 text-gray-900 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition-colors duration-300">
+                            Promocionar Producto
+                        </button>
+                    </a>
+                </div>
+            </div>
             </a>
+        </div>
             @endforeach
         </div>
     </div>

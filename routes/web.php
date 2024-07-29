@@ -10,6 +10,7 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PusherController;
+use App\Http\Controllers\ContactoController;
 use App\Http\Controllers\UsuarioFavoritoController;
 use App\Http\Controllers\UsuarioOpinionController;
 use App\Models\Categoria;
@@ -38,6 +39,30 @@ Route::prefix('web')->group(function() {
 
     // GUARDAR CONTACTO
     Route::post('/contacto', [AdminController::class, 'guardarContacto'])->name('guardarContacto'); 
+
+
+    Route::get('/contact', [ContactoController::class, 'contacto'])->name('contacto');
+
+    Route::get('/misProductos', [ContactoController::class, 'misProductos'])->name('misProductos');
+    Route::get('/editarProducto', [ContactoController::class, 'editarProducto'])->name('editarProducto');
+    Route::get('/productoEliminado`', [ContactoController::class, 'productoEliminado'])->name('productoEliminado');
+
+    Route::get('/comprarResmoke', [ContactoController::class, 'comprarResmoke'])->name('comprarResmoke');
+    Route::get('/filtros', [ContactoController::class, 'filtros'])->name('filtrosResmoke');
+    Route::get('/favoritos', [ContactoController::class, 'favoritos'])->name('favoritosResmoke');
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     
     // RUTAS DE LA WEB PERO PARA LOS QUE ESTAN REGISTRADOS O LOGUEADOSS

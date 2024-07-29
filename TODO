@@ -3,8 +3,10 @@ Por Hacer:
   ✔   Poner cuantas veces se han puesto como favorito
       ✔ → Añadir casilla en base de datos (NUMEROFAVORITO)
 
-  ■   Modificar card de los productos ✘
-        → Quitamos toda la información y ponemos los vistos y los favoritos ✘
+  ✔   Modificar card de los productos 
+      ✔ → Quitamos toda la información y ponemos los vistos, los favoritos y botón de promocionar producto
+        → Poner botones de filtrado, con "En venta", "Vendidos", "En observación", "reservado" y "oculto" 
+        → Falta por poner funcionalidad en boton de promocionar producto
 
   ■   Mirar metodo para vender productos
       ✔ → Poner casilla en base de datos (PROMOCION)
@@ -33,7 +35,7 @@ Por Hacer:
 
   ■   Mejorar rating
 
-  ■   Arreglar placeholder precio en poner vendido y poner reserva que sea value ✘
+  ✔  Arreglar placeholder precio en poner vendido y poner reserva que sea value 
 
   ■   Poner mis ventas ✘
 
