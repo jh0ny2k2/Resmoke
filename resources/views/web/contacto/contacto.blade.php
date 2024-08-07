@@ -9,15 +9,15 @@
                 <ul>
                     <li class="mt-2"><a href="{{ route('misProductos') }}" class="text-gray-600 hover:text-gray-800 text">Mis Productos</a></li>
                     <li class="mt-2"><a href="{{ route('comprarResmoke') }}" class="text-gray-600 hover:text-gray-800 text-bold">Como Comprar en Resmoke</a></li>
-                    <li class="mt-2"><a href="Comprar y Vender1/comoVender.html" class="text-gray-600 hover:text-gray-800 text-bold">Como Vender en Resmoke</a></li>
-                    <li class="mt-2"><a href="Comprar y Vender1/Destacados.html" class="text-gray-600 hover:text-gray-800 text-bold">Destacados</a></li>
+                    <li class="mt-2"><a href="{{ route('venderResmoke') }}" class="text-gray-600 hover:text-gray-800 text-bold">Como Vender en Resmoke</a></li>
+                    <li class="mt-2"><a href="{{ route('destacadoContacto') }}" class="text-gray-600 hover:text-gray-800 text-bold">Destacados</a></li>
                 </ul>
             </div>
             <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
                 <h3 class="text-xl font-bold mb-4">Cuenta</h3>
                 <ul>
-                    <li class="mt-2"><a href="Cuenta/Perfil.html" class="text-gray-600 hover:text-gray-800 text-bold">Perfil</a></li>
-                    <li class="mt-2"><a href="Cuenta/Chats.html" class="text-gray-600 hover:text-gray-800 text-bold">Chats</a></li>
+                    <li class="mt-2"><a href="{{ route('perfilContacto') }}" class="text-gray-600 hover:text-gray-800 text-bold">Perfil</a></li>
+                    <li class="mt-2"><a href="{{ route('chatsContacto') }}" class="text-gray-600 hover:text-gray-800 text-bold">Chats</a></li>
 
                 </ul>
             </div>

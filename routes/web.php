@@ -51,6 +51,26 @@ Route::prefix('web')->group(function() {
     Route::get('/filtros', [ContactoController::class, 'filtros'])->name('filtrosResmoke');
     Route::get('/favoritos', [ContactoController::class, 'favoritos'])->name('favoritosResmoke');
 
+    Route::get('/venderResmoke', [ContactoController::class, 'venderResmoke'])->name('venderResmoke');
+    Route::get('/subirProducto', [ContactoController::class, 'subirProducto'])->name('subirProducto');
+    Route::get('/politicaAnuncios', [ContactoController::class, 'politicaAnuncios'])->name('policiticaAnuncios');
+
+    Route::get('/Destacados', [ContactoController::class, 'destacados'])->name('destacadoContacto');
+    Route::get('/queSon', [ContactoController::class, 'queSon'])->name('queSon');
+    Route::get('/comoDestacar', [ContactoController::class, 'comoDestacar'])->name('comoDestacar');
+
+    Route::get('/perfilContacto', [ContactoController::class, 'perfilContacto'])->name('perfilContacto');
+    Route::get('/comoCrearPerfil', [ContactoController::class, 'comoCrearPerfil'])->name('comoCrearPerfil');
+    Route::get('/valoraciones', [ContactoController::class, 'valoraciones'])->name('valoraciones');
+    Route::get('/problemasPerfil', [ContactoController::class, 'problemasPerfil'])->name('problemasPerfil');
+    Route::get('/editarPerfil', [ContactoController::class, 'editarPerfil'])->name('editarPerfil');
+    Route::get('/olvidadoContraseña', [ContactoController::class, 'olvidadoContraseña'])->name('olvidadoContraseña');
+    Route::get('/eliminarCuenta', [ContactoController::class, 'eliminarCuenta'])->name('eliminarCuenta');
+
+    Route::get('/chatsContacto', [ContactoController::class, 'chatsContacto'])->name('chatsContacto');
+    Route::get('/comoFunciona', [ContactoController::class, 'comoFunciona'])->name('comoFunciona');
+    Route::get('/chatsBorrados', [ContactoController::class, 'chatsBorrados'])->name('chatsBorrados');
+
 
 
 
