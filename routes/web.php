@@ -76,7 +76,7 @@ Route::prefix('web')->group(function() {
     Route::get('/formularioContacto', [ContactoController::class, 'formularioContacto'])->name('formularioContacto');
     Route::post('/form', [ContactoController::class, 'form'])->name('form');
 
-
+    
 
 
 
@@ -159,6 +159,8 @@ Route::prefix('web')->group(function() {
 
         // VER MIS FAVORITOS
         Route::get('/verFavoritos', [UsuarioFavoritoController::class, 'verMisFavoritos'])->name('favoritos'); 
+
+        Route::get('/compras', [ProductoController::class, 'verMisCompras'])->name('compras');
 
         // PERFIL      
 

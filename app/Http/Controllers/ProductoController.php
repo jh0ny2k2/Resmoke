@@ -142,6 +142,15 @@ class ProductoController extends Controller
         return view('web.perfil.enVenta', ['usuario' => $usuario, 'productos' => $productoVenta]);
     }
 
+
+    public function verMisCompras() {
+        $usuario = User::where('id', Auth::user()->id)->first();
+        $productoVenta = Producto::where('vendidoPor', Auth::user()->id)->get();
+
+        return view('web.perfil.misCompras', ['usuario' => $usuario, 'productos' => $productoVenta]);
+    }
+
+
     // PONER PRODUCTO COMO RESERVADO
     public function ponerReservado($id) {
 

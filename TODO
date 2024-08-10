@@ -28,6 +28,9 @@ Por Hacer:
         
 
   ■   Mejorar página de contacto con preguntas predeterminadas ✘
+      → Queda por hacer la parte de seguridad
+      ✔ → Funcionalidad de formulario contacto
+        ✔ → Mejorado panel admin de contacto, base de datos y ver contacto en admin
 
   ✔   Arreglar botón de favorito, si se le da se le suma 1 al producto y si se quita se le resta 1
       ✔  Poner más grande el botón de like 

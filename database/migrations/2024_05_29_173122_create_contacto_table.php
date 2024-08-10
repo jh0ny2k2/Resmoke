@@ -15,7 +15,10 @@ return new class extends Migration
             $table->id();
             $table->text('nombre');
             $table->text('email');
+            $table->string('telefono');
+            $table->enum('motivo', ['consulta','problema','sugerencia','otros']);
             $table->text('comentario');
+            $table->enum('comoConociste', ['ninguno','internet','amigo','redesSociales','otros']);
             $table->enum('estado', ['visto', 'pendiente']);
             $table->timestamps();
         });
