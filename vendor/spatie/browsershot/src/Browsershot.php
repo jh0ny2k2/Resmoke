@@ -457,6 +457,11 @@ class Browsershot
         return $this->setOption('disableImages', true);
     }
 
+    public function disableCaptureURLS(): static
+    {
+        return $this->setOption('disableCaptureURLS', true);
+    }
+
     public function blockUrls($array): static
     {
         return $this->setOption('blockUrls', $array);
@@ -604,7 +609,9 @@ class Browsershot
             throw CouldNotTakeBrowsershot::chromeOutputEmpty($targetPath, $output, $command);
         }
 
-        $this->imageManipulations->apply($targetPath);
+        if (! $this->imageManipulations->isEmpty()) {
+            $this->imageManipulations->apply($targetPath);
+        }
     }
 
     public function bodyHtml(): string
@@ -707,7 +714,7 @@ class Browsershot
     {
         $requests = $this->chromiumResult?->getRequestsList();
 
-        if ($requests) {
+        if (! is_null($requests)) {
             return $requests;
         }
 
@@ -732,7 +739,7 @@ class Browsershot
     {
         $redirectHistory = $this->chromiumResult?->getRedirectHistory();
 
-        if ($redirectHistory) {
+        if (! is_null($redirectHistory)) {
             return $redirectHistory;
         }
 
@@ -754,7 +761,7 @@ class Browsershot
     {
         $messages = $this->chromiumResult?->getConsoleMessages();
 
-        if ($messages) {
+        if (! is_null($messages)) {
             return $messages;
         }
 
@@ -774,7 +781,7 @@ class Browsershot
     {
         $requests = $this->chromiumResult?->getFailedRequests();
 
-        if ($requests) {
+        if (! is_null($requests)) {
             return $requests;
         }
 
@@ -794,7 +801,7 @@ class Browsershot
     {
         $pageErrors = $this->chromiumResult?->getPageErrors();
 
-        if ($pageErrors) {
+        if (! is_null($pageErrors)) {
             return $pageErrors;
         }
 
@@ -1029,7 +1036,7 @@ class Browsershot
     {
         $fullCommand = $this->getFullCommand($command);
 
-        $process = $this->isWindows() ? new Process($fullCommand) : Process::fromShellCommandline($fullCommand);
+        $process = $this->isWindows() ? new Process($fullCommand, null, $this->getWindowsEnv()) : Process::fromShellCommandline($fullCommand);
 
         $process->setTimeout($this->timeout);
 
@@ -1043,7 +1050,11 @@ class Browsershot
         $this->chromiumResult = new ChromiumResult(json_decode($rawOutput, true));
 
         if ($process->isSuccessful()) {
-            return $this->chromiumResult?->getResult();
+            $result = $this->chromiumResult?->getResult();
+
+            $this->cleanupTemporaryOptionsFile();
+
+            return $result;
         }
 
         $this->cleanupTemporaryOptionsFile();
@@ -1060,6 +1071,16 @@ class Browsershot
         }
 
         throw new ProcessFailedException($process);
+    }
+
+    protected function getWindowsEnv(): array
+    {
+        return [
+            'LOCALAPPDATA' => getenv('LOCALAPPDATA'),
+            'Path' => getenv('Path'),
+            'SystemRoot' => getenv('SystemRoot'),
+            'USERPROFILE' => getenv('USERPROFILE'),
+        ];
     }
 
     protected function getFullCommand(array $command): array|string

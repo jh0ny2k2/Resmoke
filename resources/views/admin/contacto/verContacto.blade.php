@@ -23,12 +23,24 @@
                 <dt class="text-sm font-medium text-gray-500">Email:</dt>
                 <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{{ $contacto->email }}</dd>
             </div>
-            
-        </div>
-        <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 rounded gap-4 ml-5 mr-5 sm:p-6">
+            <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 rounded">
+                <dt class="text-sm font-medium text-gray-500">Teléfono:</dt>
+                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{{ $contacto->telefono }}</dd>
+            </div>
+            <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 rounded">
+                <dt class="text-sm font-medium text-gray-500">Motivo:</dt>
+                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{{ $contacto->motivo }}</dd>
+            </div>
+            <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 rounded">
                 <dt class="text-sm font-medium text-gray-500">Comentario:</dt>
                 <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{{ $contacto->comentario }}</dd>
             </div>
+            <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 rounded">
+                <dt class="text-sm font-medium text-gray-500">Como nos conoció:</dt>
+                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{{ $contacto->comoConociste }}</dd>
+            </div>
+            
+        </div>
         <div class="flex justify-center space-x-2">
                 <a href="/admin/aceptarContacto/{{ $contacto->id }}" class="inline-block">
                     <button class="p-2 text-green-500 hover:text-green-700">

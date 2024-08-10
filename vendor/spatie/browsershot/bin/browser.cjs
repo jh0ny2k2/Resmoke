@@ -46,9 +46,10 @@ const getOutput = async (request, page = null) => {
         if (request.action == 'evaluate') {
             output.result = await page.evaluate(request.options.pageFunction);
         } else {
-            output.result = (
-                await page[request.action](request.options)
-            ).toString('base64');
+            const result = await page[request.action](request.options);
+
+            // Ignore output result when saving to a file
+            output.result = request.options.path ? '' : result.toString('base64');
         }
     }
 
@@ -157,9 +158,11 @@ const callChrome = async pup => {
         page.on('request', interceptedRequest => {
             var headers = interceptedRequest.headers();
 
-            requestsList.push({
-                url: interceptedRequest.url(),
-            });
+            if (request.options && request.options.disableCaptureURLS) {
+                requestsList.push({
+                    url: interceptedRequest.url(),
+                });
+            }
 
             if (request.options && request.options.disableImages) {
                 if (interceptedRequest.resourceType() === 'image') {

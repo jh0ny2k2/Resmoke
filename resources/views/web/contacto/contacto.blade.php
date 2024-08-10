@@ -33,7 +33,7 @@
         </div>
         <div class="mt-6 flex justify-center items-center space-x-4">
             <p class="text-base">¿No encuentras lo que necesitas? Envíanos un mensaje</p>
-            <a href="formContacto.html" class="inline-block px-6 py-2 border border-black rounded-lg">Enviar Mensaje</a>
+            <a href="{{ route('formularioContacto') }}" class="inline-block px-6 py-2 border border-black rounded-lg">Enviar Mensaje</a>
         </div>
     </div>
 

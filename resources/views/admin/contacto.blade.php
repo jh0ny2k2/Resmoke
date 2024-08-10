@@ -14,6 +14,8 @@
                 <tr>
                     <th scope="col" class="px-6 py-3">Nombre Usuario</th>
                     <th scope="col" class="px-6 py-3">Email</th>
+                    <th scope="col" class="px-6 py-3">Teléfono</th>
+                    <th scope="col" class="px-6 py-3">Motivo</th>
                     <th scope="col" class="px-6 py-3">comentario</th>
                     <th scope="col" class="px-6 py-3">Estado</th>
                     <th scope="col" class="px-6 py-3">Acciones</th>
@@ -24,10 +26,30 @@
                 <tr class="bg-white border-b">
                     <td class="px-6 py-4">{{ $contacto->nombre }}</td>
                     <td class="px-6 py-4">{{ $contacto->email }}</td>
+                    <td class="px-6 py-4">{{ $contacto->telefono }}</td>
+                    <td class="px-6 py-4">{{ $contacto->motivo }}</td>
                     <td class="px-6 py-4">{{ $contacto->comentario}}</td>
                     <td class="px-6 py-4">{{ $contacto->estado}}</td>
                     <td class="px-6 py-4 justify-center">
                         <a href="/admin/verContacto/{{ $contacto->id }}">
+                            <button class="text-yellow-500 hover:text-yellow-700">
+                                <span class="material-icons">visibility</span>
+                            </button>
+                        </a>
+                    </td>
+                </tr>
+                @endforeach
+
+                @foreach ($contactoFin as $fin)
+                <tr class="bg-white border-b">
+                    <td class="px-6 py-4">{{ $fin->nombre }}</td>
+                    <td class="px-6 py-4">{{ $fin->email }}</td>
+                    <td class="px-6 py-4">{{ $fin->telefono }}</td>
+                    <td class="px-6 py-4">{{ $fin->motivo }}</td>
+                    <td class="px-6 py-4">{{ $fin->comentario}}</td>
+                    <td class="px-6 py-4">{{ $fin->estado}}</td>
+                    <td class="px-6 py-4 justify-center">
+                        <a href="/admin/verContacto/{{ $fin->id }}">
                             <button class="text-yellow-500 hover:text-yellow-700">
                                 <span class="material-icons">visibility</span>
                             </button>

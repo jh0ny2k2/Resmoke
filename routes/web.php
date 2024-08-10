@@ -41,6 +41,8 @@ Route::prefix('web')->group(function() {
     Route::post('/contacto', [AdminController::class, 'guardarContacto'])->name('guardarContacto'); 
 
 
+
+    
     Route::get('/contact', [ContactoController::class, 'contacto'])->name('contacto');
 
     Route::get('/misProductos', [ContactoController::class, 'misProductos'])->name('misProductos');
@@ -71,7 +73,8 @@ Route::prefix('web')->group(function() {
     Route::get('/comoFunciona', [ContactoController::class, 'comoFunciona'])->name('comoFunciona');
     Route::get('/chatsBorrados', [ContactoController::class, 'chatsBorrados'])->name('chatsBorrados');
 
-
+    Route::get('/formularioContacto', [ContactoController::class, 'formularioContacto'])->name('formularioContacto');
+    Route::post('/form', [ContactoController::class, 'form'])->name('form');
 
 
 

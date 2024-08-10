@@ -9,9 +9,10 @@ class AdminController extends Controller
 {
     // VER TODOS LOS CONTACTOS
     public function contacto(){
-        $contacto = Contacto::orderBy('created_at', 'asc')->get();
+        $contacto = Contacto::where('estado', 'pendiente')->get();
+        $contactoFin = Contacto::where('estado', 'visto')->get();
 
-        return view('admin.contacto', ['contactos' => $contacto]);
+        return view('admin.contacto', ['contactos' => $contacto, 'contactoFin' => $contactoFin]);
     }
 
     // VER CONTACTO

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Contacto;
 
 class ContactoController extends Controller
 {
@@ -119,6 +120,26 @@ class ContactoController extends Controller
     public function chatsBorrados() {
 
         return view('web.contacto.chats.chatsBorrados');
+    }
+    
+    public function formularioContacto() {
+
+        return view('web.contacto.formularioContacto');
+    } 
+
+    public function form(Request $request) {
+
+        $contacto = new Contacto();
+        $contacto->nombre = $request->nombre;
+        $contacto->email = $request->email;
+        $contacto->telefono = $request->telefono;
+        $contacto->motivo = $request->motivo;
+        $contacto->comentario = $request->comentario;
+        $contacto->comoConociste = $request->comoConociste;
+        $contacto->estado = 'pendiente';
+        $contacto->save();
+
+        return redirect()->route('contacto');
     }
 
 }
