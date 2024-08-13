@@ -5,7 +5,7 @@ Por Hacer:
 
   ✔   Modificar card de los productos 
       ✔ → Quitamos toda la información y ponemos los vistos, los favoritos y botón de promocionar producto
-        → Poner botones de filtrado, con "En venta", "Vendidos", "En observación", "reservado" y "oculto" 
+      ✔ → Poner botones de filtrado, con "En venta", "Vendidos", "En observación", "reservado" y "oculto" 
         → Falta por poner funcionalidad en boton de promocionar producto
 
   ■   Mirar metodo para vender productos
@@ -24,7 +24,7 @@ Por Hacer:
 
   ✔   Cambiar formulario de registro, quitar dni y sexo, esto se podrá poner en edicción de usuario posteriormente
       ✔ → Poner add foto perfil como las fotos en add producto
-      ✔ → Poner letra negra en fecha nacimiento formulario registro ✘
+      ✔ → Poner letra negra en fecha nacimiento formulario registro
         
 
   ■   Mejorar página de contacto con preguntas predeterminadas ✘
@@ -39,7 +39,7 @@ Por Hacer:
 
   ✔  Arreglar placeholder precio en poner vendido y poner reserva que sea value 
 
-  ■   Poner mis compras ✘
+  ✔  Poner mis compras 
 
   ■ 
 

@@ -137,6 +137,7 @@ class ProductoController extends Controller
     // VER MIS PRODUCTOR
     public function verMisProductos() {
         $usuario = User::where('id', Auth::user()->id)->first();
+
         $productoVenta = UsuarioProducto::where('usuarioId', Auth::user()->id)->with('productos')->get();
 
         return view('web.perfil.enVenta', ['usuario' => $usuario, 'productos' => $productoVenta]);

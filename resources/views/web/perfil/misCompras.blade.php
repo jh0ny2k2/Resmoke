@@ -27,7 +27,7 @@
 <section class="text-gray-600 body-font px-5 py-24 mx-auto  flex flex-col h-screen container">
 
     <div class="flex flex-wrap w-full mb-12 flex-col mt-10 ml-5">
-        <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Productos</h1>
+        <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Mis Compras</h1>
     </div>
 
 
