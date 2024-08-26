@@ -4,7 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resmoke - Inicio</title>
+
+    <!-- Información Resmoke -->
+    <title>Resmoke</title>
+    <meta name="description" content="Tienda de segunda mano especializada en cachimbas, accesorios y vapers. Encuentra productos de calidad a precios asequibles para disfrutar al máximo de la cultura del narguile y el vapeo.">
+    <meta name="keywords" content="Cachimbas, Cazoletas, Accesorios">
+
+
     <link rel="shortcut icon" href="{{ asset('storage/logo resmoke.png' )}}" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.0/dist/alpine.min.js"></script>
