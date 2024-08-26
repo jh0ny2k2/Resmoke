@@ -7,8 +7,9 @@
 
     <!-- Información Resmoke -->
     <title>Resmoke</title>
-    <meta name="description" content="Tienda de segunda mano especializada en cachimbas, accesorios y vapers. Encuentra productos de calidad a precios asequibles para disfrutar al máximo de la cultura del narguile y el vapeo.">
+    <meta name="description" content="Resmoke es una tienda de segunda mano especializada en cachimbas, accesorios y vapers. Encuentra productos de calidad a precios asequibles para disfrutar al máximo de la cultura del narguile y el vapeo.">
     <meta name="keywords" content="Cachimbas, Cazoletas, Accesorios">
+    <meta name="google-site-verification" content="Y_SvepQNEJRXTbWVj-GIWkoq-L1GMbvg68fTo1WHLFw" />
 
 
     <link rel="shortcut icon" href="{{ asset('storage/logo resmoke.png' )}}" />
@@ -30,7 +31,7 @@
         <div class="container mx-auto flex flex-wrap items-center justify-between p-5">
 
             <a href="/welcome" class="flex items-center text-gray-900 mr-4">
-                <img src="{{ asset('storage/logo resmoke.png' )}}" alt="Logo" class="h-24">
+                <img src="{{ asset('storage/logo resmoke.png' )}}" alt="resmoke" class="h-24">
             </a>
 
             <div class="flex items-center">
