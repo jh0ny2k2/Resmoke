@@ -11,8 +11,19 @@
     <meta name="keywords" content="Cachimbas, Cazoletas, Accesorios">
     <meta name="google-site-verification" content="Y_SvepQNEJRXTbWVj-GIWkoq-L1GMbvg68fTo1WHLFw" />
 
+    <!-- Otros metadatos -->
+    <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "{{ url('/verCategoria/1') }}",
+      "logo": "{{ asset('storage/logo resmoke.png') }}",
+      "name": "Cachimbas",
+    }
+    </script>
 
     <link rel="shortcut icon" href="{{ asset('storage/logo resmoke.png' )}}" />
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.0/dist/alpine.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
