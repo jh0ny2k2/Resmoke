@@ -11,7 +11,7 @@
     <meta name="keywords" content="Cachimbas, Cazoletas, Accesorios">
     <meta name="google-site-verification" content="Y_SvepQNEJRXTbWVj-GIWkoq-L1GMbvg68fTo1WHLFw" />
 
-    <link rel="icon" href="{{ asset('storage/logo resmoke.png' )}}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('storage/logo resmoke.png') }}" type="image/x-icon">
 
 
 
