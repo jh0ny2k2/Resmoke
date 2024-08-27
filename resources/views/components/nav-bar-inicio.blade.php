@@ -10,7 +10,9 @@
     <meta name="description" content="Resmoke es una tienda de segunda mano especializada en cachimbas, accesorios y vapers. Encuentra productos de calidad a precios asequibles para disfrutar al máximo de la cultura del narguile y el vapeo.">
     <meta name="keywords" content="Cachimbas, Cazoletas, Accesorios">
     <meta name="google-site-verification" content="Y_SvepQNEJRXTbWVj-GIWkoq-L1GMbvg68fTo1WHLFw" />
-    <meta name="image" content="{{ asset('storage/logo resmoke.png') }}" />
+
+    <link rel="icon" href="{{ asset('storage/logo resmoke.png' )}}" type="image/x-icon">
+
 
 
     <link rel="shortcut icon" href="{{ asset('storage/logo resmoke.png' )}}" />
