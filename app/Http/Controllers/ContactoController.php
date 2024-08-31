@@ -142,4 +142,50 @@ class ContactoController extends Controller
         return redirect()->route('contacto');
     }
 
+    public function consejosSeguridad() {
+
+        return view('web.contacto.consejos.consejos');
+    } 
+
+
+
+
+
+
+
+    public function normasResmoke() {
+
+        return view('web.contacto.normas.normas');
+    }
+
+
+
+
+
+
+
+
+    public function leyServiciosDigitales() {
+
+        return view('web.contacto.ley.ley');
+    }
+
+    public function recursosMecanismos() {
+
+        return view('web.contacto.ley.recursos');
+    }
+
+    public function contenidoIlegal() {
+
+        return view('web.contacto.ley.ilegal');
+    }
+
+
+
+
+    public function usoProteccionDatos() {
+
+        return view('web.contacto.proteccion.proteccion');
+    }
+
 }

@@ -13,9 +13,13 @@ use App\Http\Controllers\PusherController;
 use App\Http\Controllers\ContactoController;
 use App\Http\Controllers\UsuarioFavoritoController;
 use App\Http\Controllers\UsuarioOpinionController;
+use App\Http\Controllers\MailController;
 use App\Models\Categoria;
 use App\Models\Producto;
 use Illuminate\Support\Facades\Route;
+
+
+Route::get('/envioRegister', [MailController::class, 'envioRegister'])->name('envioRegister');
 
 
 // RUTAS PARA LA WEB
@@ -72,6 +76,30 @@ Route::prefix('web')->group(function() {
     Route::get('/chatsContacto', [ContactoController::class, 'chatsContacto'])->name('chatsContacto');
     Route::get('/comoFunciona', [ContactoController::class, 'comoFunciona'])->name('comoFunciona');
     Route::get('/chatsBorrados', [ContactoController::class, 'chatsBorrados'])->name('chatsBorrados');
+
+
+
+
+
+
+    Route::get('/consejosSeguridad', [ContactoController::class, 'consejosSeguridad'])->name('consejosSeguridad');
+
+    Route::get('/normasResmoke', [ContactoController::class, 'normasResmoke'])->name('normasResmoke');
+
+    Route::get('/leyServiciosDigitales', [ContactoController::class, 'leyServiciosDigitales'])->name('leyServiciosDigitales');
+    Route::get('/recursosMecanismos', [ContactoController::class, 'recursosMecanismos'])->name('recursosMecanismos');
+    Route::get('/contenidoIlegal', [ContactoController::class, 'contenidoIlegal'])->name('contenidoIlegal');
+
+    Route::get('/usoProteccionDatos', [ContactoController::class, 'usoProteccionDatos'])->name('usoProteccionDatos');
+
+
+
+
+
+
+
+
+
 
     Route::get('/formularioContacto', [ContactoController::class, 'formularioContacto'])->name('formularioContacto');
     Route::post('/form', [ContactoController::class, 'form'])->name('form');

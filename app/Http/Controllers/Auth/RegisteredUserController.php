@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\envioLoginMailable;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -46,6 +48,10 @@ class RegisteredUserController extends Controller
             'password' => Hash::make($request->password),
             'rol' => 'usuario',
         ]);
+
+        $correo = new envioLoginMailable();
+        Mail::to($user->email)->send($correo);
+
 
         $id = $user->id;
 

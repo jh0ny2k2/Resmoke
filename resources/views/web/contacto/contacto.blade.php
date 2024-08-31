@@ -24,10 +24,10 @@
             <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
                 <h3 class="text-xl font-bold mb-4">Centro de Seguridad</h3>
                 <ul>
-                    <li class="mt-2"><a href="Centro y Seguridad/consejosDeSeguridad.html" class="text-gray-600">Consejos de Seguridad</a></li>
-                    <li class="mt-2"><a href="Centro y Seguridad/normasDeResmoke.html" class="text-gray-600 hover:text-gray-800 text-bold">Normas de Resmoke</a></li>
-                    <li class="mt-2"><a href="Centro y Seguridad/leyDeServiciosDigitales.html" class="text-gray-600 hover:text-gray-800 text-bold">Ley de Servicios Digitales</a></li>
-                    <li class="mt-2"><a href="Centro y Seguridad/usoyProteccionDeDatos.html" class="text-gray-600 hover:text-gray-800 text-bold">Uso y Protección de Datos</a></li>
+                    <li class="mt-2"><a href="{{ route('consejosSeguridad') }}" class="text-gray-600">Consejos de Seguridad</a></li>
+                    <li class="mt-2"><a href="{{ route('normasResmoke') }}" class="text-gray-600 hover:text-gray-800 text-bold">Normas de Resmoke</a></li>
+                    <li class="mt-2"><a href="{{ route('leyServiciosDigitales') }}" class="text-gray-600 hover:text-gray-800 text-bold">Ley de Servicios Digitales</a></li>
+                    <li class="mt-2"><a href="{{ route('usoProteccionDatos') }}" class="text-gray-600 hover:text-gray-800 text-bold">Uso y Protección de Datos</a></li>
                 </ul>
             </div>
         </div>
