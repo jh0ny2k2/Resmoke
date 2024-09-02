@@ -7,8 +7,6 @@
         <div class="text-center lg:w-2/3 w-full">
             <h1 class="title-font sm:text-6xl text-5xl mb-4 font-medium">Encuentra lo que necesitas</h1>
             <p class="mb-8 font-mono leading-relaxed">Vende lo que no utilizas</p>
-
-             BUSCADOR
             <form method="post" action="{{ route('buscador') }}" class="flex w-full justify-center items-end">
             @csrf
                 <div class="relative mr-4 lg:w-full xl:w-1/2 w-2/4 md:w-full text-left">
@@ -81,7 +79,7 @@
 
 
 <!-- Contenedor de la notificación -->
-<div id="notification" class="fixed top-4 right-4 bg-white border-l-4 border-gray-900 shadow-lg rounded-lg p-4 max-w-lg opacity-0 transform translate-y-4 transition-all duration-300">
+<div id="notification" class="fixed bottom-4 left-4 bg-white border-l-4 border-gray-900 shadow-lg rounded-lg p-4 max-w-lg opacity-0 transform translate-y-4 transition-all duration-300">
         <div class="flex items-start">
             <div class="text-red-700">
                 <!-- Icono -->
