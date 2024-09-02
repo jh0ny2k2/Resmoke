@@ -14,7 +14,7 @@
         <!-- Texto principal -->
         <h1 class="text-5xl font-bold">¡Volveremos pronto!</h1>
         <p class="text-2xl">Lo sentimos por la inconveniencia, pero estamos realizando mantenimiento por problemas técnicos en este momento.</p>
-        <p class="text-lg">— Resmoke</p>
+        <p class="text-lg">Resmoke</p>
 
         <!-- Icono de Mantenimiento -->
         <div class="mt-10 flex justify-center">
