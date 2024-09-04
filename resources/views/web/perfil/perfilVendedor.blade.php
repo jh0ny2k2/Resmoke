@@ -21,17 +21,18 @@
         </div>
 
         <!-- INFORMACION DE CONTACTO -->
-        <div class="p-8">
+        <div class="p-4 md:p-8">
             <h3 class="text-lg font-semibold text-gray-800 mb-4">Información de contacto</h3>
-            <div class="grid grid-cols-2">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 
                 <!-- CORREO ELECTRONICO -->
                 <p><strong>Correo electrónico:</strong> {{$usuario->email}} </p>
 
-                <!-- TELEFONO -->
+                <!-- TELÉFONO -->
                 <p><strong>Teléfono:</strong> {{$usuario->telefono}} </p>
             </div>
         </div>
+
 
         <!-- BOTONES --> 
         <div class="px-8 pb-8 grid grid-cols-2 gap-4 text-center">

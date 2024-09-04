@@ -14,7 +14,7 @@ class UsuarioOpinionController extends Controller
     // Función para ver formulario añadir una opinión
     public function addOpinion($id) {
 
-        $usuario = User::where('id', $id)->first();
+        $usuario = User::where('id', $user->usuarioId)->first();
 
         return view('web.perfil.addOpinion', ['usuario' => $usuario]); 
     }

@@ -34,21 +34,27 @@
     <div class="container px-5 py-8 mx-auto">
         <div class="flex flex-wrap -m-4">
 
-            @foreach ($productos as $producto)
-            <a href="/web/verProducto/{{ $producto->id }}">
+        @foreach ($productos as $producto)
             <div class="lg:w-1/3 md:w-1/2 p-4 w-full">
-            <div class="block relative h-full max-h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <img alt="ecommerce" class="lg:h-48 md:h-36 w-full object-cover object-center" src="{{ asset('storage/producto_'. $producto->id .'.jpg') }}">
-                
-                <div class="p-4 mt-4">
-                        <h2 class="text-gray-900 title-font text-lg font-medium">{{ $producto->nombre }}</h2>
-                        <p class="mt-1 text-gray-600 text-sm text-ellipsis">{{ $producto->descripcion }}</p>
-                </div>
-                
+                <a href="/web/verProducto/{{ $producto->id }}">
+                    <div class="block relative h-full max-h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <img alt="ecommerce" class="lg:h-48 md:h-36 w-full object-cover object-center" src="{{ asset('storage/producto_'. $producto->id .'.jpg') }}">
+                        <div class="p-4 mt-4">
+                            <h2 class="text-gray-900 title-font text-lg font-medium">{{ $producto->nombre }}</h2>
+                            <p class="mt-1 text-gray-600 text-sm text-ellipsis">{{ $producto->descripcion }}</p>
+                            
+                            <!-- BOTÓN AÑADIR OPINIÓN -->
+                            <!-- <a href="/web/addOpinion/{{ $producto->id }}" class="mt-4 inline-block">
+                                <button class="w-full hover:bg-gray-300 text-gray-900 font-semibold py-2 px-4 rounded-lg border border-gray-900 transition duration-300">
+                                    Añadir Opinión
+                                </button>
+                            </a> -->
+                        </div>
+                    </div>
+                </a>
             </div>
-            </a>
-        </div>
-            @endforeach
+        @endforeach
+
         </div>
     </div>
 </section>

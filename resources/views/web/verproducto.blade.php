@@ -233,8 +233,10 @@
             <p><strong>Teléfono:</strong> {{$productoo->usuarios->telefono}} </p>
           </div>
           @auth
-          <div>
-            <a class="border-2 border-gray-900 p-2 rounded-lg hover:bg-gray-400" href="/web/verPerfilVendedor/{{ $productoo->usuarios->id }}">Ver Perfil de {{$productoo->usuarios->name}}</a>
+          <div class="md:col-span-2 mt-5">
+            <a class="block w-full text-center border-2 border-gray-900 p-2 rounded-lg hover:bg-gray-400" href="/web/verPerfilVendedor/{{ $productoo->usuarios->id }}">
+              Ver Perfil de {{$productoo->usuarios->name}}
+            </a>
           </div>
           @endauth
         </div>
@@ -242,6 +244,7 @@
     </div>
   </div>
 </div>
+
 
 <dialog id="my_modal_3" class="modal">
   <div class="modal-box">
