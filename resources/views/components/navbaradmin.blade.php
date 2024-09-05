@@ -80,11 +80,6 @@
     </ul>
 </div>
 
-<!-- Content -->
-<div class="container ml-64 p-10">
-    <!-- Main content here -->
-</div>
-
 <!-- Alpine.js root -->
 <script>
     document.addEventListener('alpine:init', () => {

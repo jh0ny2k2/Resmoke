@@ -2,7 +2,7 @@
 <x-navbaradmin></x-navbaradmin>
 
 <!-- CONTENIDO -->
-<div class="flex-1 p-10 ml-64">
+<div class="flex-1 p-2 md:ml-64">
     <div class="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg">
         <form class="space-y-4"  method="POST" action="/admin/addUser">
             @csrf
