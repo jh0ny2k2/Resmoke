@@ -2,7 +2,7 @@
 <x-navbaradmin></x-navbaradmin>
 
 <!-- CONTENIDO -->
-<div class="flex-1 p-10 ml-60">
+<div class="flex-1 p-2 md:ml-60">
     <h1 class="text-4xl font-bold mb-6">Productos por confirmar</h1>
     <h1 class=" mb-6">Hay un total de {{ $numero }} productos por confirmar</h1>
     <a href="{{ route('adminProducto') }}">

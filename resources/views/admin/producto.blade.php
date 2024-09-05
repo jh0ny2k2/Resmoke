@@ -2,8 +2,8 @@
 <x-navbaradmin></x-navbaradmin>
 
 <!-- CONTENIDO -->
-<div class="flex-1 p-10 ml-60">
-    <div class="flex justify-between mb-6">
+<div class="flex-1 p-2 md:ml-64">
+    <div class="flex flex-col space-y-4 md:space-y-0 md:flex-row justify-between mb-6">
         <h1 class="text-4xl font-bold">Productos</h1>
 
         <!-- BUSCADOR -->

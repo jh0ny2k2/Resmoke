@@ -2,7 +2,7 @@
 <x-navbaradmin></x-navbaradmin>
 
 <!-- CONTENIDO -->
-<div class="flex-1 p-10 ml-60">
+<div class="flex-1 p-2 md:ml-60">
     <h1 class="text-4xl font-bold mb-6 text-gray-800">Contacto {{ $contacto->id }}</h1>
 
     <!-- BOTON VOLVER ATRAS -->
