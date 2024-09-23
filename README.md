@@ -10,11 +10,11 @@ En la era digital actual, la compra y venta de productos de segunda mano ha gana
 
 El objetivo principal de este proyecto es facilitar el intercambio de productos de segunda mano mediante una aplicación web intuitiva y funcional, que se centre en la transparencia y la seguridad de las transacciones. De esta manera, Resmoke no solo promueve el consumo sostenible, sino que también fortalece la confianza entre los usuarios.
 
-### OBJETIVOS
+## OBJETIVOS
 
 Desarrollar una aplicación web que mejore la compra y venta de productos del “mundo del humo” de segunda mano, proporcionando una plataforma segura y fácil de usar. 
 
-## OBJETIVOS FUNCIONALES DEL SISTEMA
+# OBJETIVOS FUNCIONALES DEL SISTEMA
 
 Gestión y Control de Usuarios: El sistema diferenciará las tareas y funcionalidades disponibles según el rol del usuario, asegurando que cada uno tenga acceso únicamente a las herramientas necesarias para sus responsabilidades específicas: 
 Administradores: Tienen acceso completo para gestionar usuarios, productos, categorías, favoritos y comentarios. o 
@@ -58,7 +58,7 @@ Cifrado de Datos: Protección de datos sensibles mediante cifrado.
 
 
 
-## OBJETIVOS NO FUNCIONALES DEL SISTEMA
+# OBJETIVOS NO FUNCIONALES DEL SISTEMA
 
 Usabilidad: El sistema deberá proporcionar una interfaz de usuario sencilla para los usuarios, evitando la sobrecarga de información. La navegación debe ser clara y accesible para que los usuarios puedan realizar sus tareas sin dificultad. 
 
