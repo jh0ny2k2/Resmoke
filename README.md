@@ -21,29 +21,38 @@ Administradores: Tienen acceso completo para gestionar usuarios, productos, cate
 Usuarios: Pueden buscar productos, hacer compras, dejar opiniones, pueden listar productos, gestionar sus ventas e incluso comunicarse con los vendedores/compradores.
 
 
-Gestión de Datos del Usuario: El sistema permitirá a los usuarios gestionar su información personal de manera autónoma y segura incluyendo: 
+#### Gestión de Datos del Usuario: 
+
+El sistema permitirá a los usuarios gestionar su información personal de manera autónoma y segura incluyendo: 
 Actualización de Datos Personales: Usuarios pueden actualizar su nombre, dirección, información de contacto y preferencias. 
 Seguridad de datos: Implementación de medidas de seguridad para proteger la información personal, cumpliendo con normativas de privacidad y protección de datos. 
 
 
-Gestión de Productos: El sistema proporcionará herramientas para la gestión de productos de segunda mano, incluyendo: 
+#### Gestión de Productos:
+
+El sistema proporcionará herramientas para la gestión de productos de segunda mano, incluyendo: 
 Listado de Productos: Los usuarios pueden agregar nuevos productos con descripciones detalladas, fotos, precios y categorías. 
 Búsqueda y Filtros Avanzados: Los usuarios pueden buscar productos mediante filtros como categoría, precio y ubicación. 
 Actualización y Eliminación de Productos: Vendedores pueden actualizar la información de sus productos o eliminarlos cuando ya no estén disponibles, 
 Moderación de contenido: Los administradores pueden revisar y moderar productos inapropiados para mantener un ambiente seguro y respetuoso. 
 
 
+#### Gestión de Opiniones y Calificaciones: 
 
-Gestión de Opiniones y Calificaciones: El sistema permitirá a los usuarios dejar opiniones, promoviendo una comunidad de confianza 
+El sistema permitirá a los usuarios dejar opiniones, promoviendo una comunidad de confianza 
 Opiniones de compradores: Los usuarios pueden dejar de revisar y moderar opiniones inapropiadas para mantener un ambiente seguro y respetuoso. 
 Moderación de contenido: Los administradores pueden revisar y moderar opiniones inapropiadas para mantener un ambiente seguro y respetuoso. 
 
 
-Gestión de mensajería y comunicación: El sistema ofrecerá herramientas de comunicación entre compradores y vendedores 
+#### Gestión de mensajería y comunicación: 
+
+El sistema ofrecerá herramientas de comunicación entre compradores y vendedores 
 Mensajería Interna: Plataforma de mensajería interna para que los compradores puedan hacer preguntas y negociar detalles con los vendedores.
  
 
-Administración de la información: El sistema proporcionará una interfaz especializada para los administradores 
+#### Administración de la información: 
+
+El sistema proporcionará una interfaz especializada para los administradores 
 Gestión de usuarios: Los administradores pueden gestionar perfiles de usuarios, incluyendo la suspensión, edición o creación de ellos. 
 Moderación y Gestión de Productos: Los administradores pueden revisar y aprobar productos limpiados, también pueden gestionar los productos, incluyendo la suspensión y reactivación de ellos, podrán borrar, editar e incluso crear nuevos productos. 
 Gestión de Categorías: Los administradores pueden gestionar pudiendo así borrar y añadir categorías. 
