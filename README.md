@@ -1,6 +1,6 @@
 # RESMOKE
 
-- [RESMOKE](http://resmoke.es).
+- [RESMOKE](http://resmoke.es)
 
 # SOBRE RESMOKE
 
