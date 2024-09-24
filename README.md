@@ -60,8 +60,13 @@ Gestión de Favoritos: Los administradores pueden gestionar pudiendo así borrar
 Moderación y Gestión de Opiniones: Los administradores pueden revisar y aprobar opiniones listadas, también pueden gestionar las opiniones pudiendo así borrar favoritos. 
 
 
-Seguridad y Cumplimiento Normativo: El sistema implementará robustas medidas de seguridad para proteger la información sensible y garantizar el cumplimiento de las normativas de protección de datos, como el GDPR 
-Cifrado de Datos: Protección de datos sensibles mediante cifrado. 
+#### Seguridad y Cumplimiento Normativo: 
+
+El sistema implementará robustas medidas de seguridad para proteger la información sensible y garantizar el cumplimiento de las normativas de protección de datos, como el GDPR 
+
+#### Cifrado de Datos: 
+
+Protección de datos sensibles mediante cifrado. 
 
 
 
@@ -69,10 +74,16 @@ Cifrado de Datos: Protección de datos sensibles mediante cifrado.
 
 ### OBJETIVOS NO FUNCIONALES DEL SISTEMA
 
-Usabilidad: El sistema deberá proporcionar una interfaz de usuario sencilla para los usuarios, evitando la sobrecarga de información. La navegación debe ser clara y accesible para que los usuarios puedan realizar sus tareas sin dificultad. 
+#### Usabilidad: 
 
-Portabilidad: La aplicación se desplegará en un entorno Amazon Linux utilizando Amazon Web Linux (AWS). Esto garantizará una alta disponibilidad, escalabilidad y accesibilidad desde una amplia variedad de plataformas y dispositivos. 
+El sistema deberá proporcionar una interfaz de usuario sencilla para los usuarios, evitando la sobrecarga de información. La navegación debe ser clara y accesible para que los usuarios puedan realizar sus tareas sin dificultad. 
 
-Rendimiento: La aplicación deberá funcionar con el menor consumo de recursos necesarios, garantizando una experiencia rápida y eficiente.
+#### Portabilidad: 
+
+La aplicación se desplegará en un entorno Amazon Linux utilizando Amazon Web Linux (AWS). Esto garantizará una alta disponibilidad, escalabilidad y accesibilidad desde una amplia variedad de plataformas y dispositivos. 
+
+#### Rendimiento: 
+
+La aplicación deberá funcionar con el menor consumo de recursos necesarios, garantizando una experiencia rápida y eficiente.
 
 
