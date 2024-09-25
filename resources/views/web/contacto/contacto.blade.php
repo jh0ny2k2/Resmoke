@@ -54,7 +54,7 @@
             <div class="bg-gray-100 p-6 rounded-lg shadow-xl">
                 <h3 class="text-xl font-semibold mb-4">Email</h3>
                 <p>Generalmente respondemos dentro de las 24 horas.</p>
-                <p>info@resmoke.com</p>
+                <p>info.resmoke@gmail.com</p>
             </div>
             <div class="bg-gray-100 p-6 rounded-lg shadow-xl">
                 <h3 class="text-xl font-semibold mb-4">Horario de Trabajo</h3>

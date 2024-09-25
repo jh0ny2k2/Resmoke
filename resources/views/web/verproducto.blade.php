@@ -1,10 +1,11 @@
 <x-navbarvproducto></x-navbarvproducto>
 
 <div class="container mx-auto px-4 py-8">
-
+  <!-- BOTON VOLVER ATRAS -->
+  <x-boton-atras></x-boton-atras>
+  
   <div class="flex">
-    <!-- BOTON VOLVER ATRAS -->
-    <x-boton-atras></x-boton-atras>
+    
 
     @auth
     @if ($productoo->usuarioId === Auth::user()->id)

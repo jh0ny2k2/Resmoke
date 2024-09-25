@@ -79,26 +79,26 @@
 
 
 <!-- Contenedor de la notificación -->
-<div id="notification" class="fixed bottom-4 left-4 bg-white border-l-4 border-gray-900 shadow-lg rounded-lg p-4 max-w-lg opacity-0 transform translate-y-4 transition-all duration-300">
+<!-- <div id="notification" class="fixed bottom-4 left-4 bg-white border-l-4 border-gray-900 shadow-lg rounded-lg p-4 max-w-lg opacity-0 transform translate-y-4 transition-all duration-300">
         <div class="flex items-start">
-            <div class="text-red-700">
+            <div class="text-red-700"> -->
                 <!-- Icono -->
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m2 4h.01m-6.938 4h13.856c1.054 0 1.88-.816 1.994-1.851l.007-.15V6c0-1.054-.816-1.88-1.851-1.994L19.938 4H6.062c-1.054 0-1.88.816-1.994 1.851L4.062 6v12c0 1.054.816 1.88 1.851 1.994l.15.006z"></path></svg>
-            </div>
-            <div class="ml-3">
+                <!-- <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m2 4h.01m-6.938 4h13.856c1.054 0 1.88-.816 1.994-1.851l.007-.15V6c0-1.054-.816-1.88-1.851-1.994L19.938 4H6.062c-1.054 0-1.88.816-1.994 1.851L4.062 6v12c0 1.054.816 1.88 1.851 1.994l.15.006z"></path></svg> -->
+            <!-- </div>
+            <div class="ml-3"> -->
                 <!-- Título de la notificación -->
-                <p class="text-sm font-bold text-red-700">¡Notificación Importante!</p>
+                <!-- <p class="text-sm font-bold text-red-700">¡Notificación Importante!</p> -->
                 <!-- Descripción de la notificación -->
-                <p class="text-sm text-gray-500">Lamentamos informarles que nuestra base de datos ha sido eliminada debido a un problema inesperado. Estamos trabajando diligentemente para resolver la situación y para implementar medidas que prevengan futuros incidentes. <br><br>
+                <!-- <p class="text-sm text-gray-500">Lamentamos informarles que nuestra base de datos ha sido eliminada debido a un problema inesperado. Estamos trabajando diligentemente para resolver la situación y para implementar medidas que prevengan futuros incidentes. <br><br> -->
 
-                    Agradecemos su comprensión y paciencia mientras solucionamos este problema. Nos disculpamos sinceramente por cualquier inconveniente que esto pueda causar.</p>
-            </div>
-        </div>
+                    <!-- Agradecemos su comprensión y paciencia mientras solucionamos este problema. Nos disculpamos sinceramente por cualquier inconveniente que esto pueda causar.</p> -->
+            <!-- </div> -->
+        <!-- </div> -->
         <!-- Botón de cerrar -->
-        <button onclick="closeNotification()" class="absolute top-2 right-2 text-gray-400 hover:text-gray-600">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-        </button>
-    </div>
+        <!-- <button onclick="closeNotification()" class="absolute top-2 right-2 text-gray-400 hover:text-gray-600"> -->
+            <!-- <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg> -->
+        <!-- </button> -->
+    <!-- </div> -->
 
     <script>
         // Mostrar la notificación al cargar la página

@@ -29,8 +29,8 @@
                     <h3 class="text-lg font-semibold text-gray-800">Soporte</h3>
                     <ul class="mt-4 space-y-2">
                         <li><a href="{{ route('contacto') }}" class="text-gray-600 hover:underline">Centro de ayuda</a></li>
-                        <li><a href="#" class="text-gray-600 hover:underline">Normas de la comunidad</a></li> 
-                        <li><a href="#" class="text-gray-600 hover:underline">Consejos de seguridad</a></li>
+                        <li><a href="{{ route('normasResmoke') }}" class="text-gray-600 hover:underline">Normas de la comunidad</a></li> 
+                        <li><a href="{{ route('consejosSeguridad') }}" class="text-gray-600 hover:underline">Consejos de seguridad</a></li>
                     </ul>
                 </div>
                 <div>
