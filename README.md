@@ -1,5 +1,7 @@
 # RESMOKE
 
+http://resmoke.es/storage/logo%20resmoke.png
+
 - [RESMOKE](http://resmoke.es)
 
 # SOBRE RESMOKE
