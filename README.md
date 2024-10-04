@@ -1,7 +1,7 @@
 # RESMOKE
 
 
-<img src="http://resmoke.es/storage/logo%20resmoke.png" alt="La Mojonera" width="60" height="80"/>
+<img src="http://resmoke.es/storage/logo%20resmoke.png" alt="La Mojonera" width="100" height="100"/>
 
 - [RESMOKE](http://resmoke.es)
 
